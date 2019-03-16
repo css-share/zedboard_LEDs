@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;xuartps_intr_example_modified/src/xuartps_intr_example.c&apos; to &apos;xuartps_intr_example_modified.c&apos;" description="Rename resource &apos;xuartps_intr_example.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/xuartps_intr_example.c" name="xuartps_intr_example_modified.c" stamp="1552096852346" updateReferences="true"/>
+</session>

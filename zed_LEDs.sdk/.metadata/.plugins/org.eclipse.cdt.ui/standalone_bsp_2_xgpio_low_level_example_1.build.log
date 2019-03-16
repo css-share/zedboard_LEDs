@@ -1,0 +1,23 @@
+22:18:01 **** Auto Build of configuration Debug for project standalone_bsp_2_xgpio_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xgpio_low_level_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xgpio_low_level_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/xgpio_low_level_example.d" -MT"src/xgpio_low_level_example.o" -o "src/xgpio_low_level_example.o" "../src/xgpio_low_level_example.c"
+'Finished building: ../src/xgpio_low_level_example.c'
+' '
+'Building target: standalone_bsp_2_xgpio_low_level_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "standalone_bsp_2_xgpio_low_level_example_1.elf"  ./src/xgpio_low_level_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_2_xgpio_low_level_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_2_xgpio_low_level_example_1.elf  |tee "standalone_bsp_2_xgpio_low_level_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19244	   1144	  22568	  42956	   a7cc	standalone_bsp_2_xgpio_low_level_example_1.elf
+'Finished building: standalone_bsp_2_xgpio_low_level_example_1.elf.size'
+' '
+
+22:18:01 Build Finished (took 535ms)
+

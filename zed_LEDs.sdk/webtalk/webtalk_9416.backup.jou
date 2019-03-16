@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# 
+# Start of session at: Tue Feb 26 20:29:39 2019
+# Process ID: 9416
+# Current directory: C:/Xilinx/Vivado/projects/vivado_tutorial_project_2/vivado_tutorial_project_2.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: C:/Xilinx/Vivado/projects/vivado_tutorial_project_2/vivado_tutorial_project_2.sdk/webtalk/webtalk.log
+# Journal file: C:/Xilinx/Vivado/projects/vivado_tutorial_project_2/vivado_tutorial_project_2.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

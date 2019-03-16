@@ -1,0 +1,28 @@
+22:17:58 **** Auto Build of configuration Debug for project forum_code ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/forum_code.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/forum_code.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/forum_code.d" -MT"src/forum_code.o" -o "src/forum_code.o" "../src/forum_code.c"
+'Finished building: ../src/forum_code.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: forum_code.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "forum_code.elf"  ./src/forum_code.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: forum_code.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size forum_code.elf  |tee "forum_code.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28548	   2832	  22664	  54044	   d31c	forum_code.elf
+'Finished building: forum_code.elf.size'
+' '
+
+22:17:59 Build Finished (took 782ms)
+

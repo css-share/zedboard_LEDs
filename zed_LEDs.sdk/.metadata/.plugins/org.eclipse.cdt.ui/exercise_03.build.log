@@ -1,0 +1,32 @@
+01:18:14 **** Auto Build of configuration Debug for project exercise_03 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/exercise_03.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/exercise_03.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_00/ps7_cortexa9_0/include -MMD -MP -MF"src/exercise_03.d" -MT"src/exercise_03.o" -o "src/exercise_03.o" "../src/exercise_03.c"
+../src/exercise_03.c: In function 'main':
+../src/exercise_03.c:58:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+  int Status;
+      ^~~~~~
+'Finished building: ../src/exercise_03.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_00/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: exercise_03.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_00/ps7_cortexa9_0/lib -o "exercise_03.elf"  ./src/exercise_03.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: exercise_03.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size exercise_03.elf  |tee "exercise_03.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  77420	   2588	  23344	 103352	  193b8	exercise_03.elf
+'Finished building: exercise_03.elf.size'
+' '
+
+01:18:15 Build Finished (took 933ms)
+
