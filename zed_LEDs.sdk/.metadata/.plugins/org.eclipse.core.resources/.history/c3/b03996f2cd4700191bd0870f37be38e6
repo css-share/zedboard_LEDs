@@ -52,7 +52,7 @@ void PushButtons_ISR(void *data);
 void advance_LED_state(void);
 void update_conditions(unsigned int);
 void init_gpio(void);
-s32 init_interrupts(void);
+void init_interrupts(void);
 //*****************************************
 
 
@@ -202,7 +202,7 @@ void init_gpio(void)
 }
 
 //------------------------------------------------------------
-s32 init_interrupts(void)
+void init_interrupts(void)
 {
 	XScuGic_Config *IntcConfig;
 	IntcConfig = XScuGic_LookupConfig(BUT_INTC_DEVICE_ID);
@@ -250,8 +250,6 @@ s32 init_interrupts(void)
 
 	// Ensure that the programmable logic has all interrupts cleared before use
 	XGpio_InterruptClear(&buttons_gpio,INTERRUPT_MASK);
-
-	return XST_SUCCESS;
 }
 
 //------------------------------------------------------------

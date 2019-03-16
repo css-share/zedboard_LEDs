@@ -7251,3 +7251,89 @@ con
 ----------------End of Script----------------
 
 22:02:48 INFO  : Disconnected from the channel tcfchan#1.
+01:08:55 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA3C5B" && level==0} -index 1' command is executed.
+01:08:56 INFO  : 'fpga -state' command is executed.
+01:08:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+01:08:56 INFO  : Jtag cable 'Digilent Zed 210248AA3C5B' is selected.
+01:08:56 INFO  : 'jtag frequency' command is executed.
+01:08:56 INFO  : Sourcing of 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+01:08:56 INFO  : Context for 'APU' is selected.
+01:08:56 INFO  : Hardware design information is loaded from 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+01:08:56 INFO  : 'configparams force-mem-access 1' command is executed.
+01:08:57 INFO  : Context for 'APU' is selected.
+01:08:57 INFO  : 'stop' command is executed.
+01:08:57 INFO  : 'ps7_init' command is executed.
+01:08:57 INFO  : 'ps7_post_config' command is executed.
+01:08:57 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:08:58 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+01:08:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:08:58 INFO  : The application 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/zed_LEDs/Debug/zed_LEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+01:08:58 INFO  : 'configparams force-mem-access 0' command is executed.
+01:08:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+loadhw -hw C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+dow C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/zed_LEDs/Debug/zed_LEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+01:08:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+01:08:58 INFO  : 'con' command is executed.
+01:08:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+con
+----------------End of Script----------------
+
+01:08:58 INFO  : Disconnected from the channel tcfchan#2.
+02:17:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA3C5B" && level==0} -index 1' command is executed.
+02:17:44 INFO  : 'fpga -state' command is executed.
+02:17:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+02:17:45 INFO  : Jtag cable 'Digilent Zed 210248AA3C5B' is selected.
+02:17:45 INFO  : 'jtag frequency' command is executed.
+02:17:45 INFO  : Sourcing of 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl' is done.
+02:17:45 INFO  : Context for 'APU' is selected.
+02:17:45 INFO  : Hardware design information is loaded from 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/system.hdf'.
+02:17:45 INFO  : 'configparams force-mem-access 1' command is executed.
+02:17:45 INFO  : Context for 'APU' is selected.
+02:17:45 INFO  : 'stop' command is executed.
+02:17:46 INFO  : 'ps7_init' command is executed.
+02:17:46 INFO  : 'ps7_post_config' command is executed.
+02:17:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:17:46 INFO  : Processor reset is completed for 'ps7_cortexa9_0'.
+02:17:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:17:47 INFO  : The application 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/zed_LEDs/Debug/zed_LEDs.elf' is downloaded to processor 'ps7_cortexa9_0'.
+02:17:47 INFO  : 'configparams force-mem-access 0' command is executed.
+02:17:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+loadhw -hw C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/design_1_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+stop
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+dow C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.sdk/zed_LEDs/Debug/zed_LEDs.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+02:17:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+02:17:47 INFO  : 'con' command is executed.
+02:17:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "ARM*#0" && jtag_cable_name =~ "Digilent Zed 210248AA3C5B"} -index 0
+con
+----------------End of Script----------------
+
+02:17:47 INFO  : Disconnected from the channel tcfchan#3.

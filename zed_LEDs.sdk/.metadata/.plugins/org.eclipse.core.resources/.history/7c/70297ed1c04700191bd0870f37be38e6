@@ -1,6 +1,49 @@
-// zed_LEDs.c
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
 
-
+/*
+ *
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
 
 #include <stdio.h>
 #include "platform.h"
@@ -38,6 +81,7 @@
 #define STATE_SERVICE_UART		0x04
 
 
+
 XGpio sw_gpio, leds_gpio, buttons_gpio;
 //XGpio *sw_gpio = &sw_gpio_instance;
 //XGpio *leds_gpio = &leds_gpio_instance;
@@ -51,8 +95,6 @@ XScuGic *INTCInst = &intr_cntrl_Inst;
 void PushButtons_ISR(void *data);
 void advance_LED_state(void);
 void update_conditions(unsigned int);
-void init_gpio(void);
-s32 init_interrupts(void);
 //*****************************************
 
 
@@ -64,14 +106,13 @@ unsigned int state = STATE_LED_RUNNING;
 unsigned int switches_GPIO_value;
 unsigned int buttons_GPIO_value;
 unsigned int cmd;
-int Status;
 
 /*
 int gpio_init(XGpio *gpioPtr, u16 deviceID, unsjigned channel,u32 directionMask);
 
 int gpio_init(XGpio *gpioPtr, u16 deviceID, unsjigned channel,u32 directionMask){
 
-	//-----------------------------------------------------
+	//************************************************
 	//Initialize GPIO for slide switches 0-7
 	Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
 	if (Status != XST_SUCCESS){
@@ -86,7 +127,7 @@ int gpio_init(XGpio *gpioPtr, u16 deviceID, unsjigned channel,u32 directionMask)
 
 int main()
 {
-
+	int Status;
 	int looping = 1;
 
 
@@ -95,66 +136,9 @@ int main()
 
     xil_printf("\n\nRunning Zedboard LED application...\n");
 
-    init_gpio();
 
-    init_interrupts();
+//    gpio_init(&sw_gpio, SWITCHES_AXI_ID, SWITCHES_CHANNEL,0xFF);
 
-
-	//************************************************************
-	//Initial tests to verify board functionality
-    switches_GPIO_value = XGpio_DiscreteRead(&sw_gpio, SWITCHES_CHANNEL);
-    xil_printf("switch settings: 0x%04X\n",switches_GPIO_value);
-
-    buttons_GPIO_value = XGpio_DiscreteRead(&buttons_gpio, BUTTONS_CHANNEL);
-    xil_printf("button settings: 0x%04X\n",buttons_GPIO_value);
-
-    xil_printf("setting LED values to: 0x%04X\n",switches_GPIO_value);
-    XGpio_DiscreteWrite(&leds_gpio, SWITCHES_CHANNEL, switches_GPIO_value);
-    xil_printf("LED values written...\n");
-    //************************************************************
-
-
-
-    //****************************************************************************
-    //****************************************************************************
-    looping = 1;  //can set to 0 to terminate program if run from debugger
-
-    while(looping){
-
-    	//************************************
-    	// if the LED display is running take care of next LED to
-    	// illuminate, then delay here (update later to use timer and interrupts)
-    	if (state & STATE_LED_RUNNING){
-    		XGpio_DiscreteWrite(&leds_gpio, LEDS_CHANNEL, LEDs_GPIO_value);
-
-    		advance_LED_state();
-
-    		usleep(LED_delay_usec);
-    	}
-
-    	//************************************
-    	// a button was pressed so perform requested action
-    	if (state & STATE_UPDATE_CONDITIONS){
-    		update_conditions(cmd);
-    		state &= ~STATE_UPDATE_CONDITIONS;
-    	}
-
-    }
-    //****************************************************************************
-    //****************************************************************************
-
-
-
-    xil_printf("done.\n");
-
-   	cleanup_platform();
-    return 0;
-}
-
-
-//------------------------------------------------------------
-void init_gpio(void)
-{
     //************************************************
     //Initialize GPIO for slide switches 0-7
     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
@@ -199,28 +183,24 @@ void init_gpio(void)
     //Enable interrupts for buttons
     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
     XGpio_InterruptGlobalEnable(&buttons_gpio);
-}
 
-//------------------------------------------------------------
-s32 init_interrupts(void)
-{
-	XScuGic_Config *IntcConfig;
-	IntcConfig = XScuGic_LookupConfig(BUT_INTC_DEVICE_ID);
+    XScuGic_Config *IntcConfig;
+    IntcConfig = XScuGic_LookupConfig(BUT_INTC_DEVICE_ID);
 
-	//Initialize fields of the XScuGic structure
-	Status = XScuGic_CfgInitialize(INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
-	if(Status != XST_SUCCESS){
-		xil_printf("error initializing interrupt controller config\n");
-		return XST_FAILURE;
-	}
-	else{
-		xil_printf("success initializing interrupt controller config\n");
-	}
+    //Initialize fields of the XScuGic structure
+    Status = XScuGic_CfgInitialize(INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
+    if(Status != XST_SUCCESS){
+    	xil_printf("error initializing interrupt controller config\n");
+    	return XST_FAILURE;
+    }
+    else{
+    	xil_printf("success initializing interrupt controller config\n");
+    }
 
-	//Sets the interrupt priority and trigger type for the specificd IRQ source.
-	XScuGic_SetPriorityTriggerType(INTCInst, INT_PushButtons, 0xA8, 3);	//0=Max priority, 3=rising edge.
+    //Sets the interrupt priority and trigger type for the specificd IRQ source.
+    XScuGic_SetPriorityTriggerType(INTCInst, INT_PushButtons, 0xA8, 3);	//0=Max priority, 3=rising edge.
 
-	// Makes the connection between the Int_Id of the interrupt source and the
+    // Makes the connection between the Int_Id of the interrupt source and the
 	// associated handler that is to run when the interrupt is recognized. The
 	// argument provided in this call as the Callbackref is used as the argument
 	// for the handler when it is called.
@@ -239,7 +219,7 @@ s32 init_interrupts(void)
 	// called.
 	XScuGic_Enable(INTCInst, INT_PushButtons);
 
-	//Initialize the interrupt controller driver so that it is ready to use./
+    //Initialize the interrupt controller driver so that it is ready to use./
 	Xil_ExceptionInit();
 
 	// Enable interrupt
@@ -248,13 +228,69 @@ s32 init_interrupts(void)
 								 INTCInst);
 	Xil_ExceptionEnable();
 
-	// Ensure that the programmable logic has all interrupts cleared before use
-	XGpio_InterruptClear(&buttons_gpio,INTERRUPT_MASK);
 
-	return XST_SUCCESS;
+
+	xil_printf("done setting up interrupts...\n");
+	//************************************************************
+
+
+
+	//************************************************************
+	//Initial tests to verify board functionality
+    switches_GPIO_value = XGpio_DiscreteRead(&sw_gpio, SWITCHES_CHANNEL);
+    xil_printf("switch settings: 0x%04X\n",switches_GPIO_value);
+
+    buttons_GPIO_value = XGpio_DiscreteRead(&buttons_gpio, BUTTONS_CHANNEL);
+    xil_printf("button settings: 0x%04X\n",buttons_GPIO_value);
+
+    xil_printf("setting LED values to: 0x%04X\n",switches_GPIO_value);
+    XGpio_DiscreteWrite(&leds_gpio, SWITCHES_CHANNEL, switches_GPIO_value);
+    xil_printf("LED values written...\n");
+    //************************************************************
+
+
+
+    // Ensure that the programmable logic has all interrupts cleared before use
+    XGpio_InterruptClear(&buttons_gpio,INTERRUPT_MASK);
+
+
+
+    //****************************************************************************
+    //****************************************************************************
+    looping = 1;  //can set to 0 to terminate program if run from debugger
+
+    while(looping){
+
+    	//************************************
+    	// if the LED display is running take care of next LED to
+    	// illuminate, then delay here (update later to use timer and interrupts)
+    	if (state & STATE_LED_RUNNING){
+    		XGpio_DiscreteWrite(&leds_gpio, LEDS_CHANNEL, LEDs_GPIO_value);
+
+    		advance_LED_state();
+
+    		usleep(LED_delay_usec);
+    	}
+
+    	//************************************
+    	// a button was pressed so perform requested action
+    	if (state & STATE_UPDATE_CONDITIONS){
+    		update_conditions(cmd);
+    		state &= ~STATE_UPDATE_CONDITIONS;
+    	}
+
+    }
+    //****************************************************************************
+    //****************************************************************************
+
+
+
+    xil_printf("done.\n");
+
+   	cleanup_platform();
+    return 0;
 }
 
-//------------------------------------------------------------
 void advance_LED_state(void)
 {
 	if (light_to_left){
@@ -275,10 +311,9 @@ void advance_LED_state(void)
 	}
 }
 
-//------------------------------------------------------------
 void PushButtons_ISR(void *data)
 {
-//	u32 buttons;
+	u32 buttons;
 	xil_printf("entered GPIO interrupt handler\n");
 
 	// 20msec delay for pushbutton debounce
@@ -300,9 +335,9 @@ void PushButtons_ISR(void *data)
 	XGpio_InterruptClear(&buttons_gpio,INTERRUPT_MASK);
 }
 
-//------------------------------------------------------------
-void update_conditions(unsigned int command)
-{
+
+void update_conditions(unsigned int command){
+
 	switch(command)
 	{
 		case CENTER:
