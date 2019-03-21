@@ -9,8 +9,15 @@
 #include "xparameters.h"
 #include "xil_printf.h"
 #include "xscugic.h"
+#include "xuartps.h"
+#include "xuartps_hw.h"
+#include "xil_exception.h"
 #include "sleep.h"
 
+
+//----------------------------------------
+// for gpio
+//
 #define SWITCHES_AXI_ID		XPAR_AXI_GPIO_0_DEVICE_ID
 #define LEDS_AXI_ID			XPAR_AXI_GPIO_1_DEVICE_ID
 #define BUTTONS_AXI_ID		XPAR_AXI_GPIO_2_DEVICE_ID
@@ -32,29 +39,65 @@
 #define STEP_DELAY_USEC 25000
 
 #define	INTERRUPT_MASK 0xFF
+//----------------------------------------
 
+
+
+//----------------------------------------
+// for UartPs
+//
+#define INTC				XScuGic
+#define UARTPS_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
+#define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
+#define UART_BASEADDR		XPAR_XUARTPS_0_BASEADDR
+#define RX_BUFFER_SIZE	30
+#define KEY_U			117
+#define KEY_D			100
+#define KEY_L			108
+#define KEY_R			114
+#define KEY_SPACE		32
+//----------------------------------------
+
+
+
+//----------------------------------------
+// state machine bit definitions
+//
 #define STATE_LED_RUNNING		0x01
 #define	STATE_UPDATE_CONDITIONS	0x02
 #define STATE_SERVICE_UART		0x04
+//----------------------------------------
 
 
-XGpio sw_gpio, leds_gpio, buttons_gpio;
-//XGpio *sw_gpio = &sw_gpio_instance;
-//XGpio *leds_gpio = &leds_gpio_instance;
-//XGpio *buttons_gpio = &buttons_gpio_instance;
 
-static XScuGic intr_cntrl_Inst;	//instance of the interrupt controller
-XScuGic *INTCInst = &intr_cntrl_Inst;
-
-//*****************************************
+//----------------------------------------
 // function declarations
 void PushButtons_ISR(void *data);
 void advance_LED_state(void);
 void update_conditions(unsigned int);
 void init_gpio(void);
-s32 init_interrupts(void);
-//*****************************************
+s32 init_gpio_interrupts(void);
 
+int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+			u16 DeviceId, u16 UartIntrId);
+static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
+				XUartPs *UartInstancePtr,
+				u16 UartIntrId);
+void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
+void read_uart_data(void);
+//----------------------------------------
+
+
+
+//----------------------------------------
+// variables
+XGpio sw_gpio, leds_gpio, buttons_gpio;
+static XScuGic interrupt_controller;	//instance of the interrupt controller
+//XScuGic *INTCInst = &interrupt_controller;
+
+XUartPs UartPs	;						/* Instance of the UART Device */
+static u8 RxBuffer[RX_BUFFER_SIZE];		/* Buffer for Receiving Data */
 
 char running = TRUE;
 char light_to_left = TRUE;
@@ -66,41 +109,29 @@ unsigned int buttons_GPIO_value;
 unsigned int cmd;
 int Status;
 
-/*
-int gpio_init(XGpio *gpioPtr, u16 deviceID, unsjigned channel,u32 directionMask);
-
-int gpio_init(XGpio *gpioPtr, u16 deviceID, unsjigned channel,u32 directionMask){
-
-	//-----------------------------------------------------
-	//Initialize GPIO for slide switches 0-7
-	Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
-	if (Status != XST_SUCCESS){
-		xil_printf("error initializing switches gpio\n");
-	}
-	else{
-		xil_printf("success initializing switches gpio\n");
-	}
-	XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
-
-}*/
 
 int main()
 {
-
 	int looping = 1;
 
-
-
     init_platform();
-
     xil_printf("\n\nRunning Zedboard LED application...\n");
 
     init_gpio();
+    init_gpio_interrupts();
+    xil_printf("done setting up GPIO\n");
 
-    init_interrupts();
+    Status = SetupUartPs(&interrupt_controller, &UartPs,
+    				UARTPS_DEVICE_ID, UART_INT_IRQ_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed to set up UartPs\r\n");
+		return XST_FAILURE;
+	}
+
+	xil_printf("  waiting for received UART data...\n");
 
 
-	//************************************************************
+    //-------------------------------------------------------------------
 	//Initial tests to verify board functionality
     switches_GPIO_value = XGpio_DiscreteRead(&sw_gpio, SWITCHES_CHANNEL);
     xil_printf("switch settings: 0x%04X\n",switches_GPIO_value);
@@ -111,17 +142,18 @@ int main()
     xil_printf("setting LED values to: 0x%04X\n",switches_GPIO_value);
     XGpio_DiscreteWrite(&leds_gpio, SWITCHES_CHANNEL, switches_GPIO_value);
     xil_printf("LED values written...\n");
-    //************************************************************
+    //-------------------------------------------------------------------
 
 
 
-    //****************************************************************************
-    //****************************************************************************
+
+    //###################################################################
+    //-------------------------------------------------------------------
     looping = 1;  //can set to 0 to terminate program if run from debugger
 
     while(looping){
 
-    	//************************************
+    	//------------------------------------------------------------------
     	// if the LED display is running take care of next LED to
     	// illuminate, then delay here (update later to use timer and interrupts)
     	if (state & STATE_LED_RUNNING){
@@ -132,16 +164,26 @@ int main()
     		usleep(LED_delay_usec);
     	}
 
-    	//************************************
+    	//-------------------------------------------------------------------
     	// a button was pressed so perform requested action
     	if (state & STATE_UPDATE_CONDITIONS){
     		update_conditions(cmd);
     		state &= ~STATE_UPDATE_CONDITIONS;
     	}
 
+    	//-------------------------------------------------------------------
+		// uart received data so find command and take action
+		if (state & STATE_SERVICE_UART){
+			read_uart_data();
+			update_conditions(cmd);
+			state &= ~STATE_SERVICE_UART;
+		}
+
     }
-    //****************************************************************************
-    //****************************************************************************
+    //-------------------------------------------------------------------
+    //###################################################################
+
+
 
 
 
@@ -150,12 +192,13 @@ int main()
    	cleanup_platform();
     return 0;
 }
+//------------------------------------------------------------
 
 
 //------------------------------------------------------------
 void init_gpio(void)
 {
-    //************************************************
+	//-------------------------------------------------------------------
     //Initialize GPIO for slide switches 0-7
     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
     if (Status != XST_SUCCESS){
@@ -182,33 +225,35 @@ void init_gpio(void)
 	else{
 		xil_printf("success initializing buttons gpio\n");
 	}
-	//************************************************
+	//-------------------------------------------------------------------
 
 
 
-	//************************************************
+	//-------------------------------------------------------------------
 	//buttons and switches set as inputs, LEDs set as outputs
     XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
     XGpio_SetDataDirection(&leds_gpio, 1, 0x00); //0=output, 1=input
 	XGpio_SetDataDirection(&buttons_gpio, 1, 0xFF); //0=output, 1=input
-	//************************************************
+	//-------------------------------------------------------------------
 
 
 
-	//************************************************
+	//-------------------------------------------------------------------
     //Enable interrupts for buttons
     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
     XGpio_InterruptGlobalEnable(&buttons_gpio);
 }
+//------------------------------------------------------------
+
 
 //------------------------------------------------------------
-s32 init_interrupts(void)
+s32 init_gpio_interrupts(void)
 {
 	XScuGic_Config *IntcConfig;
 	IntcConfig = XScuGic_LookupConfig(BUT_INTC_DEVICE_ID);
 
 	//Initialize fields of the XScuGic structure
-	Status = XScuGic_CfgInitialize(INTCInst, IntcConfig, IntcConfig->CpuBaseAddress);
+	Status = XScuGic_CfgInitialize(&interrupt_controller, IntcConfig, IntcConfig->CpuBaseAddress);
 	if(Status != XST_SUCCESS){
 		xil_printf("error initializing interrupt controller config\n");
 		return XST_FAILURE;
@@ -218,14 +263,14 @@ s32 init_interrupts(void)
 	}
 
 	//Sets the interrupt priority and trigger type for the specificd IRQ source.
-	XScuGic_SetPriorityTriggerType(INTCInst, INT_PushButtons, 0xA8, 3);	//0=Max priority, 3=rising edge.
+	XScuGic_SetPriorityTriggerType(&interrupt_controller, INT_PushButtons, 0xA8, 3);	//0=Max priority, 3=rising edge.
 
 	// Makes the connection between the Int_Id of the interrupt source and the
 	// associated handler that is to run when the interrupt is recognized. The
 	// argument provided in this call as the Callbackref is used as the argument
 	// for the handler when it is called.
-	Status = XScuGic_Connect(INTCInst,INT_PushButtons,
-							(Xil_ExceptionHandler)PushButtons_ISR, (void *)&intr_cntrl_Inst);
+	Status = XScuGic_Connect(&interrupt_controller,INT_PushButtons,
+							(Xil_ExceptionHandler)PushButtons_ISR, (void *)&interrupt_controller);
 	if(Status != XST_SUCCESS){
 			xil_printf("error connecting interrupt controller IRQ handler\n");
 			return XST_FAILURE;
@@ -237,7 +282,7 @@ s32 init_interrupts(void)
 	// Enables the interrupt source provided as the argument Int_Id. Any pending
 	// interrupt condition for the specified Int_Id will occur after this function is
 	// called.
-	XScuGic_Enable(INTCInst, INT_PushButtons);
+	XScuGic_Enable(&interrupt_controller, INT_PushButtons);
 
 	//Initialize the interrupt controller driver so that it is ready to use./
 	Xil_ExceptionInit();
@@ -245,7 +290,7 @@ s32 init_interrupts(void)
 	// Enable interrupt
 	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
 								 (Xil_ExceptionHandler)XScuGic_InterruptHandler,
-								 INTCInst);
+								 &interrupt_controller);
 	Xil_ExceptionEnable();
 
 	// Ensure that the programmable logic has all interrupts cleared before use
@@ -253,6 +298,7 @@ s32 init_interrupts(void)
 
 	return XST_SUCCESS;
 }
+//------------------------------------------------------------
 
 //------------------------------------------------------------
 void advance_LED_state(void)
@@ -274,6 +320,8 @@ void advance_LED_state(void)
 		}
 	}
 }
+//------------------------------------------------------------
+
 
 //------------------------------------------------------------
 void PushButtons_ISR(void *data)
@@ -299,6 +347,8 @@ void PushButtons_ISR(void *data)
 	// interrupt capabilities.
 	XGpio_InterruptClear(&buttons_gpio,INTERRUPT_MASK);
 }
+//------------------------------------------------------------
+
 
 //------------------------------------------------------------
 void update_conditions(unsigned int command)
@@ -356,3 +406,228 @@ void update_conditions(unsigned int command)
 	}
 
 }
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+			u16 DeviceId, u16 UartIntrId)
+{
+	int Status;
+	XUartPs_Config *Config;
+	u32 IntrMask;
+
+
+	/*
+	 * Initialize the UART driver so that it's ready to use
+	 * Look up the configuration in the config table, then initialize it.
+	 */
+	Config = XUartPs_LookupConfig(DeviceId);
+	if (NULL == Config) {
+		return XST_FAILURE;
+	}
+
+	Status = XUartPs_CfgInitialize(UartInstPtr, Config, Config->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/* Check hardware build */
+	Status = XUartPs_SelfTest(UartInstPtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Connect the UART to the interrupt subsystem such that interrupts
+	 * can occur. This function is application specific.
+	 */
+	Status = SetupUartInterruptSystem(IntcInstPtr, UartInstPtr, UartIntrId);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Setup the handlers for the UART that will be called from the
+	 * interrupt context when data has been sent and received, specify
+	 * a pointer to the UART driver instance as the callback reference
+	 * so the handlers are able to access the instance data
+	 */
+	XUartPs_SetHandler(UartInstPtr, (XUartPs_Handler)UartPsISR, UartInstPtr);
+
+	/*
+	 * Enable the interrupt of the UART so interrupts will occur, setup
+	 * a local loopback so data that is sent will be received.
+	 */
+	IntrMask =
+		XUARTPS_IXR_TOUT | XUARTPS_IXR_PARITY | XUARTPS_IXR_FRAMING |
+		XUARTPS_IXR_OVER | XUARTPS_IXR_TXEMPTY | XUARTPS_IXR_RXFULL |
+		XUARTPS_IXR_RXOVR;
+
+	if (UartInstPtr->Platform == XPLAT_ZYNQ_ULTRA_MP) {
+		IntrMask |= XUARTPS_IXR_RBRK;
+	}
+
+	XUartPs_SetInterruptMask(UartInstPtr, IntrMask);
+
+	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
+
+	/*
+	 * Set the receiver timeout. If it is not set, and the last few bytes
+	 * of data do not trigger the over-water or full interrupt, the bytes
+	 * will not be received. By default it is disabled.
+	 *
+	 * The setting of 8 will timeout after 8 x 4 = 32 character times.
+	 * Increase the time out value if baud rate is high, decrease it if
+	 * baud rate is low.
+	 */
+	XUartPs_SetRecvTimeout(UartInstPtr, 8);
+
+	return XST_SUCCESS;
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+{
+	xil_printf("IRQ handler!\n");
+
+	/* All of the data has been sent */
+	if (Event == XUARTPS_EVENT_SENT_DATA) {
+		xil_printf("1\n");
+	}
+
+	/* All of the data has been received */
+	if (Event == XUARTPS_EVENT_RECV_DATA) {
+		xil_printf("2\n");
+		state |= STATE_SERVICE_UART;
+	}
+
+	/*
+	 * Data was received, but not the expected number of bytes, a
+	 * timeout just indicates the data stopped for 8 character times
+	 */
+	if (Event == XUARTPS_EVENT_RECV_TOUT) {
+		xil_printf("3\n");
+	}
+
+	/*
+	 * Data was received with an error, keep the data but determine
+	 * what kind of errors occurred
+	 */
+	if (Event == XUARTPS_EVENT_RECV_ERROR) {
+		xil_printf("4\n");
+	}
+
+	/*
+	 * Data was received with an parity or frame or break error, keep the data
+	 * but determine what kind of errors occurred. Specific to Zynq Ultrascale+
+	 * MP.
+	 */
+	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
+		xil_printf("5\n");
+	}
+
+	/*
+	 * Data was received with an overrun error, keep the data but determine
+	 * what kind of errors occurred. Specific to Zynq Ultrascale+ MP.
+	 */
+	if (Event == XUARTPS_EVENT_RECV_ORERR) {
+		xil_printf("6\n");
+	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
+				XUartPs *UartInstancePtr,
+				u16 UartIntrId)
+{
+	int Status;
+
+	XScuGic_Config *IntcConfig; /* Config for interrupt controller */
+
+	/* Initialize the interrupt controller driver */
+	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	if (NULL == IntcConfig) {
+		return XST_FAILURE;
+	}
+
+	Status = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig,
+					IntcConfig->CpuBaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Connect the interrupt controller interrupt handler to the
+	 * hardware interrupt handling logic in the processor.
+	 */
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+				(Xil_ExceptionHandler) XScuGic_InterruptHandler,
+				IntcInstancePtr);
+
+	/*
+	 * Connect a device driver handler that will be called when an
+	 * interrupt for the device occurs, the device driver handler
+	 * performs the specific interrupt processing for the device
+	 */
+	Status = XScuGic_Connect(IntcInstancePtr, UartIntrId,
+				  (Xil_ExceptionHandler) XUartPs_InterruptHandler,
+				  (void *) UartInstancePtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/* Enable the interrupt for the device */
+	XScuGic_Enable(IntcInstancePtr, UartIntrId);
+
+
+	/* Enable interrupts */
+	 Xil_ExceptionEnable();
+
+
+	return XST_SUCCESS;
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void read_uart_data(void)
+{
+	u8 index = 0;
+	unsigned int RxByte;
+
+	// loop through Uart Rx buffer and store received data
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		RxBuffer[index++] = XUartPs_ReadReg(UART_BASEADDR,
+					    					XUARTPS_FIFO_OFFSET);
+	}
+
+	//take first received byte as the command
+	RxByte = (unsigned int)RxBuffer[0];
+
+	// check received byte for valid command
+	switch (RxByte){
+		case (KEY_U):
+			cmd = UP;
+			break;
+		case (KEY_D):
+			cmd = DOWN;
+			break;
+		case (KEY_L):
+			cmd = LEFT;
+			break;
+		case (KEY_R):
+			cmd = RIGHT;
+			break;
+		case (KEY_SPACE):
+			cmd = CENTER;
+			break;
+	}
+
+}
+//------------------------------------------------------------

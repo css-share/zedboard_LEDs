@@ -19,6 +19,11 @@ src/zed_LEDs.o src/zed_LEDs.o: ../src/zed_LEDs.c ../src/platform.h \
  ../../standalone_bsp_2/ps7_cortexa9_0/include/xscugic.h \
  ../../standalone_bsp_2/ps7_cortexa9_0/include/xscugic_hw.h \
  ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_exception.h \
+ ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps.h \
+ ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h \
+ ../../standalone_bsp_2/ps7_cortexa9_0/include/xplatform_info.h \
+ ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h \
+ ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_exception.h \
  ../../standalone_bsp_2/ps7_cortexa9_0/include/sleep.h
 
 ../src/platform.h:
@@ -60,6 +65,16 @@ src/zed_LEDs.o src/zed_LEDs.o: ../src/zed_LEDs.c ../src/platform.h \
 ../../standalone_bsp_2/ps7_cortexa9_0/include/xscugic.h:
 
 ../../standalone_bsp_2/ps7_cortexa9_0/include/xscugic_hw.h:
+
+../../standalone_bsp_2/ps7_cortexa9_0/include/xil_exception.h:
+
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps.h:
+
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:
+
+../../standalone_bsp_2/ps7_cortexa9_0/include/xplatform_info.h:
+
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:
 
 ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_exception.h:
 

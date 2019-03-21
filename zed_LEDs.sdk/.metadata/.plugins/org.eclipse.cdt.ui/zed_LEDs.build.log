@@ -1,30 +1,8 @@
-02:29:07 **** Auto Build of configuration Debug for project zed_LEDs ****
+00:19:09 **** Incremental Build of configuration Debug for project zed_LEDs ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
-'Building file: ../src/zed_LEDs.c'
-'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
-In file included from ../src/zed_LEDs.c:7:0:
-../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
- #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-  ^~~~~~~
-../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
- #warning  Please refer the Standalone BSP UG647 for further details
-  ^~~~~~~
-'Finished building: ../src/zed_LEDs.c'
-' '
-'Building target: zed_LEDs.elf'
-'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: zed_LEDs.elf'
-' '
-'Invoking: ARM v7 Print Size'
-arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  30508	   2792	  22664	  55964	   da9c	zed_LEDs.elf
-'Finished building: zed_LEDs.elf.size'
-' '
+make: Nothing to be done for `main-build'.
 
-02:29:08 Build Finished (took 540ms)
+00:19:10 Build Finished (took 250ms)
 

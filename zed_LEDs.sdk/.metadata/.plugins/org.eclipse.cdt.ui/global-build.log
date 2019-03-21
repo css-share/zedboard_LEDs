@@ -1,14 +1,4 @@
-02:15:54 **** Incremental Build of configuration Debug for project zed_LEDs ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for `main-build'.
-02:17:42 **** Incremental Build of configuration Debug for project zed_LEDs ****
-make pre-build main-build 
-a9-linaro-pre-build-step
-' '
-make: Nothing to be done for `main-build'.
-02:26:29 **** Auto Build of configuration Debug for project zed_LEDs ****
+01:01:00 **** Incremental Build of configuration Debug for project zed_LEDs ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -22,29 +12,439 @@ In file included from ../src/zed_LEDs.c:7:0:
 ../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
  #warning  Please refer the Standalone BSP UG647 for further details
   ^~~~~~~
-In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio.h:135:0,
-                 from ../src/zed_LEDs.c:8:
-../src/zed_LEDs.c: In function 'init_interrupts':
-../../standalone_bsp_2/ps7_cortexa9_0/include/xstatus.h:65:41: warning: 'return' with a value, in function returning void
- #define XST_FAILURE                     1L
-                                         ^
-../src/zed_LEDs.c:214:10: note: in expansion of macro 'XST_FAILURE'
-   return XST_FAILURE;
-          ^~~~~~~~~~~
-../src/zed_LEDs.c:205:6: note: declared here
- void init_interrupts(void)
-      ^~~~~~~~~~~~~~~
-In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio.h:135:0,
-                 from ../src/zed_LEDs.c:8:
-../../standalone_bsp_2/ps7_cortexa9_0/include/xstatus.h:65:41: warning: 'return' with a value, in function returning void
- #define XST_FAILURE                     1L
-                                         ^
-../src/zed_LEDs.c:231:11: note: in expansion of macro 'XST_FAILURE'
-    return XST_FAILURE;
-           ^~~~~~~~~~~
-../src/zed_LEDs.c:205:6: note: declared here
- void init_interrupts(void)
-      ^~~~~~~~~~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c: In function 'main':
+../src/zed_LEDs.c:142:14: warning: implicit declaration of function 'SetupUartPs' [-Wimplicit-function-declaration]
+     Status = SetupUartPs(&UartInterruptController, &UartPs,
+              ^~~~~~~~~~~
+../src/zed_LEDs.c:142:27: error: 'UartInterruptController' undeclared (first use in this function); did you mean 'InterruptController'?
+     Status = SetupUartPs(&UartInterruptController, &UartPs,
+                           ^~~~~~~~~~~~~~~~~~~~~~~
+                           InterruptController
+../src/zed_LEDs.c:142:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:370:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:376:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:395:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:479:5: error: conflicting types for 'SetupUartPs'
+ int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+     ^~~~~~~~~~~
+../src/zed_LEDs.c:481:1: note: an argument type that has a default promotion can't match an empty parameter name list declaration
+ {
+ ^
+../src/zed_LEDs.c:142:14: note: previous implicit declaration of 'SetupUartPs' was here
+     Status = SetupUartPs(&UartInterruptController, &UartPs,
+              ^~~~~~~~~~~
+../src/zed_LEDs.c: In function 'SetupUartPs':
+../src/zed_LEDs.c:486:6: warning: unused variable 'BadByteCount' [-Wunused-variable]
+  int BadByteCount = 0;
+      ^~~~~~~~~~~~
+../src/zed_LEDs.c:484:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:557:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:563:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:569:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:588:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:05:54 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c: In function 'main':
+../src/zed_LEDs.c:142:27: error: 'UartInterruptController' undeclared (first use in this function); did you mean 'InterruptController'?
+     Status = SetupUartPs(&UartInterruptController, &UartPs,
+                           ^~~~~~~~~~~~~~~~~~~~~~~
+                           InterruptController
+../src/zed_LEDs.c:142:27: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:370:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:376:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:395:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c: In function 'SetupUartPs':
+../src/zed_LEDs.c:486:6: warning: unused variable 'BadByteCount' [-Wunused-variable]
+  int BadByteCount = 0;
+      ^~~~~~~~~~~~
+../src/zed_LEDs.c:484:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:557:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:563:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:569:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:588:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:07:25 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:370:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:370:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:376:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:395:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c: In function 'SetupUartPs':
+../src/zed_LEDs.c:486:6: warning: unused variable 'BadByteCount' [-Wunused-variable]
+  int BadByteCount = 0;
+      ^~~~~~~~~~~~
+../src/zed_LEDs.c:484:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:557:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:563:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:569:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:588:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:08:32 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:382:2: error: expected identifier or '(' before 'if'
+  if (Event == XUARTPS_EVENT_RECV_TOUT) {
+  ^~
+../src/zed_LEDs.c:390:2: error: expected identifier or '(' before 'if'
+  if (Event == XUARTPS_EVENT_RECV_ERROR) {
+  ^~
+../src/zed_LEDs.c:399:2: error: expected identifier or '(' before 'if'
+  if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
+  ^~
+../src/zed_LEDs.c:407:2: error: expected identifier or '(' before 'if'
+  if (Event == XUARTPS_EVENT_RECV_ORERR) {
+  ^~
+../src/zed_LEDs.c:410:1: error: expected identifier or '(' before '}' token
+ }
+ ^
+../src/zed_LEDs.c: In function 'SetupUartPs':
+../src/zed_LEDs.c:477:6: warning: unused variable 'BadByteCount' [-Wunused-variable]
+  int BadByteCount = 0;
+      ^~~~~~~~~~~~
+../src/zed_LEDs.c:475:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:548:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:554:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:554:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:560:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:579:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:08:53 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c: In function 'SetupUartPs':
+../src/zed_LEDs.c:477:6: warning: unused variable 'BadByteCount' [-Wunused-variable]
+  int BadByteCount = 0;
+      ^~~~~~~~~~~~
+../src/zed_LEDs.c:475:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:548:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:554:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:554:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:560:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:579:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:09:24 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:546:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c: In function 'UartPsISR':
+../src/zed_LEDs.c:552:3: error: 'TotalSentCount' undeclared (first use in this function)
+   TotalSentCount = EventData;
+   ^~~~~~~~~~~~~~
+../src/zed_LEDs.c:552:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:558:3: error: 'TotalReceivedCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalReceivedCount = EventData;
+   ^~~~~~~~~~~~~~~~~~
+   TotalSentCount
+../src/zed_LEDs.c:577:3: error: 'TotalErrorCount' undeclared (first use in this function); did you mean 'TotalSentCount'?
+   TotalErrorCount++;
+   ^~~~~~~~~~~~~~~
+   TotalSentCount
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:11:29 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:546:6: error: redefinition of 'UartPsISR'
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:364:6: note: previous definition of 'UartPsISR' was here
+ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
+      ^~~~~~~~~
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+01:18:10 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
 'Finished building: ../src/zed_LEDs.c'
 ' '
 'Building target: zed_LEDs.elf'
@@ -55,10 +455,430 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  30508	   2792	  22664	  55964	   da9c	zed_LEDs.elf
+  36800	   2840	  22872	  62512	   f430	zed_LEDs.elf
 'Finished building: zed_LEDs.elf.size'
 ' '
-02:29:07 **** Auto Build of configuration Debug for project zed_LEDs ****
+01:18:51 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+01:22:05 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+01:23:22 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36696	   2840	  22872	  62408	   f3c8	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+01:39:36 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:48:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:95:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36800	   2840	  22856	  62496	   f420	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+01:40:21 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+16:28:51 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:49:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+../src/zed_LEDs.c:92:11: warning: 'RecvBuffer' defined but not used [-Wunused-variable]
+ static u8 RecvBuffer[TEST_BUFFER_SIZE]; /* Buffer for Receiving Data */
+           ^~~~~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36788	   2840	  22856	  62484	   f414	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+16:39:01 **** Build of configuration Debug for project standalone_bsp_2_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_intr_example.d" -MT"src/xttcps_intr_example.o" -o "src/xttcps_intr_example.o" "../src/xttcps_intr_example.c"
+'Finished building: ../src/xttcps_intr_example.c'
+' '
+'Building target: standalone_bsp_2_xttcps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "standalone_bsp_2_xttcps_intr_example_1.elf"  ./src/xttcps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_2_xttcps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_2_xttcps_intr_example_1.elf  |tee "standalone_bsp_2_xttcps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29148	   2784	  22648	  54580	   d534	standalone_bsp_2_xttcps_intr_example_1.elf
+'Finished building: standalone_bsp_2_xttcps_intr_example_1.elf.size'
+' '
+16:39:03 **** Auto Build of configuration Debug for project standalone_bsp_2_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+17:49:54 **** Build of configuration Debug for project standalone_bsp_2_xuartps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xuartps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xuartps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/xuartps_intr_example.d" -MT"src/xuartps_intr_example.o" -o "src/xuartps_intr_example.o" "../src/xuartps_intr_example.c"
+'Finished building: ../src/xuartps_intr_example.c'
+' '
+'Building target: standalone_bsp_2_xuartps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "standalone_bsp_2_xuartps_intr_example_1.elf"  ./src/xuartps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_2_xuartps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_2_xuartps_intr_example_1.elf  |tee "standalone_bsp_2_xuartps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  31632	   2768	  22904	  57304	   dfd8	standalone_bsp_2_xuartps_intr_example_1.elf
+'Finished building: standalone_bsp_2_xuartps_intr_example_1.elf.size'
+' '
+17:49:56 **** Auto Build of configuration Debug for project standalone_bsp_2_xuartps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+18:19:30 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:49:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps.h:190:0,
+                 from ../src/zed_LEDs.c:12:
+../src/zed_LEDs.c: In function 'read_uart_data':
+../src/zed_LEDs.c:596:31: error: 'UartBaseAddress' undeclared (first use in this function)
+  while (XUartPs_IsReceiveData(UartBaseAddress))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+../src/zed_LEDs.c:596:31: note: each undeclared identifier is reported only once for each function it appears in
+  while (XUartPs_IsReceiveData(UartBaseAddress))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+18:20:41 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:50:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps.h:190:0,
+                 from ../src/zed_LEDs.c:12:
+../src/zed_LEDs.c: In function 'read_uart_data':
+../src/zed_LEDs.c:597:31: error: 'UartBaseAddress' undeclared (first use in this function)
+  while (XUartPs_IsReceiveData(UartBaseAddress))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+../src/zed_LEDs.c:597:31: note: each undeclared identifier is reported only once for each function it appears in
+  while (XUartPs_IsReceiveData(UartBaseAddress))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+18:22:22 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:50:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps.h:190:0,
+                 from ../src/zed_LEDs.c:12:
+../src/zed_LEDs.c: In function 'read_uart_data':
+../src/zed_LEDs.c:597:31: error: 'UART_BASEADDR' undeclared (first use in this function); did you mean 'XPS_UART1_BASEADDR'?
+  while (XUartPs_IsReceiveData(UART_BASEADDR))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+../src/zed_LEDs.c:597:31: note: each undeclared identifier is reported only once for each function it appears in
+  while (XUartPs_IsReceiveData(UART_BASEADDR))
+                               ^
+../../standalone_bsp_2/ps7_cortexa9_0/include/xuartps_hw.h:416:15: note: in definition of macro 'XUartPs_IsReceiveData'
+  !((Xil_In32((BaseAddress) + XUARTPS_SR_OFFSET) &  \
+               ^~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+18:24:47 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:50:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_printf.h:12:0,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio_l.h:87,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio.h:136,
+                 from ../src/zed_LEDs.c:8:
+../src/zed_LEDs.c: In function 'read_uart_data':
+../../standalone_bsp_2/ps7_cortexa9_0/include/xparameters.h:473:33: warning: statement with no effect [-Wunused-value]
+ #define XPAR_XUARTPS_0_BASEADDR 0xE0001000
+                                 ^
+../src/zed_LEDs.c:595:15: note: in expansion of macro 'XPAR_XUARTPS_0_BASEADDR'
+  u8 index = 0;XPAR_XUARTPS_0_BASEADDR
+               ^~~~~~~~~~~~~~~~~~~~~~~
+../src/zed_LEDs.c:598:2: error: expected ';' before 'while'
+  while (XUartPs_IsReceiveData(UART_BASEADDR))
+  ^~~~~
+../src/zed_LEDs.c:595:5: warning: unused variable 'index' [-Wunused-variable]
+  u8 index = 0;XPAR_XUARTPS_0_BASEADDR
+     ^~~~~
+At top level:
+../src/zed_LEDs.c:95:11: warning: 'RxBuffer' defined but not used [-Wunused-variable]
+ static u8 RxBuffer[RX_BUFFER_SIZE];  /* Buffer for Receiving Data */
+           ^~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+18:25:19 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:50:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+In file included from ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_printf.h:12:0,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xil_io.h:65,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio_l.h:87,
+                 from ../../standalone_bsp_2/ps7_cortexa9_0/include/xgpio.h:136,
+                 from ../src/zed_LEDs.c:8:
+../src/zed_LEDs.c: In function 'read_uart_data':
+../../standalone_bsp_2/ps7_cortexa9_0/include/xparameters.h:473:33: warning: statement with no effect [-Wunused-value]
+ #define XPAR_XUARTPS_0_BASEADDR 0xE0001000
+                                 ^
+../src/zed_LEDs.c:595:15: note: in expansion of macro 'XPAR_XUARTPS_0_BASEADDR'
+  u8 index = 0;XPAR_XUARTPS_0_BASEADDR;
+               ^~~~~~~~~~~~~~~~~~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36980	   2832	  22792	  62604	   f48c	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+18:25:37 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c:50:0: warning: "UART_DEVICE_ID" redefined
+ #define UART_DEVICE_ID  XPAR_XUARTPS_0_DEVICE_ID
+ 
+In file included from ../src/platform.h:36:0,
+                 from ../src/zed_LEDs.c:6:
+../src/platform_config.h:5:0: note: this is the location of the previous definition
+ #define UART_DEVICE_ID 0
+ 
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36980	   2832	  22792	  62604	   f48c	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+18:29:30 **** Auto Build of configuration Debug for project zed_LEDs ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -82,6 +902,48 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  30508	   2792	  22664	  55964	   da9c	zed_LEDs.elf
+  36980	   2832	  22792	  62604	   f48c	zed_LEDs.elf
 'Finished building: zed_LEDs.elf.size'
 ' '
+18:30:06 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+19:52:35 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_2/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_2/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_2/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  37108	   2832	  22792	  62732	   f50c	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+19:52:51 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+00:19:09 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.

@@ -87,7 +87,7 @@
 #define INTC_DEVICE_ID		XPAR_INTC_0_DEVICE_ID
 #define UART_INT_IRQ_ID		XPAR_INTC_0_UARTPS_0_VEC_ID
 #else
-#define INTC		XScuGic
+#define INTC				XScuGic
 #define UART_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
 #define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
 #define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
@@ -104,21 +104,21 @@
 
 /************************** Function Prototypes *****************************/
 
-int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 			u16 DeviceId, u16 UartIntrId);
 
 
-static int SetupInterruptSystem(INTC *IntcInstancePtr,
+static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
 				XUartPs *UartInstancePtr,
 				u16 UartIntrId);
 
-void Handler(void *CallBackRef, u32 Event, unsigned int EventData);
+void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
 
 
 /************************** Variable Definitions ***************************/
 
 XUartPs UartPs	;		/* Instance of the UART Device */
-INTC InterruptController;	/* Instance of the Interrupt Controller */
+INTC UartInterruptController;	/* Instance of the Interrupt Controller */
 
 /*
  * The following buffers are used in this example to send and receive data
@@ -153,14 +153,18 @@ int main(void)
 	int Status;
 
 	/* Run the UartPs Interrupt example, specify the the Device ID */
-	Status = UartPsIntrExample(&InterruptController, &UartPs,
+	Status = SetupUartPs(&UartInterruptController, &UartPs,
 				UART_DEVICE_ID, UART_INT_IRQ_ID);
 	if (Status != XST_SUCCESS) {
 		xil_printf("UART Interrupt Example Test Failed\r\n");
 		return XST_FAILURE;
 	}
 
-	xil_printf("Successfully ran UART Interrupt Example Test\r\n");
+	xil_printf("  waiting for received UART data...\n");
+
+	while(1);
+
+
 	return XST_SUCCESS;
 }
 #endif
@@ -193,7 +197,7 @@ int main(void)
 * working it may never return.
 *
 **************************************************************************/
-int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
+int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 			u16 DeviceId, u16 UartIntrId)
 {
 	int Status;
@@ -232,7 +236,7 @@ int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 	 * Connect the UART to the interrupt subsystem such that interrupts
 	 * can occur. This function is application specific.
 	 */
-	Status = SetupInterruptSystem(IntcInstPtr, UartInstPtr, UartIntrId);
+	Status = SetupUartInterruptSystem(IntcInstPtr, UartInstPtr, UartIntrId);
 	if (Status != XST_SUCCESS) {
 		return XST_FAILURE;
 	}
@@ -243,7 +247,7 @@ int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 	 * a pointer to the UART driver instance as the callback reference
 	 * so the handlers are able to access the instance data
 	 */
-	XUartPs_SetHandler(UartInstPtr, (XUartPs_Handler)Handler, UartInstPtr);
+	XUartPs_SetHandler(UartInstPtr, (XUartPs_Handler)UartPsISR, UartInstPtr);
 
 	/*
 	 * Enable the interrupt of the UART so interrupts will occur, setup
@@ -273,64 +277,10 @@ int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 	 */
 	XUartPs_SetRecvTimeout(UartInstPtr, 8);
 
-	int running = 1;
-	while (running){};
-
-	/*
-	 * Initialize the send buffer bytes with a pattern and the
-	 * the receive buffer bytes to zero to allow the receive data to be
-	 * verified
-	 */
-/*	for (Index = 0; Index < TEST_BUFFER_SIZE; Index++) {
-
-		SendBuffer[Index] = (Index % 26) + 'A';
-
-		RecvBuffer[Index] = 0;
-	}
-*/
-	/*
-	 * Start receiving data before sending it since there is a loopback,
-	 * ignoring the number of bytes received as the return value since we
-	 * know it will be zero
-	 */
-//	XUartPs_Recv(UartInstPtr, RecvBuffer, TEST_BUFFER_SIZE);
-
-	/*
-	 * Send the buffer using the UART and ignore the number of bytes sent
-	 * as the return value since we are using it in interrupt mode.
-	 */
-//	XUartPs_Send(UartInstPtr, SendBuffer, TEST_BUFFER_SIZE);
-
-	/*
-	 * Wait for the entire buffer to be received, letting the interrupt
-	 * processing work in the background, this function may get locked
-	 * up in this loop if the interrupts are not working correctly.
-	 */
-/*	while (1) {
-		if ((TotalSentCount == TEST_BUFFER_SIZE) &&
-		    (TotalReceivedCount == TEST_BUFFER_SIZE)) {
-			break;
-		}
-	}
-*/
-	/* Verify the entire receive buffer was successfully received */
-/*	for (Index = 0; Index < TEST_BUFFER_SIZE; Index++) {
-		if (RecvBuffer[Index] != SendBuffer[Index]) {
-			BadByteCount++;
-		}
-	}
-*/
+//	int running = 1;
+//	while (running){};
 
 
-	/* Set the UART in Normal Mode */
-//	XUartPs_SetOperMode(UartInstPtr, XUARTPS_OPER_MODE_NORMAL);
-
-
-	/* If any bytes were not correct, return an error */
-/*	if (BadByteCount != 0) {
-		return XST_FAILURE;
-	}
-*/
 	return XST_SUCCESS;
 }
 
@@ -355,18 +305,20 @@ int UartPsIntrExample(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 * @note		None.
 *
 ***************************************************************************/
-void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
+void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 {
 	xil_printf("IRQ handler!\n");
 
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
 		TotalSentCount = EventData;
+		xil_printf("1\n");
 	}
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
 		TotalReceivedCount = EventData;
+		xil_printf("2\n");
 	}
 
 	/*
@@ -375,6 +327,7 @@ void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
 	 */
 	if (Event == XUARTPS_EVENT_RECV_TOUT) {
 		TotalReceivedCount = EventData;
+		xil_printf("3\n");
 	}
 
 	/*
@@ -384,6 +337,7 @@ void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
 	if (Event == XUARTPS_EVENT_RECV_ERROR) {
 		TotalReceivedCount = EventData;
 		TotalErrorCount++;
+		xil_printf("4\n");
 	}
 
 	/*
@@ -394,6 +348,7 @@ void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
 	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
 		TotalReceivedCount = EventData;
 		TotalErrorCount++;
+		xil_printf("5\n");
 	}
 
 	/*
@@ -403,6 +358,7 @@ void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
 	if (Event == XUARTPS_EVENT_RECV_ORERR) {
 		TotalReceivedCount = EventData;
 		TotalErrorCount++;
+		xil_printf("6\n");
 	}
 }
 
@@ -426,7 +382,7 @@ void Handler(void *CallBackRef, u32 Event, unsigned int EventData)
 * @note		None.
 *
 ****************************************************************************/
-static int SetupInterruptSystem(INTC *IntcInstancePtr,
+static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
 				XUartPs *UartInstancePtr,
 				u16 UartIntrId)
 {
