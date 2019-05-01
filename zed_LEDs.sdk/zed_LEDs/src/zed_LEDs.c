@@ -12,7 +12,17 @@
 #include "xuartps.h"
 #include "xuartps_hw.h"
 #include "xil_exception.h"
+#include "xspi.h"
 #include "sleep.h"
+
+
+#define FAKE_DATA
+
+#ifdef FAKE_DATA
+void load_sawtooth_data(void);
+#define SAWTOOTH_MAX_VALUE 100
+#define SAWTOOTH_STEP_VALUE 1
+#endif
 
 
 //----------------------------------------
@@ -52,11 +62,16 @@
 #define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
 #define UART_BASEADDR		XPAR_XUARTPS_0_BASEADDR
 #define RX_BUFFER_SIZE	30
-#define KEY_U			117
-#define KEY_D			100
-#define KEY_L			108
-#define KEY_R			114
-#define KEY_SPACE		32
+#define TX_BUFFER_SIZE	1000
+#define KEY_U			117		// keyboard 'u' for UP button
+#define KEY_D			100		// keyboard 'd' for DOWN button
+#define KEY_L			108		// keyboard 'l' for LEFT button
+#define KEY_R			114		// keyboard 'r' for RIGHT button
+#define KEY_SPACE		32		// keyboard spacebar for CENTER button
+#define CMD_READ_DATA	0x61	// read data from tester - should be followed by
+								// 4 bytes(unsigned int) for length msbyte first
+#define CMD_LOAD_SAWTOOTH_DATA1	0x62	// load test data1(sawtooth up) into TxData array
+#define CMD_LOAD_SAWTOOTH_DATA2	0x63	// load test data1(sawtooth down) into TxData array
 //----------------------------------------
 
 
@@ -85,7 +100,11 @@ static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
 				XUartPs *UartInstancePtr,
 				u16 UartIntrId);
 void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData);
-void read_uart_data(void);
+void read_uart_bytes(void);
+void send_Tx_data_over_UART(unsigned int);
+void load_sawtooth_down_data(void);
+void load_sawtooth_up_data(void);
+unsigned int get_num_data_points(u8 *RxData);
 //----------------------------------------
 
 
@@ -96,8 +115,10 @@ XGpio sw_gpio, leds_gpio, buttons_gpio;
 static XScuGic interrupt_controller;	//instance of the interrupt controller
 //XScuGic *INTCInst = &interrupt_controller;
 
-XUartPs UartPs	;						/* Instance of the UART Device */
-static u8 RxBuffer[RX_BUFFER_SIZE];		/* Buffer for Receiving Data */
+XUartPs UartPs	;						// Instance of the UART Device
+// @note: why static?
+static u8 UartRxData[RX_BUFFER_SIZE];		// Buffer for Receiving Data
+static u8 UartTxData[TX_BUFFER_SIZE];		// Buffer for Transmitting Data
 
 char running = TRUE;
 char light_to_left = TRUE;
@@ -109,10 +130,16 @@ unsigned int buttons_GPIO_value;
 unsigned int cmd;
 int Status;
 
+static XSpi  SpiInstance;
+XSpi *SpiInstancePtr = &SpiInstance;
+#define SPI_BUFFER_SIZE 3
+u8 SPI_ReadBuffer[SPI_BUFFER_SIZE];
+u8 SPI_WriteBuffer[SPI_BUFFER_SIZE];
 
 int main()
 {
 	int looping = 1;
+
 
     init_platform();
     xil_printf("\n\nRunning Zedboard LED application...\n");
@@ -129,6 +156,94 @@ int main()
 	}
 
 	xil_printf("  waiting for received UART data...\n");
+
+//###################
+// SPI
+	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+
+	/*
+	 * Initialize the SPI driver so that it is  ready to use.
+	 */
+	ConfigPtr = XSpi_LookupConfig(XPAR_SPI_0_DEVICE_ID);
+	if (ConfigPtr == NULL) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,
+				  ConfigPtr->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Perform a self-test to ensure that the hardware was built correctly.
+	 */
+	Status = XSpi_SelfTest(SpiInstancePtr);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Run loopback test only in case of standard SPI mode.
+	 */
+	if (SpiInstancePtr->SpiMode != XSP_STANDARD_MODE) {
+		return XST_SUCCESS;
+	}
+
+	/*
+	 * Set the Spi device as a master and in loopback mode.
+	 */
+	Status = XSpi_SetOptions(SpiInstancePtr, XSP_MASTER_OPTION);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	// Select the SPI Slave.  This asserts the correct SS bit on the SPI bus
+	XSpi_SetSlaveSelect(&SpiInstance, 0x01);
+
+	/*
+	 * Start the SPI driver so that the device is enabled.
+	 */
+	XSpi_Start(SpiInstancePtr);
+
+	/*
+	 * Disable Global interrupt to use polled mode operation
+	 */
+	XSpi_IntrGlobalDisable(SpiInstancePtr);
+
+
+
+	//#######################
+	// trying to slow the spi clock
+	u32 spi_control = 0;
+	spi_control = XSpi_GetXipControlReg(SpiInstancePtr);
+	//
+	u32 new_spi_control = 0x136;
+	XSpi_SetXipControlReg(SpiInstancePtr,new_spi_control);
+	//
+	spi_control = XSpi_GetXipControlReg(SpiInstancePtr);
+	//#######################
+
+
+
+	SPI_WriteBuffer[0]=0xFF;
+	SPI_WriteBuffer[1]=0xFF;
+	SPI_WriteBuffer[2]=0xFF;
+	SPI_ReadBuffer[0]=0x00;
+	SPI_ReadBuffer[1]=0x00;
+	SPI_ReadBuffer[2]=0x00;
+	u16 spi_result = 0;
+	/*
+	 * Transmit the data.
+	 */
+	while (1){
+		XSpi_Transfer(SpiInstancePtr, SPI_WriteBuffer, SPI_ReadBuffer, SPI_BUFFER_SIZE);
+
+		spi_result = SPI_ReadBuffer[0] << 15;
+		spi_result |= SPI_ReadBuffer[1] << 7;
+		spi_result |= SPI_ReadBuffer[2] >> 1;
+	}
+//###################
 
 
     //-------------------------------------------------------------------
@@ -149,8 +264,6 @@ int main()
 
     //###################################################################
     //-------------------------------------------------------------------
-    looping = 1;  //can set to 0 to terminate program if run from debugger
-
     while(looping){
 
     	//------------------------------------------------------------------
@@ -174,7 +287,7 @@ int main()
     	//-------------------------------------------------------------------
 		// uart received data so find command and take action
 		if (state & STATE_SERVICE_UART){
-			read_uart_data();
+			read_uart_bytes();
 			update_conditions(cmd);
 			state &= ~STATE_SERVICE_UART;
 		}
@@ -491,16 +604,16 @@ int SetupUartPs(INTC *IntcInstPtr, XUartPs *UartInstPtr,
 //------------------------------------------------------------
 void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 {
-	xil_printf("IRQ handler!\n");
+//	xil_printf("IRQ handler!\n");
 
 	/* All of the data has been sent */
 	if (Event == XUARTPS_EVENT_SENT_DATA) {
-		xil_printf("1\n");
+//		xil_printf("1\n");
 	}
 
 	/* All of the data has been received */
 	if (Event == XUARTPS_EVENT_RECV_DATA) {
-		xil_printf("2\n");
+//		xil_printf("2\n");
 		state |= STATE_SERVICE_UART;
 	}
 
@@ -509,7 +622,7 @@ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * timeout just indicates the data stopped for 8 character times
 	 */
 	if (Event == XUARTPS_EVENT_RECV_TOUT) {
-		xil_printf("3\n");
+//		xil_printf("3\n");
 	}
 
 	/*
@@ -517,7 +630,7 @@ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * what kind of errors occurred
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ERROR) {
-		xil_printf("4\n");
+//		xil_printf("4\n");
 	}
 
 	/*
@@ -526,7 +639,7 @@ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * MP.
 	 */
 	if (Event == XUARTPS_EVENT_PARE_FRAME_BRKE) {
-		xil_printf("5\n");
+//		xil_printf("5\n");
 	}
 
 	/*
@@ -534,7 +647,7 @@ void UartPsISR(void *CallBackRef, u32 Event, unsigned int EventData)
 	 * what kind of errors occurred. Specific to Zynq Ultrascale+ MP.
 	 */
 	if (Event == XUARTPS_EVENT_RECV_ORERR) {
-		xil_printf("6\n");
+//		xil_printf("6\n");
 	}
 }
 //------------------------------------------------------------
@@ -595,39 +708,136 @@ static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
 
 
 //------------------------------------------------------------
-void read_uart_data(void)
+void read_uart_bytes(void)
 {
 	u8 index = 0;
-	unsigned int RxByte;
+	unsigned int commandByte;
 
 	// loop through Uart Rx buffer and store received data
 	while (XUartPs_IsReceiveData(UART_BASEADDR))
 	{
-		RxBuffer[index++] = XUartPs_ReadReg(UART_BASEADDR,
+		UartRxData[index++] = XUartPs_ReadReg(UART_BASEADDR,
 					    					XUARTPS_FIFO_OFFSET);
 	}
 
 	//take first received byte as the command
-	RxByte = (unsigned int)RxBuffer[0];
+	commandByte = (unsigned int)UartRxData[0];
 
 	// check received byte for valid command
-	switch (RxByte){
+	switch (commandByte){
 		case (KEY_U):
 			cmd = UP;
 			break;
+
 		case (KEY_D):
 			cmd = DOWN;
 			break;
+
 		case (KEY_L):
 			cmd = LEFT;
 			break;
+
 		case (KEY_R):
 			cmd = RIGHT;
 			break;
+
 		case (KEY_SPACE):
 			cmd = CENTER;
 			break;
+
+		case (CMD_READ_DATA):
+			send_Tx_data_over_UART(get_num_data_points(UartRxData));
+			break;
+
+		case (CMD_LOAD_SAWTOOTH_DATA1):
+			load_sawtooth_up_data();
+			break;
+
+		case (CMD_LOAD_SAWTOOTH_DATA2):
+			load_sawtooth_down_data();
+			break;
 	}
 
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+unsigned int get_num_data_points(u8 *RxData)
+{
+	unsigned int num_points = 0;
+
+	// most significant byte in number sent first
+	num_points += RxData[1];
+	num_points = num_points << 8;
+
+	// least significant byte in number sent next
+	num_points += RxData[2];
+
+	return num_points;
+
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void load_sawtooth_up_data(void)
+{
+	int i,j;
+
+	UartTxData[0] = 0; // initial array value
+
+	// load the data array with sawtooth data
+	for(i=1; i<TX_BUFFER_SIZE; i++)
+	{
+		j = UartTxData[i-1] + SAWTOOTH_STEP_VALUE;
+		if (j>SAWTOOTH_MAX_VALUE)
+		{
+			UartTxData[i] = 0;
+		}
+		else{
+			UartTxData[i] = j;
+		}
+	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void load_sawtooth_down_data(void)
+{
+	int i,j;
+
+	UartTxData[0] = SAWTOOTH_MAX_VALUE; // initial array value
+
+	// load the data array with sawtooth data
+	for(i=1; i<TX_BUFFER_SIZE; i++)
+	{
+		j = UartTxData[i-1] - SAWTOOTH_STEP_VALUE;
+		if (j<0)
+		{
+			UartTxData[i] = SAWTOOTH_MAX_VALUE;
+		}
+		else{
+			UartTxData[i] = j;
+		}
+	}
+}
+//------------------------------------------------------------
+
+
+//------------------------------------------------------------
+void send_Tx_data_over_UART(unsigned int num_points_to_send)
+{
+	int i;
+	// send the data array to the transmit buffer as space is available
+	for (i = 0; i < num_points_to_send; i++) {
+		/* Wait until there is space in TX FIFO */
+		 while (XUartPs_IsTransmitFull(XPAR_XUARTPS_0_BASEADDR));
+
+		/* Write the byte into the TX FIFO */
+		XUartPs_WriteReg(XPAR_XUARTPS_0_BASEADDR, XUARTPS_FIFO_OFFSET,
+				UartTxData[i]);
+	}
 }
 //------------------------------------------------------------

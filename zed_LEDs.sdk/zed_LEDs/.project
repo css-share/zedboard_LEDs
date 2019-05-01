@@ -3,7 +3,7 @@
 	<name>zed_LEDs</name>
 	<comment></comment>
 	<projects>
-		<project>standalone_bsp_2</project>
+		<project>standalone_bsp_3</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
