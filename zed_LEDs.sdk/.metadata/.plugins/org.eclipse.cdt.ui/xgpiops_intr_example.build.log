@@ -1,4 +1,4 @@
-02:02:39 **** Build of configuration Debug for project xgpiops_intr_example ****
+23:18:52 **** Build of configuration Debug for project xgpiops_intr_example ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size xgpiops_intr_example.elf  |tee "xgpiops_intr_example.elf.size
 'Finished building: xgpiops_intr_example.elf.size'
 ' '
 
-02:02:40 Build Finished (took 585ms)
+23:18:53 Build Finished (took 526ms)
 

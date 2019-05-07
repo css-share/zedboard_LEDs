@@ -1,4 +1,4 @@
-02:02:43 **** Build of configuration Debug for project xuartps_low_echo_example ****
+23:18:55 **** Build of configuration Debug for project xuartps_low_echo_example ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size xuartps_low_echo_example.elf  |tee "xuartps_low_echo_example.
 'Finished building: xuartps_low_echo_example.elf.size'
 ' '
 
-02:02:43 Build Finished (took 600ms)
+23:18:56 Build Finished (took 577ms)
 

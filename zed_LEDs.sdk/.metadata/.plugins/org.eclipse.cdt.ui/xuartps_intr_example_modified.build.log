@@ -1,4 +1,4 @@
-02:02:41 **** Build of configuration Debug for project xuartps_intr_example_modified ****
+23:18:54 **** Build of configuration Debug for project xuartps_intr_example_modified ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size xuartps_intr_example_modified.elf  |tee "xuartps_intr_example
 'Finished building: xuartps_intr_example_modified.elf.size'
 ' '
 
-02:02:42 Build Finished (took 579ms)
+23:18:55 Build Finished (took 528ms)
 

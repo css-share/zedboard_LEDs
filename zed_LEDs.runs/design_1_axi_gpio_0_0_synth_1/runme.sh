@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Xilinx/Vivado/projects/vivado_tutorial_project_2/vivado_tutorial_project_2.runs/design_1_axi_gpio_0_0_synth_1'
+HD_PWD='C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/design_1_axi_gpio_0_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

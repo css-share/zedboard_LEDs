@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Thu Apr 25 23:51:00 2019
+--Date        : Fri May  3 03:30:49 2019
 --Host        : AsusP8 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -37,6 +37,10 @@ entity design_1_wrapper is
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     int_out : out STD_LOGIC;
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    spi_rtl_io0_io : inout STD_LOGIC;
+    spi_rtl_io1_io : inout STD_LOGIC;
+    spi_rtl_sck_io : inout STD_LOGIC;
+    spi_rtl_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end design_1_wrapper;
@@ -68,9 +72,42 @@ architecture STRUCTURE of design_1_wrapper is
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    int_out : out STD_LOGIC
+    spi_rtl_io0_i : in STD_LOGIC;
+    spi_rtl_io0_o : out STD_LOGIC;
+    spi_rtl_io0_t : out STD_LOGIC;
+    spi_rtl_io1_i : in STD_LOGIC;
+    spi_rtl_io1_o : out STD_LOGIC;
+    spi_rtl_io1_t : out STD_LOGIC;
+    spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
+    spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
+    spi_rtl_ss_t : out STD_LOGIC;
+    int_out : out STD_LOGIC;
+    spi_rtl_sck_i : in STD_LOGIC;
+    spi_rtl_sck_o : out STD_LOGIC;
+    spi_rtl_sck_t : out STD_LOGIC
   );
   end component design_1;
+  component IOBUF is
+  port (
+    I : in STD_LOGIC;
+    O : out STD_LOGIC;
+    T : in STD_LOGIC;
+    IO : inout STD_LOGIC
+  );
+  end component IOBUF;
+  signal spi_rtl_io0_i : STD_LOGIC;
+  signal spi_rtl_io0_o : STD_LOGIC;
+  signal spi_rtl_io0_t : STD_LOGIC;
+  signal spi_rtl_io1_i : STD_LOGIC;
+  signal spi_rtl_io1_o : STD_LOGIC;
+  signal spi_rtl_io1_t : STD_LOGIC;
+  signal spi_rtl_sck_i : STD_LOGIC;
+  signal spi_rtl_sck_o : STD_LOGIC;
+  signal spi_rtl_sck_t : STD_LOGIC;
+  signal spi_rtl_ss_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal spi_rtl_ss_t : STD_LOGIC;
 begin
 design_1_i: component design_1
      port map (
@@ -98,6 +135,46 @@ design_1_i: component design_1
       btns_5bits_tri_i(4 downto 0) => btns_5bits_tri_i(4 downto 0),
       int_out => int_out,
       leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0),
+      spi_rtl_io0_i => spi_rtl_io0_i,
+      spi_rtl_io0_o => spi_rtl_io0_o,
+      spi_rtl_io0_t => spi_rtl_io0_t,
+      spi_rtl_io1_i => spi_rtl_io1_i,
+      spi_rtl_io1_o => spi_rtl_io1_o,
+      spi_rtl_io1_t => spi_rtl_io1_t,
+      spi_rtl_sck_i => spi_rtl_sck_i,
+      spi_rtl_sck_o => spi_rtl_sck_o,
+      spi_rtl_sck_t => spi_rtl_sck_t,
+      spi_rtl_ss_i(0) => spi_rtl_ss_i_0(0),
+      spi_rtl_ss_o(0) => spi_rtl_ss_o_0(0),
+      spi_rtl_ss_t => spi_rtl_ss_t,
       sws_8bits_tri_i(7 downto 0) => sws_8bits_tri_i(7 downto 0)
+    );
+spi_rtl_io0_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_io0_o,
+      IO => spi_rtl_io0_io,
+      O => spi_rtl_io0_i,
+      T => spi_rtl_io0_t
+    );
+spi_rtl_io1_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_io1_o,
+      IO => spi_rtl_io1_io,
+      O => spi_rtl_io1_i,
+      T => spi_rtl_io1_t
+    );
+spi_rtl_sck_iobuf: component IOBUF
+     port map (
+      I => spi_rtl_sck_o,
+      IO => spi_rtl_sck_io,
+      O => spi_rtl_sck_i,
+      T => spi_rtl_sck_t
+    );
+spi_rtl_ss_iobuf_0: component IOBUF
+     port map (
+      I => spi_rtl_ss_o_0(0),
+      IO => spi_rtl_ss_io(0),
+      O => spi_rtl_ss_i_0(0),
+      T => spi_rtl_ss_t
     );
 end STRUCTURE;

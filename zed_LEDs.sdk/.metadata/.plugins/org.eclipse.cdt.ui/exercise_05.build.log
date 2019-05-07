@@ -1,4 +1,4 @@
-02:02:34 **** Build of configuration Debug for project exercise_05 ****
+23:18:28 **** Build of configuration Debug for project exercise_05 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -31,5 +31,5 @@ arm-none-eabi-size exercise_05.elf  |tee "exercise_05.elf.size"
 'Finished building: exercise_05.elf.size'
 ' '
 
-02:02:35 Build Finished (took 1s.287ms)
+23:18:29 Build Finished (took 783ms)
 

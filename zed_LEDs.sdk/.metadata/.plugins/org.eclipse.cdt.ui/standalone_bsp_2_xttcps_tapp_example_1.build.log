@@ -1,4 +1,4 @@
-02:02:38 **** Build of configuration Debug for project standalone_bsp_2_xttcps_tapp_example_1 ****
+23:18:31 **** Build of configuration Debug for project standalone_bsp_2_xttcps_tapp_example_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size standalone_bsp_2_xttcps_tapp_example_1.elf  |tee "standalone_
 'Finished building: standalone_bsp_2_xttcps_tapp_example_1.elf.size'
 ' '
 
-02:02:39 Build Finished (took 626ms)
+23:18:31 Build Finished (took 574ms)
 

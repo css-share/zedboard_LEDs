@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1556261461"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1556261461"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1556261461"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1556261461"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1556879469"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1556879469"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1556879469"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1556879469"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_processing_system7_0_0\design_1_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -73,7 +73,23 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\design_1_auto_pc_0\design_1_auto_pc_0.xci" Type="IP">
+      <File Name="ip\design_1_axi_quad_spi_0_0\design_1_axi_quad_spi_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_quad_spi_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_xlconcat_0_0\design_1_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_auto_pc_0_1\design_1_auto_pc_0.xci" Type="IP">
         <Instance HierarchyPath="ps7_0_axi_periph/s00_couplers/auto_pc"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>

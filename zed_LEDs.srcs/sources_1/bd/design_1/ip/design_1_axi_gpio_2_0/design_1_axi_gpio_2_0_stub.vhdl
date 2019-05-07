@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Wed Feb 20 23:36:49 2019
+-- Date        : Fri May  3 00:15:52 2019
 -- Host        : AsusP8 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Xilinx/Vivado/projects/vivado_tutorial_project_2/vivado_tutorial_project_2.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_stub.vhdl
+--               C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_stub.vhdl
 -- Design      : design_1_axi_gpio_2_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

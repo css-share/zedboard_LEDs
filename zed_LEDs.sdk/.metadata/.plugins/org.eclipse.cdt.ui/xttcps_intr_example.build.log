@@ -1,4 +1,4 @@
-02:02:40 **** Build of configuration Debug for project xttcps_intr_example ****
+23:18:53 **** Build of configuration Debug for project xttcps_intr_example ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size xttcps_intr_example.elf  |tee "xttcps_intr_example.elf.size"
 'Finished building: xttcps_intr_example.elf.size'
 ' '
 
-02:02:41 Build Finished (took 582ms)
+23:18:53 Build Finished (took 676ms)
 

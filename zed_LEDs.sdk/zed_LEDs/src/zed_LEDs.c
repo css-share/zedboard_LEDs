@@ -54,11 +54,18 @@ void load_sawtooth_data(void);
 
 
 //----------------------------------------
+// for SPI
+#define SPI_INTERRUPT_ID	XPAR_FABRIC_AXI_QUAD_SPI_0_IP2INTC_IRPT_INTR
+#define SPI_INTERRUPT_CONTROLLER_ID		XPAR_PS7_SCUGIC_0_DEVICE_ID
+//----------------------------------------
+
+
+//----------------------------------------
 // for UartPs
 //
 #define INTC				XScuGic
-#define UARTPS_DEVICE_ID		XPAR_XUARTPS_0_DEVICE_ID
-#define INTC_DEVICE_ID		XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define UARTPS_DEVICE_ID	XPAR_XUARTPS_0_DEVICE_ID
+#define UART_INTC_DEVICE_ID	XPAR_SCUGIC_SINGLE_DEVICE_ID
 #define UART_INT_IRQ_ID		XPAR_XUARTPS_1_INTR
 #define UART_BASEADDR		XPAR_XUARTPS_0_BASEADDR
 #define RX_BUFFER_SIZE	30
@@ -73,6 +80,7 @@ void load_sawtooth_data(void);
 #define CMD_LOAD_SAWTOOTH_DATA1	0x62	// load test data1(sawtooth up) into TxData array
 #define CMD_LOAD_SAWTOOTH_DATA2	0x63	// load test data1(sawtooth down) into TxData array
 //----------------------------------------
+
 
 
 
@@ -105,6 +113,9 @@ void send_Tx_data_over_UART(unsigned int);
 void load_sawtooth_down_data(void);
 void load_sawtooth_up_data(void);
 unsigned int get_num_data_points(u8 *RxData);
+void SpiIntrHandler(void *CallBackRef, u32 StatusEvent, u32 ByteCount);
+static int SpiSetupIntrSystem(INTC *IntcInstancePtr, XSpi *SpiInstancePtr,
+					 u16 SpiIntrId);
 //----------------------------------------
 
 
@@ -113,7 +124,6 @@ unsigned int get_num_data_points(u8 *RxData);
 // variables
 XGpio sw_gpio, leds_gpio, buttons_gpio;
 static XScuGic interrupt_controller;	//instance of the interrupt controller
-//XScuGic *INTCInst = &interrupt_controller;
 
 XUartPs UartPs	;						// Instance of the UART Device
 // @note: why static?
@@ -129,6 +139,8 @@ unsigned int switches_GPIO_value;
 unsigned int buttons_GPIO_value;
 unsigned int cmd;
 int Status;
+volatile int SpiTransferInProgress;
+volatile int SpiErrorCount;
 
 static XSpi  SpiInstance;
 XSpi *SpiInstancePtr = &SpiInstance;
@@ -184,17 +196,32 @@ int main()
 	}
 
 	/*
-	 * Run loopback test only in case of standard SPI mode.
+	 * Connect the Spi device to the interrupt subsystem such that
+	 * interrupts can occur. This function is application specific.
 	 */
-	if (SpiInstancePtr->SpiMode != XSP_STANDARD_MODE) {
-		return XST_SUCCESS;
+	Status = SpiSetupIntrSystem(&interrupt_controller,
+								SpiInstancePtr,
+								SPI_INTERRUPT_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed to set up spi interrupts\n");
+		return XST_FAILURE;
 	}
 
 	/*
-	 * Set the Spi device as a master and in loopback mode.
+	 * Setup the handler for the SPI that will be called from the interrupt
+	 * context when an SPI status occurs, specify a pointer to the SPI
+	 * driver instance as the callback reference so the handler is able to
+	 * access the instance data.
+	 */
+	XSpi_SetStatusHandler(SpiInstancePtr, SpiInstancePtr,
+		 		(XSpi_StatusHandler) SpiIntrHandler);
+
+	/*
+	 * Set the Spi device as a master.
 	 */
 	Status = XSpi_SetOptions(SpiInstancePtr, XSP_MASTER_OPTION);
 	if (Status != XST_SUCCESS) {
+		xil_printf("failed to set up spi options\n");
 		return XST_FAILURE;
 	}
 
@@ -202,63 +229,31 @@ int main()
 	XSpi_SetSlaveSelect(&SpiInstance, 0x01);
 
 	/*
-	 * Start the SPI driver so that the device is enabled.
+	 * Start the SPI driver so that interrupts and the device are enabled.
 	 */
 	XSpi_Start(SpiInstancePtr);
 
-	/*
-	 * Disable Global interrupt to use polled mode operation
-	 */
-	XSpi_IntrGlobalDisable(SpiInstancePtr);
 
-
-
-	//#######################
-	// trying to slow the spi clock
-	u32 spi_control = 0;
-	spi_control = XSpi_GetXipControlReg(SpiInstancePtr);
-	//
-	u32 new_spi_control = 0x136;
-	XSpi_SetXipControlReg(SpiInstancePtr,new_spi_control);
-	//
-	spi_control = XSpi_GetXipControlReg(SpiInstancePtr);
-	//#######################
-
-
-
-	SPI_WriteBuffer[0]=0xFF;
-	SPI_WriteBuffer[1]=0xFF;
-	SPI_WriteBuffer[2]=0xFF;
+	SPI_WriteBuffer[0]=0xAA;
+	SPI_WriteBuffer[1]=0xAA;
+	SPI_WriteBuffer[2]=0xAA;
 	SPI_ReadBuffer[0]=0x00;
 	SPI_ReadBuffer[1]=0x00;
 	SPI_ReadBuffer[2]=0x00;
 	u16 spi_result = 0;
+
 	/*
 	 * Transmit the data.
 	 */
 	while (1){
+		SpiTransferInProgress = 1;
 		XSpi_Transfer(SpiInstancePtr, SPI_WriteBuffer, SPI_ReadBuffer, SPI_BUFFER_SIZE);
+		while (SpiTransferInProgress);
 
-		spi_result = SPI_ReadBuffer[0] << 15;
-		spi_result |= SPI_ReadBuffer[1] << 7;
-		spi_result |= SPI_ReadBuffer[2] >> 1;
+		spi_result = SPI_ReadBuffer[0] << 14;
+		spi_result |= SPI_ReadBuffer[1] << 6;
+		spi_result |= SPI_ReadBuffer[2] >> 2;
 	}
-//###################
-
-
-    //-------------------------------------------------------------------
-	//Initial tests to verify board functionality
-    switches_GPIO_value = XGpio_DiscreteRead(&sw_gpio, SWITCHES_CHANNEL);
-    xil_printf("switch settings: 0x%04X\n",switches_GPIO_value);
-
-    buttons_GPIO_value = XGpio_DiscreteRead(&buttons_gpio, BUTTONS_CHANNEL);
-    xil_printf("button settings: 0x%04X\n",buttons_GPIO_value);
-
-    xil_printf("setting LED values to: 0x%04X\n",switches_GPIO_value);
-    XGpio_DiscreteWrite(&leds_gpio, SWITCHES_CHANNEL, switches_GPIO_value);
-    xil_printf("LED values written...\n");
-    //-------------------------------------------------------------------
-
 
 
 
@@ -663,7 +658,7 @@ static int SetupUartInterruptSystem(INTC *IntcInstancePtr,
 	XScuGic_Config *IntcConfig; /* Config for interrupt controller */
 
 	/* Initialize the interrupt controller driver */
-	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+	IntcConfig = XScuGic_LookupConfig(UART_INTC_DEVICE_ID);
 	if (NULL == IntcConfig) {
 		return XST_FAILURE;
 	}
@@ -841,3 +836,115 @@ void send_Tx_data_over_UART(unsigned int num_points_to_send)
 	}
 }
 //------------------------------------------------------------
+
+
+
+
+/*****************************************************************************/
+/**
+*
+* This function is the handler which performs processing for the SPI driver.
+* It is called from an interrupt context such that the amount of processing
+* performed should be minimized. It is called when a transfer of SPI data
+* completes or an error occurs.
+*
+* This handler provides an example of how to handle SPI interrupts and
+* is application specific.
+*
+* @param	CallBackRef is the upper layer callback reference passed back
+*		when the callback function is invoked.
+* @param	StatusEvent is the event that just occurred.
+* @param	ByteCount is the number of bytes transferred up until the event
+*		occurred.
+*
+* @return	None.
+*
+* @note		None.
+*
+******************************************************************************/
+void SpiIntrHandler(void *CallBackRef, u32 StatusEvent, u32 ByteCount)
+{
+	/*
+	 * Indicate the transfer on the SPI bus is no longer in progress
+	 * regardless of the status event.
+	 */
+	SpiTransferInProgress = FALSE;
+
+	/*
+	 * If the event was not transfer done, then track it as an error.
+	 */
+	if (StatusEvent != XST_SPI_TRANSFER_DONE) {
+		SpiErrorCount++;
+	}
+}
+
+
+/*****************************************************************************/
+/**
+*
+* This function setups the interrupt system such that interrupts can occur
+* for the Spi device. This function is application specific since the actual
+* system may or may not have an interrupt controller. The Spi device could be
+* directly connected to a processor without an interrupt controller.  The
+* user should modify this function to fit the application.
+*
+* @param	IntcInstancePtr is a pointer to the instance of the Intc device.
+* @param	SpiInstancePtr is a pointer to the instance of the Spi device.
+* @param	SpiIntrId is the interrupt Id and is typically
+*		XPAR_<INTC_instance>_<SPI_instance>_VEC_ID value from
+*		xparameters.h
+*
+* @return	XST_SUCCESS if successful, otherwise XST_FAILURE.
+*
+* @note		None
+*
+******************************************************************************/
+static int SpiSetupIntrSystem(INTC *IntcInstancePtr, XSpi *SpiInstancePtr,
+					 u16 SpiIntrId)
+{
+	int Status;
+
+	XScuGic_Config *IntcConfig;
+
+	/*
+	 * Initialize the interrupt controller driver so that it is ready to
+	 * use.
+	 */
+	IntcConfig = XScuGic_LookupConfig(SPI_INTERRUPT_CONTROLLER_ID);
+	if (NULL == IntcConfig) {
+		return XST_FAILURE;
+	}
+
+	Status = XScuGic_CfgInitialize(IntcInstancePtr, IntcConfig,
+				IntcConfig->CpuBaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XScuGic_SetPriorityTriggerType(IntcInstancePtr, SpiIntrId, 0xA0, 0x3);
+
+	/*
+	 * Connect the device driver handler that will be called when an
+	 * interrupt for the device occurs, the handler defined above performs
+	 * the specific interrupt processing for the device.
+	 */
+	Status = XScuGic_Connect(IntcInstancePtr, SpiIntrId,
+				(Xil_InterruptHandler)XSpi_InterruptHandler,
+				SpiInstancePtr);
+	if (Status != XST_SUCCESS) {
+		return Status;
+	}
+
+	XScuGic_Enable(IntcInstancePtr, SpiIntrId);
+
+
+	/* Enable interrupts from the hardware */
+	Xil_ExceptionInit();
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+		(Xil_ExceptionHandler)XScuGic_InterruptHandler,
+		(void *)IntcInstancePtr);
+
+	Xil_ExceptionEnable();
+
+	return XST_SUCCESS;
+}

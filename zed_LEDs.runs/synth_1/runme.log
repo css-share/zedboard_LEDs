@@ -17,24 +17,24 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10096 
+INFO: Helper process launched with PID 10732 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 382.457 ; gain = 101.855
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 382.418 ; gain = 102.816
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
-INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1845' bound to instance 'design_1_i' of component 'design_1' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:112]
-INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1891]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2313]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_0_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_1_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_1_axi_gpio_1_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2336]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_1_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_1_0_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_2_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'design_1_axi_gpio_2_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2359]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_2_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_gpio_2_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'design_1_axi_quad_spi_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_quad_spi_0_0_stub.vhdl:5' bound to instance 'axi_quad_spi_0' of component 'design_1_axi_quad_spi_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2383]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_quad_spi_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_axi_quad_spi_0_0_stub.vhdl:44]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2419]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_processing_system7_0_0_stub.vhdl:80]
-INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:989]
+INFO: [Synth 8-3491] module 'design_1' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1555' bound to instance 'design_1_i' of component 'design_1' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:112]
+INFO: [Synth 8-638] synthesizing module 'design_1' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1601]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'design_1_axi_gpio_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2020]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_0_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_1_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'design_1_axi_gpio_1_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2043]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_1_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_1_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_2_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'design_1_axi_gpio_2_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2066]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_2_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_gpio_2_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'design_1_axi_quad_spi_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_quad_spi_0_0_stub.vhdl:5' bound to instance 'axi_quad_spi_0' of component 'design_1_axi_quad_spi_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2090]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_quad_spi_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_axi_quad_spi_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2126]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_processing_system7_0_0_stub.vhdl:80]
+INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:857]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_15SPJYW' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:57]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_15SPJYW' (1#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:57]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XU9C55' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:158]
@@ -43,35 +43,31 @@ INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_14WQB4R' [C:/Xilinx/Vi
 INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_14WQB4R' (3#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:259]
 INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_YFYJ3U' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:360]
 INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_YFYJ3U' (4#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:360]
-INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_17KQ732' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:465]
-INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_17KQ732' (5#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:465]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:595]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:778]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_auto_pc_0_stub.vhdl:70]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (6#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:595]
-INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1694]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_xbar_0_stub.vhdl:51]
-INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (7#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:989]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2633]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10912-AsusP8/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (8#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1891]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:484]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:667]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (5#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:484]
+INFO: [Synth 8-3491] module 'design_1_xbar_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'design_1_xbar_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1456]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_0' (6#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:857]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:5' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2319]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_rst_ps7_0_100M_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'design_1_xlconcat_0_0' declared at 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_xlconcat_0_0_stub.vhdl:5' bound to instance 'xlconcat_0' of component 'design_1_xlconcat_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:2332]
+INFO: [Synth 8-638] synthesizing module 'design_1_xlconcat_0_0' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/.Xil/Vivado-10716-AsusP8/realtime/design_1_xlconcat_0_0_stub.vhdl:14]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (7#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/synth/design_1.vhd:1601]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'spi_rtl_io0_iobuf' of component 'IOBUF' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:152]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
 	Parameter DRIVE bound to: 12 - type: integer 
 	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
 	Parameter IOSTANDARD bound to: DEFAULT - type: string 
 	Parameter SLEW bound to: SLOW - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (9#1) [E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (8#1) [E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'spi_rtl_io1_iobuf' of component 'IOBUF' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:159]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'spi_rtl_sck_iobuf' of component 'IOBUF' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:166]
 INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/xilinx/Vivado/2018.2/scripts/rt/data/unisim_comp.v:22660' bound to instance 'spi_rtl_ss_iobuf_0' of component 'IOBUF' [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:173]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (10#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (9#1) [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:48]
 WARNING: [Synth 8-3331] design s00_couplers_imp_UYSKKA has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_UYSKKA has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m04_couplers_imp_17KQ732 has unconnected port M_ACLK
-WARNING: [Synth 8-3331] design m04_couplers_imp_17KQ732 has unconnected port M_ARESETN
-WARNING: [Synth 8-3331] design m04_couplers_imp_17KQ732 has unconnected port S_ACLK
-WARNING: [Synth 8-3331] design m04_couplers_imp_17KQ732 has unconnected port S_ARESETN
 WARNING: [Synth 8-3331] design m03_couplers_imp_YFYJ3U has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design m03_couplers_imp_YFYJ3U has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design m03_couplers_imp_YFYJ3U has unconnected port S_ACLK
@@ -89,7 +85,7 @@ WARNING: [Synth 8-3331] design m00_couplers_imp_15SPJYW has unconnected port M_A
 WARNING: [Synth 8-3331] design m00_couplers_imp_15SPJYW has unconnected port S_ACLK
 WARNING: [Synth 8-3331] design m00_couplers_imp_15SPJYW has unconnected port S_ARESETN
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.801 ; gain = 159.199
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.664 ; gain = 160.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -102,10 +98,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.801 ; gain = 159.199
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.664 ; gain = 160.063
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.801 ; gain = 159.199
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 439.664 ; gain = 160.063
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -128,8 +124,10 @@ Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/
 Finished Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0_in_context.xdc] for cell 'design_1_i/axi_gpio_2'
 Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_in_context.xdc] for cell 'design_1_i/axi_quad_spi_0'
 Finished Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0_in_context.xdc] for cell 'design_1_i/axi_quad_spi_0'
-Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
-Finished Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0/design_1_xlconcat_0_0_in_context.xdc] for cell 'design_1_i/xlconcat_0'
+Finished Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0/design_1_xlconcat_0_0_in_context.xdc] for cell 'design_1_i/xlconcat_0'
+Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0_1/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0_1/design_1_auto_pc_0/design_1_auto_pc_0_in_context.xdc] for cell 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 Parsing XDC File [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/constrs_1/new/my_constraints.xdc]
 Finished Parsing XDC File [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/constrs_1/new/my_constraints.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/constrs_1/new/my_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
@@ -142,18 +140,17 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 744.926 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 755.820 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'design_1_i/axi_quad_spi_0' at clock pin 'ext_spi_clk' is different from the actual clock period '10.000', this can lead to different synthesis results.
-WARNING: [Timing 38-316] Clock period '100.000' specified during out-of-context synthesis of instance 'design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc' at clock pin 'aclk' is different from the actual clock period '10.000', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 744.926 ; gain = 464.324
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 755.820 ; gain = 476.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 744.926 ; gain = 464.324
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 755.820 ; gain = 476.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -427,12 +424,13 @@ Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/xbar. (co
 Applied set_property DONT_TOUCH = true for design_1_i/axi_gpio_1. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_gpio_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/axi_quad_spi_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for design_1_i/xlconcat_0. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for design_1_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 744.926 ; gain = 464.324
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 755.820 ; gain = 476.219
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 744.926 ; gain = 464.324
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 755.820 ; gain = 476.219
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -475,10 +473,8 @@ WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port 
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M02_ARESETN
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M03_ACLK
 WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M03_ARESETN
-WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M04_ACLK
-WARNING: [Synth 8-3331] design design_1_ps7_0_axi_periph_0 has unconnected port M04_ARESETN
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 744.926 ; gain = 464.324
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 755.820 ; gain = 476.219
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -492,13 +488,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'design_1_i/processing_system7_0/FCLK_CLK0' to pin 'design_1_i/processing_system7_0/bbstub_FCLK_CLK0/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 773.559 ; gain = 492.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 771.137 ; gain = 491.535
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 773.707 ; gain = 493.105
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 771.285 ; gain = 491.684
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -510,7 +506,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 774.945 ; gain = 494.344
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 772.488 ; gain = 492.887
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -534,7 +530,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -547,7 +543,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -559,25 +555,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -595,6 +591,7 @@ Report BlackBoxes:
 |6     |design_1_axi_quad_spi_0_0       |         1|
 |7     |design_1_processing_system7_0_0 |         1|
 |8     |design_1_rst_ps7_0_100M_0       |         1|
+|9     |design_1_xlconcat_0_0           |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
@@ -609,26 +606,30 @@ Report Cell Usage:
 |6     |design_1_processing_system7_0_0_bbox_4 |     1|
 |7     |design_1_rst_ps7_0_100M_0_bbox_7       |     1|
 |8     |design_1_xbar_0_bbox_6                 |     1|
-|9     |IBUF                                   |    13|
-|10    |IOBUF                                  |     4|
-|11    |OBUF                                   |     9|
+|9     |design_1_xlconcat_0_0_bbox_8           |     1|
+|10    |LUT1                                   |     1|
+|11    |LUT6                                   |     1|
+|12    |IBUF                                   |    13|
+|13    |IOBUF                                  |     4|
+|14    |OBUF                                   |     8|
+|15    |OBUFT                                  |     1|
 +------+---------------------------------------+------+
 
 Report Instance Areas: 
 +------+---------------------+----------------------------+------+
 |      |Instance             |Module                      |Cells |
 +------+---------------------+----------------------------+------+
-|1     |top                  |                            |  1180|
-|2     |  design_1_i         |design_1                    |  1154|
-|3     |    ps7_0_axi_periph |design_1_ps7_0_axi_periph_0 |   773|
+|1     |top                  |                            |  1073|
+|2     |  design_1_i         |design_1                    |  1046|
+|3     |    ps7_0_axi_periph |design_1_ps7_0_axi_periph_0 |   662|
 |4     |      s00_couplers   |s00_couplers_imp_UYSKKA     |   177|
 +------+---------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 772.914 ; gain = 493.313
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 774.992 ; gain = 189.266
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 774.992 ; gain = 494.391
+Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 772.914 ; gain = 177.156
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 772.914 ; gain = 493.313
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -639,13 +640,11 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-60 Infos, 34 Warnings, 0 Critical Warnings and 0 Errors encountered.
+60 Infos, 27 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 797.391 ; gain = 523.699
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 795.859 ; gain = 523.172
 WARNING: [Constraints 18-5210] No constraint will be written out.
 INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 797.723 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 25 23:25:02 2019...
-Abnormal program termination (EXCEPTION_ACCESS_VIOLATION)
-Please check 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/synth_1/hs_err_pid10912.log' for details
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 796.207 ; gain = 0.012
+INFO: [Common 17-206] Exiting Vivado at Sat May  4 03:08:07 2019...
