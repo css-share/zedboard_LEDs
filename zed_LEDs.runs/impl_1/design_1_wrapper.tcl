@@ -71,6 +71,7 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.cache/wt [current_project]
   set_property parent.project_path C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.xpr [current_project]
+  set_property ip_repo_paths C:/Xilinx/digilent/vivado-library/ip [current_project]
   set_property ip_output_repo C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]

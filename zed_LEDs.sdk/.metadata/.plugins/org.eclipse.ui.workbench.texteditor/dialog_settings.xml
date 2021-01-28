@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="SetupInterruptSystem" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="baud"/>
-			<item value="XSP_CR_XIP_"/>
-			<item value="XSP_SR_"/>
-			<item value="SPI_BUFFER_SIZE"/>
-			<item value="ReadBuffer"/>
-			<item value="WriteBuffer"/>
-			<item value="BUFFER_SIZE"/>
-			<item value="SPI_DEVICE_ID"/>
+			<item value="SetupInterruptSystem"/>
+			<item value="INTC_DEVICE_ID"/>
+			<item value="InterruptController"/>
+			<item value="packet"/>
+			<item value="char"/>
+			<item value="setup_ADC_SPI"/>
+			<item value="SpiInstancePtr"/>
+			<item value="SpiInstance"/>
 		</list>
 		<list key="replacehistory">
+			<item value="&amp;ADC_SPI_instance"/>
+			<item value="ADC_SPI_instance"/>
 			<item value="SPI_ReadBuffer"/>
 			<item value="UARTPS_DEVICE_ID"/>
 			<item value="RX_BUFFER_SIZE"/>
 			<item value="&amp;interrupt_controller"/>
 			<item value="interrupt_controller"/>
 			<item value="INTCInst"/>
-			<item value="UartISR"/>
-			<item value="SetupUartPs"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="1370" key="DIALOG_X_ORIGIN"/>
-		<item value="376" key="DIALOG_Y_ORIGIN"/>
+		<item value="1245" key="DIALOG_X_ORIGIN"/>
+		<item value="326" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

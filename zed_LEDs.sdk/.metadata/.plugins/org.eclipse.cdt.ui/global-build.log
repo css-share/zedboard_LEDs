@@ -5901,3 +5901,2013 @@ make pre-build main-build
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
+03:04:09 **** Build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_intr_example.d" -MT"src/xttcps_intr_example.o" -o "src/xttcps_intr_example.o" "../src/xttcps_intr_example.c"
+'Finished building: ../src/xttcps_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_intr_example_1.elf"  ./src/xttcps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_intr_example_1.elf  |tee "standalone_bsp_7_xttcps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29148	   2784	  22648	  54580	   d534	standalone_bsp_7_xttcps_intr_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_intr_example_1.elf.size'
+' '
+03:04:11 **** Auto Build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+20:32:23 **** Build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_low_level_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_low_level_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_low_level_example.d" -MT"src/xttcps_low_level_example.o" -o "src/xttcps_low_level_example.o" "../src/xttcps_low_level_example.c"
+'Finished building: ../src/xttcps_low_level_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_low_level_example_1.elf"  ./src/xttcps_low_level_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_low_level_example_1.elf  |tee "standalone_bsp_7_xttcps_low_level_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22732	   1344	  22568	  46644	   b634	standalone_bsp_7_xttcps_low_level_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_low_level_example_1.elf.size'
+' '
+20:32:24 **** Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_example.d" -MT"src/xttcps_rtc_example.o" -o "src/xttcps_rtc_example.o" "../src/xttcps_rtc_example.c"
+'Finished building: ../src/xttcps_rtc_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_rtc_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_rtc_example_1.elf"  ./src/xttcps_rtc_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_rtc_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_rtc_example_1.elf  |tee "standalone_bsp_7_xttcps_rtc_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28372	   2768	  22616	  53756	   d1fc	standalone_bsp_7_xttcps_rtc_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_rtc_example_1.elf.size'
+' '
+20:32:25 **** Build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_tapp_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_tapp_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_tapp_example.d" -MT"src/xttcps_tapp_example.o" -o "src/xttcps_tapp_example.o" "../src/xttcps_tapp_example.c"
+'Finished building: ../src/xttcps_tapp_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_tapp_example_1.elf"  ./src/xttcps_tapp_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_tapp_example_1.elf  |tee "standalone_bsp_7_xttcps_tapp_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28244	   2768	  22616	  53628	   d17c	standalone_bsp_7_xttcps_tapp_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_tapp_example_1.elf.size'
+' '
+20:32:25 **** Auto Build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+20:32:26 **** Auto Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+20:32:26 **** Auto Build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+00:24:24 **** Clean-only build of configuration Debug for project xttcps_rtc_modified ****
+make clean 
+rm -rf  ./src/xttcps_rtc_example.o  ./src/xttcps_rtc_example.d  standalone_bsp_7_xttcps_rtc_example_1.elf.size  standalone_bsp_7_xttcps_rtc_example_1.elf
+' '
+00:24:24 **** Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_example.d" -MT"src/xttcps_rtc_example.o" -o "src/xttcps_rtc_example.o" "../src/xttcps_rtc_example.c"
+'Finished building: ../src/xttcps_rtc_example.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28372	   2768	  22616	  53756	   d1fc	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+00:24:46 **** Clean-only build of configuration Debug for project xttcps_rtc_modified ****
+make clean 
+rm -rf  ./src/xttcps_rtc_example.o  ./src/xttcps_rtc_example.d  xttcps_rtc_modified.elf.size  xttcps_rtc_modified.elf
+' '
+00:24:46 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28372	   2768	  22616	  53756	   d1fc	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+02:50:22 **** Clean-only build of project standalone_bsp_7 ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+02:50:24 **** Clean-only build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+make clean 
+rm -rf  ./src/xspi_intr_example.o  ./src/xspi_intr_example.d  standalone_bsp_7_xspi_intr_example_1.elf.size  standalone_bsp_7_xspi_intr_example_1.elf
+' '
+02:50:24 **** Clean-only build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make clean 
+rm -rf  ./src/xspi_polled_example.o  ./src/xspi_polled_example.d  standalone_bsp_7_xspi_polled_example_1.elf.size  standalone_bsp_7_xspi_polled_example_1.elf
+' '
+02:50:24 **** Build of project standalone_bsp_7 ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spi"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+02:50:44 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_intr_example.o  ./src/xttcps_intr_example.d  standalone_bsp_7_xttcps_intr_example_1.elf.size  standalone_bsp_7_xttcps_intr_example_1.elf
+' '
+02:50:44 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_low_level_example.o  ./src/xttcps_low_level_example.d  standalone_bsp_7_xttcps_low_level_example_1.elf.size  standalone_bsp_7_xttcps_low_level_example_1.elf
+' '
+02:50:44 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_tapp_example.o  ./src/xttcps_tapp_example.d  standalone_bsp_7_xttcps_tapp_example_1.elf.size  standalone_bsp_7_xttcps_tapp_example_1.elf
+' '
+02:50:44 **** Build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_intr_example.d" -MT"src/xspi_intr_example.o" -o "src/xspi_intr_example.o" "../src/xspi_intr_example.c"
+'Finished building: ../src/xspi_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_intr_example_1.elf"  ./src/xspi_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_intr_example_1.elf  |tee "standalone_bsp_7_xspi_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30852	   2752	  22728	  56332	   dc0c	standalone_bsp_7_xspi_intr_example_1.elf
+'Finished building: standalone_bsp_7_xspi_intr_example_1.elf.size'
+' '
+02:50:45 **** Clean-only build of configuration Debug for project xttcps_rtc_modified ****
+make clean 
+rm -rf  ./src/xttcps_rtc_mod.o  ./src/xttcps_rtc_mod.d  xttcps_rtc_modified.elf.size  xttcps_rtc_modified.elf
+' '
+02:50:45 **** Clean-only build of configuration Debug for project zed_LEDs ****
+make clean 
+rm -rf  ./src/platform.o ./src/zed_LEDs.o  ./src/platform.d ./src/zed_LEDs.d  zed_LEDs.elf.size  zed_LEDs.elf
+rm: cannot remove `zed_LEDs.elf': Permission denied
+make: [clean] Error 1 (ignored)
+' '
+02:50:45 **** Build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_polled_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_polled_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_polled_example.d" -MT"src/xspi_polled_example.o" -o "src/xspi_polled_example.o" "../src/xspi_polled_example.c"
+'Finished building: ../src/xspi_polled_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_polled_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_polled_example_1.elf"  ./src/xspi_polled_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_polled_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_polled_example_1.elf  |tee "standalone_bsp_7_xspi_polled_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27324	   1176	  22696	  51196	   c7fc	standalone_bsp_7_xspi_polled_example_1.elf
+'Finished building: standalone_bsp_7_xspi_polled_example_1.elf.size'
+' '
+02:50:46 **** Build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_intr_example.d" -MT"src/xttcps_intr_example.o" -o "src/xttcps_intr_example.o" "../src/xttcps_intr_example.c"
+'Finished building: ../src/xttcps_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_intr_example_1.elf"  ./src/xttcps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_intr_example_1.elf  |tee "standalone_bsp_7_xttcps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29148	   2784	  22648	  54580	   d534	standalone_bsp_7_xttcps_intr_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_intr_example_1.elf.size'
+' '
+02:50:47 **** Build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_low_level_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_low_level_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_low_level_example.d" -MT"src/xttcps_low_level_example.o" -o "src/xttcps_low_level_example.o" "../src/xttcps_low_level_example.c"
+'Finished building: ../src/xttcps_low_level_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_low_level_example_1.elf"  ./src/xttcps_low_level_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_low_level_example_1.elf  |tee "standalone_bsp_7_xttcps_low_level_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22732	   1344	  22568	  46644	   b634	standalone_bsp_7_xttcps_low_level_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_low_level_example_1.elf.size'
+' '
+02:50:47 **** Build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_tapp_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_tapp_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_tapp_example.d" -MT"src/xttcps_tapp_example.o" -o "src/xttcps_tapp_example.o" "../src/xttcps_tapp_example.c"
+'Finished building: ../src/xttcps_tapp_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_tapp_example_1.elf"  ./src/xttcps_tapp_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_tapp_example_1.elf  |tee "standalone_bsp_7_xttcps_tapp_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28244	   2768	  22616	  53628	   d17c	standalone_bsp_7_xttcps_tapp_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_tapp_example_1.elf.size'
+' '
+02:50:48 **** Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28372	   2768	  22616	  53756	   d1fc	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+02:50:48 **** Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42808	   2896	  23896	  69600	  10fe0	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+05:54:40 **** Build of project standalone_bsp_7 ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spi"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+05:55:04 **** Build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_intr_example.d" -MT"src/xspi_intr_example.o" -o "src/xspi_intr_example.o" "../src/xspi_intr_example.c"
+'Finished building: ../src/xspi_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_intr_example_1.elf"  ./src/xspi_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_intr_example_1.elf  |tee "standalone_bsp_7_xspi_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30852	   2752	  22728	  56332	   dc0c	standalone_bsp_7_xspi_intr_example_1.elf
+'Finished building: standalone_bsp_7_xspi_intr_example_1.elf.size'
+' '
+05:55:05 **** Clean-only build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make clean 
+rm -rf  ./src/xspi_polled_example.o  ./src/xspi_polled_example.d  standalone_bsp_7_xspi_polled_example_1.elf.size  standalone_bsp_7_xspi_polled_example_1.elf
+' '
+05:55:06 **** Build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_polled_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_polled_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_polled_example.d" -MT"src/xspi_polled_example.o" -o "src/xspi_polled_example.o" "../src/xspi_polled_example.c"
+'Finished building: ../src/xspi_polled_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_polled_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_polled_example_1.elf"  ./src/xspi_polled_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_polled_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_polled_example_1.elf  |tee "standalone_bsp_7_xspi_polled_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27324	   1176	  22696	  51196	   c7fc	standalone_bsp_7_xspi_polled_example_1.elf
+'Finished building: standalone_bsp_7_xspi_polled_example_1.elf.size'
+' '
+05:55:06 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_intr_example.o  ./src/xttcps_intr_example.d  standalone_bsp_7_xttcps_intr_example_1.elf.size  standalone_bsp_7_xttcps_intr_example_1.elf
+' '
+05:55:07 **** Build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_intr_example.d" -MT"src/xttcps_intr_example.o" -o "src/xttcps_intr_example.o" "../src/xttcps_intr_example.c"
+'Finished building: ../src/xttcps_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_intr_example_1.elf"  ./src/xttcps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_intr_example_1.elf  |tee "standalone_bsp_7_xttcps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29148	   2784	  22648	  54580	   d534	standalone_bsp_7_xttcps_intr_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_intr_example_1.elf.size'
+' '
+05:55:07 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_low_level_example.o  ./src/xttcps_low_level_example.d  standalone_bsp_7_xttcps_low_level_example_1.elf.size  standalone_bsp_7_xttcps_low_level_example_1.elf
+' '
+05:55:07 **** Build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_low_level_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_low_level_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_low_level_example.d" -MT"src/xttcps_low_level_example.o" -o "src/xttcps_low_level_example.o" "../src/xttcps_low_level_example.c"
+'Finished building: ../src/xttcps_low_level_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_low_level_example_1.elf"  ./src/xttcps_low_level_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_low_level_example_1.elf  |tee "standalone_bsp_7_xttcps_low_level_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22732	   1344	  22568	  46644	   b634	standalone_bsp_7_xttcps_low_level_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_low_level_example_1.elf.size'
+' '
+05:55:08 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_tapp_example.o  ./src/xttcps_tapp_example.d  standalone_bsp_7_xttcps_tapp_example_1.elf.size  standalone_bsp_7_xttcps_tapp_example_1.elf
+' '
+05:55:08 **** Build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_tapp_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_tapp_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_tapp_example.d" -MT"src/xttcps_tapp_example.o" -o "src/xttcps_tapp_example.o" "../src/xttcps_tapp_example.c"
+'Finished building: ../src/xttcps_tapp_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_tapp_example_1.elf"  ./src/xttcps_tapp_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_tapp_example_1.elf  |tee "standalone_bsp_7_xttcps_tapp_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28244	   2768	  22616	  53628	   d17c	standalone_bsp_7_xttcps_tapp_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_tapp_example_1.elf.size'
+' '
+05:55:09 **** Clean-only build of configuration Debug for project xttcps_rtc_modified ****
+make clean 
+rm -rf  ./src/xttcps_rtc_mod.o  ./src/xttcps_rtc_mod.d  xttcps_rtc_modified.elf.size  xttcps_rtc_modified.elf
+' '
+05:55:09 **** Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:507:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:507:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/xttcps_rtc_mod.c:507:14: warning: implicit declaration of function 'XGpio_Initialize'; did you mean 'XScuGic_CfgInitialize'? [-Wimplicit-function-declaration]
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+              ^~~~~~~~~~~~~~~~
+              XScuGic_CfgInitialize
+../src/xttcps_rtc_mod.c:507:32: error: 'sw_gpio' undeclared (first use in this function); did you mean 'init_gpio'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                ^~~~~~~
+                                init_gpio
+../src/xttcps_rtc_mod.c:507:41: error: 'SWITCHES_AXI_ID' undeclared (first use in this function)
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                         ^~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:516:32: error: 'leds_gpio' undeclared (first use in this function); did you mean 'sw_gpio'?
+     Status = XGpio_Initialize(&leds_gpio, LEDS_AXI_ID);
+                                ^~~~~~~~~
+                                sw_gpio
+../src/xttcps_rtc_mod.c:516:43: error: 'LEDS_AXI_ID' undeclared (first use in this function); did you mean 'SWITCHES_AXI_ID'?
+     Status = XGpio_Initialize(&leds_gpio, LEDS_AXI_ID);
+                                           ^~~~~~~~~~~
+                                           SWITCHES_AXI_ID
+../src/xttcps_rtc_mod.c:525:29: error: 'buttons_gpio' undeclared (first use in this function); did you mean 'leds_gpio'?
+  Status = XGpio_Initialize(&buttons_gpio, BUTTONS_AXI_ID);
+                             ^~~~~~~~~~~~
+                             leds_gpio
+../src/xttcps_rtc_mod.c:525:43: error: 'BUTTONS_AXI_ID' undeclared (first use in this function); did you mean 'LEDS_AXI_ID'?
+  Status = XGpio_Initialize(&buttons_gpio, BUTTONS_AXI_ID);
+                                           ^~~~~~~~~~~~~~
+                                           LEDS_AXI_ID
+../src/xttcps_rtc_mod.c:538:5: warning: implicit declaration of function 'XGpio_SetDataDirection' [-Wimplicit-function-declaration]
+     XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
+     ^~~~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:547:5: warning: implicit declaration of function 'XGpio_InterruptEnable'; did you mean 'TmrRtcInterruptExample'? [-Wimplicit-function-declaration]
+     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
+     ^~~~~~~~~~~~~~~~~~~~~
+     TmrRtcInterruptExample
+../src/xttcps_rtc_mod.c:547:41: error: 'INTERRUPT_MASK' undeclared (first use in this function); did you mean 'INTPTR_MAX'?
+     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
+                                         ^~~~~~~~~~~~~~
+                                         INTPTR_MAX
+../src/xttcps_rtc_mod.c:548:5: warning: implicit declaration of function 'XGpio_InterruptGlobalEnable' [-Wimplicit-function-declaration]
+     XGpio_InterruptGlobalEnable(&buttons_gpio);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/xttcps_rtc_mod.o] Error 1
+05:55:09 **** Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42808	   2896	  23896	  69600	  10fe0	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+06:35:27 **** Clean-only build of project standalone_bsp_7 ****
+make -k clean 
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s clean 
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s clean 
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s clean 
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s clean 
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s clean 
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s clean 
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s clean 
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s clean 
+rm -f ps7_cortexa9_0/lib/libxil.a
+06:35:29 **** Clean-only build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+make clean 
+rm -rf  ./src/xspi_intr_example.o  ./src/xspi_intr_example.d  standalone_bsp_7_xspi_intr_example_1.elf.size  standalone_bsp_7_xspi_intr_example_1.elf
+' '
+06:35:29 **** Build of project standalone_bsp_7 ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_9/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_5/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/spi_v4_4/src"
+make -C ps7_cortexa9_0/libsrc/spi_v4_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling spi"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_7/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_6/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+06:35:48 **** Clean-only build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make clean 
+rm -rf  ./src/xspi_polled_example.o  ./src/xspi_polled_example.d  standalone_bsp_7_xspi_polled_example_1.elf.size  standalone_bsp_7_xspi_polled_example_1.elf
+' '
+06:35:48 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_intr_example.o  ./src/xttcps_intr_example.d  standalone_bsp_7_xttcps_intr_example_1.elf.size  standalone_bsp_7_xttcps_intr_example_1.elf
+' '
+06:35:48 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_low_level_example.o  ./src/xttcps_low_level_example.d  standalone_bsp_7_xttcps_low_level_example_1.elf.size  standalone_bsp_7_xttcps_low_level_example_1.elf
+' '
+06:35:48 **** Clean-only build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make clean 
+rm -rf  ./src/xttcps_tapp_example.o  ./src/xttcps_tapp_example.d  standalone_bsp_7_xttcps_tapp_example_1.elf.size  standalone_bsp_7_xttcps_tapp_example_1.elf
+' '
+06:35:48 **** Build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_intr_example.d" -MT"src/xspi_intr_example.o" -o "src/xspi_intr_example.o" "../src/xspi_intr_example.c"
+'Finished building: ../src/xspi_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_intr_example_1.elf"  ./src/xspi_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_intr_example_1.elf  |tee "standalone_bsp_7_xspi_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  30852	   2752	  22728	  56332	   dc0c	standalone_bsp_7_xspi_intr_example_1.elf
+'Finished building: standalone_bsp_7_xspi_intr_example_1.elf.size'
+' '
+06:35:49 **** Clean-only build of configuration Debug for project xttcps_rtc_modified ****
+make clean 
+rm -rf  ./src/xttcps_rtc_mod.o  ./src/xttcps_rtc_mod.d  xttcps_rtc_modified.elf.size  xttcps_rtc_modified.elf
+' '
+06:35:49 **** Clean-only build of configuration Debug for project zed_LEDs ****
+make clean 
+rm -rf  ./src/platform.o ./src/zed_LEDs.o  ./src/platform.d ./src/zed_LEDs.d  zed_LEDs.elf.size  zed_LEDs.elf
+' '
+06:35:49 **** Build of configuration Debug for project standalone_bsp_7_xspi_polled_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xspi_polled_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xspi_polled_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xspi_polled_example.d" -MT"src/xspi_polled_example.o" -o "src/xspi_polled_example.o" "../src/xspi_polled_example.c"
+'Finished building: ../src/xspi_polled_example.c'
+' '
+'Building target: standalone_bsp_7_xspi_polled_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xspi_polled_example_1.elf"  ./src/xspi_polled_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xspi_polled_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xspi_polled_example_1.elf  |tee "standalone_bsp_7_xspi_polled_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27324	   1176	  22696	  51196	   c7fc	standalone_bsp_7_xspi_polled_example_1.elf
+'Finished building: standalone_bsp_7_xspi_polled_example_1.elf.size'
+' '
+06:35:50 **** Build of configuration Debug for project standalone_bsp_7_xttcps_intr_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_intr_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_intr_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_intr_example.d" -MT"src/xttcps_intr_example.o" -o "src/xttcps_intr_example.o" "../src/xttcps_intr_example.c"
+'Finished building: ../src/xttcps_intr_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_intr_example_1.elf"  ./src/xttcps_intr_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_intr_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_intr_example_1.elf  |tee "standalone_bsp_7_xttcps_intr_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29148	   2784	  22648	  54580	   d534	standalone_bsp_7_xttcps_intr_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_intr_example_1.elf.size'
+' '
+06:35:50 **** Build of configuration Debug for project standalone_bsp_7_xttcps_low_level_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_low_level_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_low_level_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_low_level_example.d" -MT"src/xttcps_low_level_example.o" -o "src/xttcps_low_level_example.o" "../src/xttcps_low_level_example.c"
+'Finished building: ../src/xttcps_low_level_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_low_level_example_1.elf"  ./src/xttcps_low_level_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_low_level_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_low_level_example_1.elf  |tee "standalone_bsp_7_xttcps_low_level_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  22732	   1344	  22568	  46644	   b634	standalone_bsp_7_xttcps_low_level_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_low_level_example_1.elf.size'
+' '
+06:35:51 **** Build of configuration Debug for project standalone_bsp_7_xttcps_tapp_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_tapp_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_tapp_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_tapp_example.d" -MT"src/xttcps_tapp_example.o" -o "src/xttcps_tapp_example.o" "../src/xttcps_tapp_example.c"
+'Finished building: ../src/xttcps_tapp_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_tapp_example_1.elf"  ./src/xttcps_tapp_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_tapp_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_tapp_example_1.elf  |tee "standalone_bsp_7_xttcps_tapp_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28244	   2768	  22616	  53628	   d17c	standalone_bsp_7_xttcps_tapp_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_tapp_example_1.elf.size'
+' '
+06:35:51 **** Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:507:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:507:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/xttcps_rtc_mod.c:507:14: warning: implicit declaration of function 'XGpio_Initialize'; did you mean 'XScuGic_CfgInitialize'? [-Wimplicit-function-declaration]
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+              ^~~~~~~~~~~~~~~~
+              XScuGic_CfgInitialize
+../src/xttcps_rtc_mod.c:507:32: error: 'sw_gpio' undeclared (first use in this function); did you mean 'init_gpio'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                ^~~~~~~
+                                init_gpio
+../src/xttcps_rtc_mod.c:507:41: error: 'SWITCHES_AXI_ID' undeclared (first use in this function)
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                         ^~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:516:32: error: 'leds_gpio' undeclared (first use in this function); did you mean 'sw_gpio'?
+     Status = XGpio_Initialize(&leds_gpio, LEDS_AXI_ID);
+                                ^~~~~~~~~
+                                sw_gpio
+../src/xttcps_rtc_mod.c:516:43: error: 'LEDS_AXI_ID' undeclared (first use in this function); did you mean 'SWITCHES_AXI_ID'?
+     Status = XGpio_Initialize(&leds_gpio, LEDS_AXI_ID);
+                                           ^~~~~~~~~~~
+                                           SWITCHES_AXI_ID
+../src/xttcps_rtc_mod.c:525:29: error: 'buttons_gpio' undeclared (first use in this function); did you mean 'leds_gpio'?
+  Status = XGpio_Initialize(&buttons_gpio, BUTTONS_AXI_ID);
+                             ^~~~~~~~~~~~
+                             leds_gpio
+../src/xttcps_rtc_mod.c:525:43: error: 'BUTTONS_AXI_ID' undeclared (first use in this function); did you mean 'LEDS_AXI_ID'?
+  Status = XGpio_Initialize(&buttons_gpio, BUTTONS_AXI_ID);
+                                           ^~~~~~~~~~~~~~
+                                           LEDS_AXI_ID
+../src/xttcps_rtc_mod.c:538:5: warning: implicit declaration of function 'XGpio_SetDataDirection' [-Wimplicit-function-declaration]
+     XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
+     ^~~~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:547:5: warning: implicit declaration of function 'XGpio_InterruptEnable'; did you mean 'TmrRtcInterruptExample'? [-Wimplicit-function-declaration]
+     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
+     ^~~~~~~~~~~~~~~~~~~~~
+     TmrRtcInterruptExample
+../src/xttcps_rtc_mod.c:547:41: error: 'INTERRUPT_MASK' undeclared (first use in this function); did you mean 'INTPTR_MAX'?
+     XGpio_InterruptEnable(&buttons_gpio,INTERRUPT_MASK);
+                                         ^~~~~~~~~~~~~~
+                                         INTPTR_MAX
+../src/xttcps_rtc_mod.c:548:5: warning: implicit declaration of function 'XGpio_InterruptGlobalEnable' [-Wimplicit-function-declaration]
+     XGpio_InterruptGlobalEnable(&buttons_gpio);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/xttcps_rtc_mod.o] Error 1
+06:35:52 **** Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  42808	   2896	  23896	  69600	  10fe0	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+06:38:46 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:134:1: error: unknown type name 'XGpio'
+ XGpio digital_outs;
+ ^~~~~
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:508:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:508:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/xttcps_rtc_mod.c:508:14: warning: implicit declaration of function 'XGpio_Initialize'; did you mean 'XScuGic_CfgInitialize'? [-Wimplicit-function-declaration]
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+              ^~~~~~~~~~~~~~~~
+              XScuGic_CfgInitialize
+../src/xttcps_rtc_mod.c:508:32: error: 'sw_gpio' undeclared (first use in this function); did you mean 'init_gpio'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                ^~~~~~~
+                                init_gpio
+../src/xttcps_rtc_mod.c:508:41: error: 'SWITCHES_AXI_ID' undeclared (first use in this function)
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                         ^~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:522:5: warning: implicit declaration of function 'XGpio_SetDataDirection' [-Wimplicit-function-declaration]
+     XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
+     ^~~~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:522:5: error: expected declaration or statement at end of input
+make: *** [src/xttcps_rtc_mod.o] Error 1
+06:39:35 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:509:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:509:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/xttcps_rtc_mod.c:509:32: error: 'sw_gpio' undeclared (first use in this function); did you mean 'init_gpio'?
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                ^~~~~~~
+                                init_gpio
+../src/xttcps_rtc_mod.c:509:41: error: 'SWITCHES_AXI_ID' undeclared (first use in this function)
+     Status = XGpio_Initialize(&sw_gpio, SWITCHES_AXI_ID);
+                                         ^~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:523:5: error: expected declaration or statement at end of input
+     XGpio_SetDataDirection(&sw_gpio, 1, 0xFF); //0=output, 1=input
+     ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/xttcps_rtc_mod.o] Error 1
+06:41:10 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:509:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&digital_outs, SWITCHES_AXI_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:509:5: note: each undeclared identifier is reported only once for each function it appears in
+../src/xttcps_rtc_mod.c:509:46: error: 'SWITCHES_AXI_ID' undeclared (first use in this function)
+     Status = XGpio_Initialize(&digital_outs, SWITCHES_AXI_ID);
+                                              ^~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:523:5: error: expected declaration or statement at end of input
+     XGpio_SetDataDirection(&digital_outs, 1, 0x0); //0=output, 1=input
+     ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/xttcps_rtc_mod.o] Error 1
+06:42:30 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c: In function 'init_gpio':
+../src/xttcps_rtc_mod.c:509:5: error: 'Status' undeclared (first use in this function); did you mean 'XStatus'?
+     Status = XGpio_Initialize(&digital_outs, XPAR_AXI_GPIO_3_DEVICE_ID);
+     ^~~~~~
+     XStatus
+../src/xttcps_rtc_mod.c:509:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/xttcps_rtc_mod.o] Error 1
+06:43:22 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29684	   2848	  22648	  55180	   d78c	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:06:33 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29684	   2848	  22648	  55180	   d78c	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:11:09 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:12:05 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29680	   2848	  22648	  55176	   d788	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:12:48 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:13:06 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:14:11 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:19:18 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:21:47 **** Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_example.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_example.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_example.d" -MT"src/xttcps_rtc_example.o" -o "src/xttcps_rtc_example.o" "../src/xttcps_rtc_example.c"
+'Finished building: ../src/xttcps_rtc_example.c'
+' '
+'Building target: standalone_bsp_7_xttcps_rtc_example_1.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "standalone_bsp_7_xttcps_rtc_example_1.elf"  ./src/xttcps_rtc_example.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: standalone_bsp_7_xttcps_rtc_example_1.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size standalone_bsp_7_xttcps_rtc_example_1.elf  |tee "standalone_bsp_7_xttcps_rtc_example_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  28372	   2768	  22616	  53756	   d1fc	standalone_bsp_7_xttcps_rtc_example_1.elf
+'Finished building: standalone_bsp_7_xttcps_rtc_example_1.elf.size'
+' '
+03:21:49 **** Auto Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:22:23 **** Incremental Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:24:47 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:25:27 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:26:42 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:30:40 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:312:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:34:22 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:35:11 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:36:44 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:37:15 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:42:11 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:46:34 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:47:03 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:51:26 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:52:57 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:56:47 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:57:49 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29808	   2848	  22648	  55304	   d808	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+03:58:23 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:01:40 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29784	   2848	  22648	  55280	   d7f0	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+04:02:43 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29784	   2848	  22648	  55280	   d7f0	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+04:02:58 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:04:48 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29784	   2848	  22648	  55280	   d7f0	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+04:05:11 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:06:17 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:07:30 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:313:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29784	   2848	  22648	  55280	   d7f0	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+04:08:23 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:24:16 **** Auto Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/xttcps_rtc_mod.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/xttcps_rtc_mod.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/xttcps_rtc_mod.d" -MT"src/xttcps_rtc_mod.o" -o "src/xttcps_rtc_mod.o" "../src/xttcps_rtc_mod.c"
+../src/xttcps_rtc_mod.c:321:5: warning: 'WaitForDutyCycleFull' defined but not used [-Wunused-function]
+ int WaitForDutyCycleFull(void)
+     ^~~~~~~~~~~~~~~~~~~~
+../src/xttcps_rtc_mod.c:137:12: warning: 'TickCount' defined but not used [-Wunused-variable]
+ static u32 TickCount;  /* Ticker interrupts between seconds change */
+            ^~~~~~~~~
+'Finished building: ../src/xttcps_rtc_mod.c'
+' '
+'Building target: xttcps_rtc_modified.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "xttcps_rtc_modified.elf"  ./src/xttcps_rtc_mod.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: xttcps_rtc_modified.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size xttcps_rtc_modified.elf  |tee "xttcps_rtc_modified.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  29848	   2848	  22648	  55344	   d830	xttcps_rtc_modified.elf
+'Finished building: xttcps_rtc_modified.elf.size'
+' '
+04:24:37 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+04:25:59 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+01:33:12 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c: In function 'setup_ADC_SPI':
+../src/zed_LEDs.c:929:23: error: 'SpiInstance' undeclared (first use in this function); did you mean 'SpiIntrHandler'?
+  XSpi_SetSlaveSelect(&SpiInstance, 0x01);
+                       ^~~~~~~~~~~
+                       SpiIntrHandler
+../src/zed_LEDs.c:929:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [src/zed_LEDs.o] Error 1
+01:33:53 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  43128	   2896	  23896	  69920	  11120	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+02:04:28 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  43128	   2896	  23896	  69920	  11120	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+02:05:12 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:01:31 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  43128	   2896	  23896	  69920	  11120	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+03:01:43 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:17:15 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c: In function 'read_uart_bytes':
+../src/zed_LEDs.c:677:5: warning: implicit declaration of function 'send_u16_over_UART'; did you mean 'send_Tx_data_over_UART'? [-Wimplicit-function-declaration]
+     send_u16_over_UART(readADC());
+     ^~~~~~~~~~~~~~~~~~
+     send_Tx_data_over_UART
+../src/zed_LEDs.c: At top level:
+../src/zed_LEDs.c:767:6: warning: conflicting types for 'send_u16_over_UART'
+ void send_u16_over_UART(u16 num_to_send)
+      ^~~~~~~~~~~~~~~~~~
+../src/zed_LEDs.c:677:5: note: previous implicit declaration of 'send_u16_over_UART' was here
+     send_u16_over_UART(readADC());
+     ^~~~~~~~~~~~~~~~~~
+../src/zed_LEDs.c: In function 'send_u16_over_UART':
+../src/zed_LEDs.c:774:7: error: 'i' undeclared (first use in this function)
+  for (i = 0; i < 2; i++) {
+       ^
+../src/zed_LEDs.c:774:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:769:7: warning: variable 'bytes_to_send' set but not used [-Wunused-but-set-variable]
+  char bytes_to_send[2];
+       ^~~~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+03:20:27 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c: In function 'send_u16_over_UART':
+../src/zed_LEDs.c:775:7: error: 'i' undeclared (first use in this function)
+  for (i = 0; i < 2; i++) {
+       ^
+../src/zed_LEDs.c:775:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:770:7: warning: variable 'bytes_to_send' set but not used [-Wunused-but-set-variable]
+  char bytes_to_send[2];
+       ^~~~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+03:21:02 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c: In function 'send_u16_over_UART':
+../src/zed_LEDs.c:777:7: error: 'i' undeclared (first use in this function)
+  for (i = 0; i < 2; i++) {
+       ^
+../src/zed_LEDs.c:777:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:774:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+../src/zed_LEDs.c:770:7: warning: variable 'bytes_to_send' set but not used [-Wunused-but-set-variable]
+  char bytes_to_send[2];
+       ^~~~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+03:23:09 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+../src/zed_LEDs.c: In function 'send_u16_over_UART':
+../src/zed_LEDs.c:776:7: error: 'i' undeclared (first use in this function)
+  for (i=0; i<2; i++)
+       ^
+../src/zed_LEDs.c:776:7: note: each undeclared identifier is reported only once for each function it appears in
+../src/zed_LEDs.c:774:6: warning: unused variable 'x' [-Wunused-variable]
+  int x;
+      ^
+../src/zed_LEDs.c:770:7: warning: variable 'bytes_to_send' set but not used [-Wunused-but-set-variable]
+  char bytes_to_send[2];
+       ^~~~~~~~~~~~~
+make: *** [src/zed_LEDs.o] Error 1
+03:23:24 **** Auto Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  43320	   2896	  23896	  70112	  111e0	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+03:23:50 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+03:27:46 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/zed_LEDs.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/zed_LEDs.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_7/ps7_cortexa9_0/include -MMD -MP -MF"src/zed_LEDs.d" -MT"src/zed_LEDs.o" -o "src/zed_LEDs.o" "../src/zed_LEDs.c"
+In file included from ../src/zed_LEDs.c:7:0:
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:115:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+ #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+  ^~~~~~~
+../../standalone_bsp_7/ps7_cortexa9_0/include/xbasic_types.h:116:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+ #warning  Please refer the Standalone BSP UG647 for further details
+  ^~~~~~~
+'Finished building: ../src/zed_LEDs.c'
+' '
+'Building target: zed_LEDs.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_7/ps7_cortexa9_0/lib -o "zed_LEDs.elf"  ./src/platform.o ./src/zed_LEDs.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: zed_LEDs.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size zed_LEDs.elf  |tee "zed_LEDs.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  43320	   2896	  23896	  70112	  111e0	zed_LEDs.elf
+'Finished building: zed_LEDs.elf.size'
+' '
+19:51:05 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+20:00:46 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+20:02:10 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+05:59:05 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+06:00:23 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+06:36:13 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+06:39:03 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+06:55:47 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+07:11:21 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+07:16:42 **** Incremental Build of configuration Debug for project xttcps_rtc_modified ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+00:19:50 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+00:22:43 **** Incremental Build of configuration Debug for project zed_LEDs ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.

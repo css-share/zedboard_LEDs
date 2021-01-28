@@ -34,5 +34,14 @@ set_property PULLDOWN true [get_ports {spi_rtl_*}]
 #set_property PULLDOWN true [get_ports {leds_8bits_tri_o[*]}]
 set_property PULLDOWN true [get_ports {sws_8bits_tri_i[*]}]
 
+#output for interrupt monitoring
 set_property PACKAGE_PIN B22 [get_ports int_out]
 set_property IOSTANDARD LVCMOS25 [get_ports int_out]
+
+set_property IOSTANDARD LVCMOS25 [get_ports {DINS_tri_i[*]}]
+set_property PACKAGE_PIN AB6 [get_ports {DINS_tri_i[0]}]
+set_property PACKAGE_PIN AB7 [get_ports {DINS_tri_i[1]}]
+
+set_property IOSTANDARD LVCMOS25 [get_ports {DOUTS_tri_o[*]}]
+set_property PACKAGE_PIN Y4 [get_ports {DOUTS_tri_o[0]}]
+set_property PACKAGE_PIN AA4 [get_ports {DOUTS_tri_o[1]}]

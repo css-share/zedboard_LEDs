@@ -1,0 +1,8 @@
+03:22:23 **** Incremental Build of configuration Debug for project standalone_bsp_7_xttcps_rtc_example_1 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+make: Nothing to be done for `main-build'.
+
+03:22:24 Build Finished (took 183ms)
+

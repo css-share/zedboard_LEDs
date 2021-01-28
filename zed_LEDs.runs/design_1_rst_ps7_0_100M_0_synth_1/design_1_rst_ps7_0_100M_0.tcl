@@ -31,12 +31,12 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+set_property ip_repo_paths c:/Xilinx/digilent/vivado-library/ip [current_project]
 set_property ip_output_repo c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xci
 set_property used_in_implementation false [get_files -all c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

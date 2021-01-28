@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;xttcps_rtc_modified/src/xttcps_rtc_example.c&apos; to &apos;xttcps_rtc_mod.c&apos;" description="Rename resource &apos;xttcps_rtc_example.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/xttcps_rtc_example.c" name="xttcps_rtc_mod.c" stamp="1557473085881" updateReferences="true"/>
+</session>

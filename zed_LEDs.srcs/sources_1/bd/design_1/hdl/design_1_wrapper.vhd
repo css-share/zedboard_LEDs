@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Fri May  3 03:30:49 2019
+--Date        : Sat May 11 06:24:27 2019
 --Host        : AsusP8 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -28,6 +28,8 @@ entity design_1_wrapper is
     DDR_ras_n : inout STD_LOGIC;
     DDR_reset_n : inout STD_LOGIC;
     DDR_we_n : inout STD_LOGIC;
+    DINS_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    DOUTS_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
@@ -78,13 +80,15 @@ architecture STRUCTURE of design_1_wrapper is
     spi_rtl_io1_i : in STD_LOGIC;
     spi_rtl_io1_o : out STD_LOGIC;
     spi_rtl_io1_t : out STD_LOGIC;
+    spi_rtl_sck_i : in STD_LOGIC;
+    spi_rtl_sck_o : out STD_LOGIC;
+    spi_rtl_sck_t : out STD_LOGIC;
     spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_t : out STD_LOGIC;
     int_out : out STD_LOGIC;
-    spi_rtl_sck_i : in STD_LOGIC;
-    spi_rtl_sck_o : out STD_LOGIC;
-    spi_rtl_sck_t : out STD_LOGIC
+    DINS_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    DOUTS_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component design_1;
   component IOBUF is
@@ -126,6 +130,8 @@ design_1_i: component design_1
       DDR_ras_n => DDR_ras_n,
       DDR_reset_n => DDR_reset_n,
       DDR_we_n => DDR_we_n,
+      DINS_tri_i(1 downto 0) => DINS_tri_i(1 downto 0),
+      DOUTS_tri_o(1 downto 0) => DOUTS_tri_o(1 downto 0),
       FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
       FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
       FIXED_IO_mio(53 downto 0) => FIXED_IO_mio(53 downto 0),

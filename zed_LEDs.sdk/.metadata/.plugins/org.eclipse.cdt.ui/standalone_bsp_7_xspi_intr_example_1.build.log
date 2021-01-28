@@ -1,4 +1,4 @@
-03:14:14 **** Build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
+06:35:48 **** Build of configuration Debug for project standalone_bsp_7_xspi_intr_example_1 ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -19,5 +19,5 @@ arm-none-eabi-size standalone_bsp_7_xspi_intr_example_1.elf  |tee "standalone_bs
 'Finished building: standalone_bsp_7_xspi_intr_example_1.elf.size'
 ' '
 
-03:14:15 Build Finished (took 580ms)
+06:35:49 Build Finished (took 523ms)
 

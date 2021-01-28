@@ -31,6 +31,7 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
+set_property ip_repo_paths c:/Xilinx/digilent/vivado-library/ip [current_project]
 set_property ip_output_repo c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_ip -quiet C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_axi_quad_spi_0_0/design_1_axi_quad_spi_0_0.xci

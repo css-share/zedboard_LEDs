@@ -14,6 +14,7 @@
 #include "xil_exception.h"
 #include "xspi.h"
 #include "sleep.h"
+#include "xttcps.h"
 
 
 #define FAKE_DATA
@@ -79,6 +80,7 @@ void load_sawtooth_data(void);
 								// 4 bytes(unsigned int) for length msbyte first
 #define CMD_LOAD_SAWTOOTH_DATA1	0x62	// load test data1(sawtooth up) into TxData array
 #define CMD_LOAD_SAWTOOTH_DATA2	0x63	// load test data1(sawtooth down) into TxData array
+#define CMD_READ_ADC	0x88
 //----------------------------------------
 
 
@@ -113,9 +115,12 @@ void send_Tx_data_over_UART(unsigned int);
 void load_sawtooth_down_data(void);
 void load_sawtooth_up_data(void);
 unsigned int get_num_data_points(u8 *RxData);
+int setup_ADC_SPI(void);
 void SpiIntrHandler(void *CallBackRef, u32 StatusEvent, u32 ByteCount);
 static int SpiSetupIntrSystem(INTC *IntcInstancePtr, XSpi *SpiInstancePtr,
 					 u16 SpiIntrId);
+u16 readADC(void);
+void send_u16_over_UART(u16 num_to_send);
 //----------------------------------------
 
 
@@ -142,8 +147,7 @@ int Status;
 volatile int SpiTransferInProgress;
 volatile int SpiErrorCount;
 
-static XSpi  SpiInstance;
-XSpi *SpiInstancePtr = &SpiInstance;
+static XSpi  ADC_SPI_instance;
 #define SPI_BUFFER_SIZE 3
 u8 SPI_ReadBuffer[SPI_BUFFER_SIZE];
 u8 SPI_WriteBuffer[SPI_BUFFER_SIZE];
@@ -163,96 +167,14 @@ int main()
     Status = SetupUartPs(&interrupt_controller, &UartPs,
     				UARTPS_DEVICE_ID, UART_INT_IRQ_ID);
 	if (Status != XST_SUCCESS) {
-		xil_printf("Failed to set up UartPs\r\n");
+		xil_printf("Failed to set up UartPs\n");
 		return XST_FAILURE;
 	}
 
-	xil_printf("  waiting for received UART data...\n");
-
-//###################
-// SPI
-	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
-
-	/*
-	 * Initialize the SPI driver so that it is  ready to use.
-	 */
-	ConfigPtr = XSpi_LookupConfig(XPAR_SPI_0_DEVICE_ID);
-	if (ConfigPtr == NULL) {
-		return XST_DEVICE_NOT_FOUND;
-	}
-
-	Status = XSpi_CfgInitialize(SpiInstancePtr, ConfigPtr,
-				  ConfigPtr->BaseAddress);
+	Status = setup_ADC_SPI();
 	if (Status != XST_SUCCESS) {
+		xil_printf("Failed to set up SPI for ADC\n");
 		return XST_FAILURE;
-	}
-
-	/*
-	 * Perform a self-test to ensure that the hardware was built correctly.
-	 */
-	Status = XSpi_SelfTest(SpiInstancePtr);
-	if (Status != XST_SUCCESS) {
-		return XST_FAILURE;
-	}
-
-	/*
-	 * Connect the Spi device to the interrupt subsystem such that
-	 * interrupts can occur. This function is application specific.
-	 */
-	Status = SpiSetupIntrSystem(&interrupt_controller,
-								SpiInstancePtr,
-								SPI_INTERRUPT_ID);
-	if (Status != XST_SUCCESS) {
-		xil_printf("Failed to set up spi interrupts\n");
-		return XST_FAILURE;
-	}
-
-	/*
-	 * Setup the handler for the SPI that will be called from the interrupt
-	 * context when an SPI status occurs, specify a pointer to the SPI
-	 * driver instance as the callback reference so the handler is able to
-	 * access the instance data.
-	 */
-	XSpi_SetStatusHandler(SpiInstancePtr, SpiInstancePtr,
-		 		(XSpi_StatusHandler) SpiIntrHandler);
-
-	/*
-	 * Set the Spi device as a master.
-	 */
-	Status = XSpi_SetOptions(SpiInstancePtr, XSP_MASTER_OPTION);
-	if (Status != XST_SUCCESS) {
-		xil_printf("failed to set up spi options\n");
-		return XST_FAILURE;
-	}
-
-	// Select the SPI Slave.  This asserts the correct SS bit on the SPI bus
-	XSpi_SetSlaveSelect(&SpiInstance, 0x01);
-
-	/*
-	 * Start the SPI driver so that interrupts and the device are enabled.
-	 */
-	XSpi_Start(SpiInstancePtr);
-
-
-	SPI_WriteBuffer[0]=0xAA;
-	SPI_WriteBuffer[1]=0xAA;
-	SPI_WriteBuffer[2]=0xAA;
-	SPI_ReadBuffer[0]=0x00;
-	SPI_ReadBuffer[1]=0x00;
-	SPI_ReadBuffer[2]=0x00;
-	u16 spi_result = 0;
-
-	/*
-	 * Transmit the data.
-	 */
-	while (1){
-		SpiTransferInProgress = 1;
-		XSpi_Transfer(SpiInstancePtr, SPI_WriteBuffer, SPI_ReadBuffer, SPI_BUFFER_SIZE);
-		while (SpiTransferInProgress);
-
-		spi_result = SPI_ReadBuffer[0] << 14;
-		spi_result |= SPI_ReadBuffer[1] << 6;
-		spi_result |= SPI_ReadBuffer[2] >> 2;
 	}
 
 
@@ -751,6 +673,10 @@ void read_uart_bytes(void)
 		case (CMD_LOAD_SAWTOOTH_DATA2):
 			load_sawtooth_down_data();
 			break;
+
+		case (CMD_READ_ADC):
+				send_u16_over_UART(readADC());
+			break;
 	}
 
 }
@@ -838,6 +764,32 @@ void send_Tx_data_over_UART(unsigned int num_points_to_send)
 //------------------------------------------------------------
 
 
+//------------------------------------------------------------
+void send_u16_over_UART(u16 num_to_send)
+{
+	char bytes_to_send[2];
+
+	// store number in char array so MSB sent first
+	bytes_to_send[0] = (char)(num_to_send >> 8);
+	bytes_to_send[1] = (char)(num_to_send & 0xFF);
+
+	int i;
+
+	for (i=0; i<2; i++)
+	{
+		/* Wait until there is space in TX FIFO */
+		while (XUartPs_IsTransmitFull(XPAR_XUARTPS_0_BASEADDR));
+
+		/* Write the byte into the TX FIFO */
+		XUartPs_WriteReg(XPAR_XUARTPS_0_BASEADDR, XUARTPS_FIFO_OFFSET,
+						bytes_to_send[i]);
+	}
+
+
+}
+//------------------------------------------------------------
+
+
 
 
 /*****************************************************************************/
@@ -889,7 +841,7 @@ void SpiIntrHandler(void *CallBackRef, u32 StatusEvent, u32 ByteCount)
 * user should modify this function to fit the application.
 *
 * @param	IntcInstancePtr is a pointer to the instance of the Intc device.
-* @param	SpiInstancePtr is a pointer to the instance of the Spi device.
+* @param	&ADC_SPI_instance is a pointer to the instance of the Spi device.
 * @param	SpiIntrId is the interrupt Id and is typically
 *		XPAR_<INTC_instance>_<SPI_instance>_VEC_ID value from
 *		xparameters.h
@@ -947,4 +899,95 @@ static int SpiSetupIntrSystem(INTC *IntcInstancePtr, XSpi *SpiInstancePtr,
 	Xil_ExceptionEnable();
 
 	return XST_SUCCESS;
+}
+
+
+int setup_ADC_SPI(void)
+{
+	XSpi_Config *ConfigPtr;	/* Pointer to Configuration data */
+
+	/*
+	 * Initialize the SPI driver so that it is  ready to use.
+	 */
+	ConfigPtr = XSpi_LookupConfig(XPAR_SPI_0_DEVICE_ID);
+	if (ConfigPtr == NULL) {
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	Status = XSpi_CfgInitialize(&ADC_SPI_instance, ConfigPtr,
+				  ConfigPtr->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Perform a self-test to ensure that the hardware was built correctly.
+	 */
+	Status = XSpi_SelfTest(&ADC_SPI_instance);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Connect the Spi device to the interrupt subsystem such that
+	 * interrupts can occur. This function is application specific.
+	 */
+	Status = SpiSetupIntrSystem(&interrupt_controller,
+								&ADC_SPI_instance,
+								SPI_INTERRUPT_ID);
+	if (Status != XST_SUCCESS) {
+		xil_printf("Failed to set up spi interrupts\n");
+		return XST_FAILURE;
+	}
+
+	/*
+	 * Setup the handler for the SPI that will be called from the interrupt
+	 * context when an SPI status occurs, specify a pointer to the SPI
+	 * driver instance as the callback reference so the handler is able to
+	 * access the instance data.
+	 */
+	XSpi_SetStatusHandler(&ADC_SPI_instance, &ADC_SPI_instance,
+				(XSpi_StatusHandler) SpiIntrHandler);
+
+	/*
+	 * Set the Spi device as a master.
+	 */
+	Status = XSpi_SetOptions(&ADC_SPI_instance, XSP_MASTER_OPTION);
+	if (Status != XST_SUCCESS) {
+		xil_printf("failed to set up spi options\n");
+		return XST_FAILURE;
+	}
+
+	// Select the SPI Slave.  This asserts the correct SS bit on the SPI bus
+	XSpi_SetSlaveSelect(&ADC_SPI_instance, 0x01);
+
+	/*
+	 * Start the SPI driver so that interrupts and the device are enabled.
+	 */
+	XSpi_Start(&ADC_SPI_instance);
+
+	return XST_SUCCESS;
+}
+
+
+u16 readADC(void)
+{
+	u16 spi_result = 0;
+
+	SPI_WriteBuffer[0]=0xAA;
+	SPI_WriteBuffer[1]=0xAA;
+	SPI_WriteBuffer[2]=0xAA;
+	SPI_ReadBuffer[0]=0x00;
+	SPI_ReadBuffer[1]=0x00;
+	SPI_ReadBuffer[2]=0x00;
+
+	SpiTransferInProgress = 1;
+	XSpi_Transfer(&ADC_SPI_instance, SPI_WriteBuffer, SPI_ReadBuffer, SPI_BUFFER_SIZE);
+	while (SpiTransferInProgress);
+
+	spi_result = SPI_ReadBuffer[0] << 14;
+	spi_result |= SPI_ReadBuffer[1] << 6;
+	spi_result |= SPI_ReadBuffer[2] >> 2;
+
+	return spi_result;
 }

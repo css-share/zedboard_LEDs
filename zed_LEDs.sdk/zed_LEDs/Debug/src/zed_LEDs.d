@@ -26,7 +26,9 @@ src/zed_LEDs.o src/zed_LEDs.o: ../src/zed_LEDs.c ../src/platform.h \
  ../../standalone_bsp_7/ps7_cortexa9_0/include/xil_exception.h \
  ../../standalone_bsp_7/ps7_cortexa9_0/include/xspi.h \
  ../../standalone_bsp_7/ps7_cortexa9_0/include/xspi_l.h \
- ../../standalone_bsp_7/ps7_cortexa9_0/include/sleep.h
+ ../../standalone_bsp_7/ps7_cortexa9_0/include/sleep.h \
+ ../../standalone_bsp_7/ps7_cortexa9_0/include/xttcps.h \
+ ../../standalone_bsp_7/ps7_cortexa9_0/include/xttcps_hw.h
 
 ../src/platform.h:
 
@@ -85,3 +87,7 @@ src/zed_LEDs.o src/zed_LEDs.o: ../src/zed_LEDs.c ../src/platform.h \
 ../../standalone_bsp_7/ps7_cortexa9_0/include/xspi_l.h:
 
 ../../standalone_bsp_7/ps7_cortexa9_0/include/sleep.h:
+
+../../standalone_bsp_7/ps7_cortexa9_0/include/xttcps.h:
+
+../../standalone_bsp_7/ps7_cortexa9_0/include/xttcps_hw.h:
