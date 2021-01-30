@@ -1,0 +1,7 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]C:\Xilinx\Vivado\projects\zed_LEDs\zed_LEDs.sdk\zynq_FSBL\Debug\zynq_FSBL.elf
+	C:\Xilinx\Vivado\projects\zed_LEDs\zed_LEDs.sdk\design_1_wrapper_hw_platform_2\design_1_wrapper.bit
+	C:\Xilinx\Vivado\projects\zed_LEDs\zed_LEDs.sdk\zed_LEDs\Debug\zed_LEDs.elf
+}
