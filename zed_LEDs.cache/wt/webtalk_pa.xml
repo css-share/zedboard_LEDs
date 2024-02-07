@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Wed Oct  2 02:21:42 2019">
+<application name="pa" timeStamp="Mon Feb  5 18:52:06 2024">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="a84c24a23e16454385c7e26f858b4265" type="ProjectID"/>
-<property name="ProjectIteration" value="41" type="ProjectIteration"/>
+<property name="ProjectIteration" value="53" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -215,11 +215,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="17" type="GuiHandlerData"/>
 <property name="TclObjectTreeTable_TREETABLE" value="4" type="GuiHandlerData"/>
 <property name="ZynqPanel_IMPORT_XPS_SETTINGS" value="1" type="GuiHandlerData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="60" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="45" type="TclMode"/>
 </item>
 </section>
 </application>

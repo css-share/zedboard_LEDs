@@ -1,0 +1,353 @@
+18:14:20 DEBUG : Logs will be stored at 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/IDE.log'.
+18:14:32 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\temp_xsdb_launch_script.tcl
+18:14:32 INFO  : Registering command handlers for Vitis TCF services
+18:14:33 INFO  : Platform repository initialization has completed.
+18:14:34 INFO  : XSCT server has started successfully.
+18:14:34 INFO  : plnx-install-location is set to ''
+18:14:35 INFO  : Successfully done setting XSCT server connection channel  
+18:14:35 INFO  : Successfully done query RDI_DATADIR 
+18:14:35 INFO  : Successfully done setting workspace for the tool. 
+18:15:23 DEBUG : Logs will be stored at 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/IDE.log'.
+18:15:27 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\temp_xsdb_launch_script.tcl
+18:15:27 INFO  : Registering command handlers for Vitis TCF services
+18:15:28 INFO  : Platform repository initialization has completed.
+18:15:29 INFO  : XSCT server has started successfully.
+18:15:29 INFO  : Successfully done setting XSCT server connection channel  
+18:15:29 INFO  : plnx-install-location is set to ''
+18:15:29 INFO  : Successfully done setting workspace for the tool. 
+18:15:29 INFO  : Successfully done query RDI_DATADIR 
+18:18:31 INFO  : Result from executing command 'getProjects': zed_LED_platform
+18:18:31 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm
+18:21:45 INFO  : No changes in MSS file content so sources will not be generated.
+18:22:48 INFO  : Result from executing command 'getProjects': zed_LED_platform;zed_led_wrapper
+18:22:48 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LED_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_platform/export/zed_LED_platform/zed_LED_platform.xpfm
+18:22:50 INFO  : Platform 'zed_led_wrapper' is added to custom repositories.
+18:23:01 INFO  : Platform 'zed_led_wrapper' is added to custom repositories.
+18:26:26 INFO  : Result from executing command 'getProjects': zed_LED_platform;zed_led_wrapper
+18:26:26 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LED_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_platform/export/zed_LED_platform/zed_LED_platform.xpfm;zed_led_wrapper|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/zed_led_wrapper.xpfm
+18:26:28 INFO  : Checking for BSP changes to sync application flags for project 'zed_LED_application'...
+11:34:08 INFO  : Checking for BSP changes to sync application flags for project 'zed_LED_application'...
+11:35:06 ERROR : (XRT Server)C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/xrt_server.exe: error: illegal option '-'
+Usage: agent [OPTION]...
+Start Target Communication Framework agent.
+  -d               run in daemon mode (output is sent to system logger)
+  -i               run in interactive mode
+  -L<file>         enable logging, use -L- to send log to stderr
+  -l<level>        set log level, the level is comma separated list of:
+      alloc        memory allocation and deallocation (0x1)
+      eventcore    main event queue (0x2)
+      waitpid      waitpid() events (0x4)
+      events       low-level debugger events (0x8)
+      protocol     communication protocol (0x20)
+      context      debug context actions (0x40)
+      children     debug context children (0x10)
+      discovery    discovery (0x80)
+      asyncreq     async I/O (0x100)
+      proxy        proxy state (0x200)
+      tcflog       proxy traffic (0x400)
+      elf          ELF reader (0x800)
+      stack        stack trace service (0x2000)
+      plugin       plugins (0x4000)
+      shutdown     shutdown of subsystems (0x8000)
+      disasm       disassembly service (0x10000)
+  -s<url>          set agent listening port and protocol, default is tcp::0
+  -S               print server properties in Json format to stdout
+  -g<port>         start GDB Remote Serial Protocol server at the specified TCP port
+  -I<idle-seconds> exit if there are no connections for the specified time
+
+11:36:06 ERROR : Timed out. 60 seconds have elapsed while waiting for the XRT server to launch.
+11:36:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:36:27 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+11:37:55 ERROR : (XRT Server)C:/Xilinx/Vitis/2023.2/bin/unwrapped/win64.o/xrt_server.exe: error: illegal option '-'
+Usage: agent [OPTION]...
+Start Target Communication Framework agent.
+  -d               run in daemon mode (output is sent to system logger)
+  -i               run in interactive mode
+  -L<file>         enable logging, use -L- to send log to stderr
+  -l<level>        set log level, the level is comma separated list of:
+      alloc        memory allocation and deallocation (0x1)
+      eventcore    main event queue (0x2)
+      waitpid      waitpid() events (0x4)
+      events       low-level debugger events (0x8)
+      protocol     communication protocol (0x20)
+      context      debug context actions (0x40)
+      children     debug context children (0x10)
+      discovery    discovery (0x80)
+      asyncreq     async I/O (0x100)
+      proxy        proxy state (0x200)
+      tcflog       proxy traffic (0x400)
+      elf          ELF reader (0x800)
+      stack        stack trace service (0x2000)
+      plugin       plugins (0x4000)
+      shutdown     shutdown of subsystems (0x8000)
+      disasm       disassembly service (0x10000)
+  -s<url>          set agent listening port and protocol, default is tcp::0
+  -S               print server properties in Json format to stdout
+  -g<port>         start GDB Remote Serial Protocol server at the specified TCP port
+  -I<idle-seconds> exit if there are no connections for the specified time
+
+11:38:55 ERROR : Timed out. 60 seconds have elapsed while waiting for the XRT server to launch.
+11:38:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:55 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+11:38:55 INFO  : 'jtag frequency' command is executed.
+11:38:55 INFO  : Context for 'APU' is selected.
+11:38:55 INFO  : System reset is completed.
+11:38:58 INFO  : 'after 3000' command is executed.
+11:38:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+11:39:02 INFO  : Device configured successfully with "C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/bitstream/zed_led_wrapper.bit"
+11:39:02 INFO  : Context for 'APU' is selected.
+11:39:03 INFO  : Hardware design and registers information is loaded from 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/hw/zed_led_wrapper.xsa'.
+11:39:03 INFO  : 'configparams force-mem-access 1' command is executed.
+11:39:03 INFO  : Context for 'APU' is selected.
+11:39:03 INFO  : Sourcing of 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/psinit/ps7_init.tcl' is done.
+11:39:03 INFO  : 'ps7_init' command is executed.
+11:39:03 INFO  : 'ps7_post_config' command is executed.
+11:39:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:04 INFO  : The application 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/Debug/zed_LED_application.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:39:04 INFO  : 'configparams force-mem-access 0' command is executed.
+11:39:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}
+fpga -file C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/bitstream/zed_led_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/hw/zed_led_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/Debug/zed_LED_application.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:39:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:39:04 INFO  : 'con' command is executed.
+11:39:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:39:04 INFO  : Launch script is exported to file 'C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\zed_LED_application_system\_ide\scripts\systemdebugger_zed_led_application_system_standalone.tcl'
+11:40:18 INFO  : Disconnected from the channel tcfchan#4.
+12:12:44 INFO  : Example project xgpio_example_1 has been created successfully.
+12:52:53 INFO  : Result from executing command 'getProjects': zed_LED_platform;zed_led_wrapper
+12:52:53 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LED_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_platform/export/zed_LED_platform/zed_LED_platform.xpfm;zed_led_wrapper|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/zed_led_wrapper.xpfm
+13:10:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:10:08 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+13:10:08 INFO  : 'jtag frequency' command is executed.
+13:10:08 INFO  : Context for 'APU' is selected.
+13:10:08 INFO  : System reset is completed.
+13:10:11 INFO  : 'after 3000' command is executed.
+13:10:11 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+13:10:13 ERROR : could not find configuration request.
+13:10:13 ERROR : Exception occured while running Program Device.
+java.lang.RuntimeException: could not find configuration request.
+13:10:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+----------------End of Script----------------
+
+13:10:13 ERROR : could not find configuration request.
+13:10:21 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:10:22 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+13:10:22 INFO  : 'jtag frequency' command is executed.
+13:10:22 INFO  : Context for 'APU' is selected.
+13:10:22 INFO  : System reset is completed.
+13:10:25 INFO  : 'after 3000' command is executed.
+13:10:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+13:10:29 INFO  : Device configured successfully with "C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/bitstream/zed_led_wrapper.bit"
+13:10:29 INFO  : Context for 'APU' is selected.
+13:10:29 INFO  : Hardware design and registers information is loaded from 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/hw/zed_led_wrapper.xsa'.
+13:10:29 INFO  : 'configparams force-mem-access 1' command is executed.
+13:10:29 INFO  : Context for 'APU' is selected.
+13:10:29 INFO  : Sourcing of 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/psinit/ps7_init.tcl' is done.
+13:10:30 INFO  : 'ps7_init' command is executed.
+13:10:30 INFO  : 'ps7_post_config' command is executed.
+13:10:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:10:30 INFO  : The application 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/Debug/zed_LED_application.elf' is downloaded to processor 'ps7_cortexa9_0'.
+13:10:30 INFO  : 'configparams force-mem-access 0' command is executed.
+13:10:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}
+fpga -file C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/bitstream/zed_led_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_led_wrapper/export/zed_led_wrapper/hw/zed_led_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_application/Debug/zed_LED_application.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+13:10:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+13:10:30 INFO  : 'con' command is executed.
+13:10:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+13:10:30 INFO  : Launch script is exported to file 'C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\zed_LED_application_system\_ide\scripts\debugger_zed_led_application-default_1.tcl'
+14:05:36 INFO  : Checking for BSP changes to sync application flags for project 'zed_LED_application'...
+14:15:54 INFO  : Checking for BSP changes to sync application flags for project 'zed_LED_application'...
+14:49:51 ERROR : An unexpected exception occurred in the module 'reading platform'
+14:50:02 ERROR : An unexpected exception occurred in the module 'reading platform'
+14:54:23 INFO  : Result from executing command 'getProjects': zed_LED_platform
+14:54:23 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm
+14:58:40 INFO  : Result from executing command 'getProjects': zed_LED_platform
+14:58:40 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LED_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LED_platform/export/zed_LED_platform/zed_LED_platform.xpfm
+14:58:42 INFO  : Checking for BSP changes to sync application flags for project 'zed_LEDs_application'...
+16:10:08 ERROR : An unexpected exception occurred in the module 'reading platform'
+16:10:45 INFO  : Result from executing command 'getProjects': zed_LEDs_platform
+16:10:45 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm
+16:12:21 INFO  : Result from executing command 'getProjects': zed_LEDs_platform
+16:12:21 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LEDs_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/zed_LEDs_platform.xpfm
+16:12:23 INFO  : Checking for BSP changes to sync application flags for project 'zed_LEDs_application'...
+18:59:52 INFO  : Result from executing command 'getProjects': zed_LEDs_platform
+18:59:52 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm
+19:01:51 INFO  : Result from executing command 'getProjects': zed_LEDs_platform
+19:01:51 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_202320_1/xilinx_vck190_base_202320_1.xpfm;xilinx_vck190_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vck190_base_dfx_202320_1/xilinx_vck190_base_dfx_202320_1.xpfm;xilinx_vek280_es1_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vek280_es1_base_202320_1/xilinx_vek280_es1_base_202320_1.xpfm;xilinx_vmk180_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_vmk180_base_202320_1/xilinx_vmk180_base_202320_1.xpfm;xilinx_zcu102_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_202320_1/xilinx_zcu102_base_202320_1.xpfm;xilinx_zcu102_base_dfx_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu102_base_dfx_202320_1/xilinx_zcu102_base_dfx_202320_1.xpfm;xilinx_zcu104_base_202320_1|C:/Xilinx/Vitis/2023.2/base_platforms/xilinx_zcu104_base_202320_1/xilinx_zcu104_base_202320_1.xpfm;zed_LEDs_platform|C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/zed_LEDs_platform.xpfm
+19:01:52 INFO  : Checking for BSP changes to sync application flags for project 'zed_LEDs_application'...
+19:02:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:02:48 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+19:02:48 ERROR : Could not find ARM device on the board for connection 'Local'.
+Check if the target is in:
+1. Split JTAG - No operations are possible with ARM DAP.
+2. Non JTAG bootmode - Bootrom may need time to enable DAP.
+Please try again.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+19:03:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:03:06 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+19:03:06 INFO  : 'jtag frequency' command is executed.
+19:03:06 INFO  : Context for 'APU' is selected.
+19:03:06 INFO  : System reset is completed.
+19:03:09 INFO  : 'after 3000' command is executed.
+19:03:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+19:03:13 INFO  : Device configured successfully with "C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/bitstream/design_1_wrapper.bit"
+19:03:13 INFO  : Context for 'APU' is selected.
+19:03:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/hw/design_1_wrapper.xsa'.
+19:03:13 INFO  : 'configparams force-mem-access 1' command is executed.
+19:03:13 INFO  : Context for 'APU' is selected.
+19:03:13 INFO  : Sourcing of 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/psinit/ps7_init.tcl' is done.
+19:03:14 INFO  : 'ps7_init' command is executed.
+19:03:14 INFO  : 'ps7_post_config' command is executed.
+19:03:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:03:15 INFO  : The application 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/Debug/zed_LEDs_application.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:03:15 INFO  : 'configparams force-mem-access 0' command is executed.
+19:03:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}
+fpga -file C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/Debug/zed_LEDs_application.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:03:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:03:15 INFO  : 'con' command is executed.
+19:03:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:03:15 INFO  : Launch script is exported to file 'C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\zed_LEDs_application_system\_ide\scripts\systemdebugger_zed_leds_application_system_standalone.tcl'
+10:58:12 INFO  : Disconnected from the channel tcfchan#6.
+10:58:12 WARN  : channel "tcfchan#6" closed
+18:06:26 DEBUG : Logs will be stored at 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/IDE.log'.
+18:06:27 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\temp_xsdb_launch_script.tcl
+18:06:32 INFO  : XSCT server has started successfully.
+18:06:33 INFO  : Successfully done setting XSCT server connection channel  
+18:06:33 INFO  : plnx-install-location is set to ''
+18:06:33 INFO  : Successfully done setting workspace for the tool. 
+18:06:33 INFO  : Registering command handlers for Vitis TCF services
+18:06:35 INFO  : Platform repository initialization has completed.
+18:06:40 INFO  : Successfully done query RDI_DATADIR 
+18:06:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:06:47 INFO  : Jtag cable 'Digilent Zed 210248AA59A3' is selected.
+18:06:47 INFO  : 'jtag frequency' command is executed.
+18:06:47 INFO  : Context for 'APU' is selected.
+18:06:47 INFO  : System reset is completed.
+18:06:50 INFO  : 'after 3000' command is executed.
+18:06:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}' command is executed.
+18:06:54 INFO  : Device configured successfully with "C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/bitstream/design_1_wrapper.bit"
+18:06:54 INFO  : Context for 'APU' is selected.
+18:06:54 INFO  : Hardware design and registers information is loaded from 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/hw/design_1_wrapper.xsa'.
+18:06:54 INFO  : 'configparams force-mem-access 1' command is executed.
+18:06:54 INFO  : Context for 'APU' is selected.
+18:06:54 INFO  : Sourcing of 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/psinit/ps7_init.tcl' is done.
+18:06:55 INFO  : 'ps7_init' command is executed.
+18:06:55 INFO  : 'ps7_post_config' command is executed.
+18:06:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:06:56 INFO  : The application 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/Debug/zed_LEDs_application.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:06:56 INFO  : 'configparams force-mem-access 0' command is executed.
+18:06:56 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248AA59A3" && level==0 && jtag_device_ctx=="jsn-Zed-210248AA59A3-23727093-0"}
+fpga -file C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application/Debug/zed_LEDs_application.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:06:56 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:06:56 INFO  : 'con' command is executed.
+18:06:56 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:06:56 INFO  : Launch script is exported to file 'C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\zed_LEDs_application_system\_ide\scripts\systemdebugger_zed_leds_application_system_standalone.tcl'
+18:38:27 INFO  : Disconnected from the channel tcfchan#1.

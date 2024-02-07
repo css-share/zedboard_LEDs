@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="zed_LEDs_application" location="C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_application" platform="C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_platform/export/zed_LEDs_platform/zed_LEDs_platform.xpfm" platformUID="xilinx:zed::0.0(custom)" systemProject="zed_LEDs_application_system" sysConfig="zed_LEDs_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="4ac29587a67c8f0e6015a011656d1684">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.83998099">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1544642076" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/constrs_1/new/my_constraints.xdc rfile:../../../zed_LEDs.srcs/constrs_1/new/my_constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/constrs_1/new/my_constraints.xdc rfile:../../../zed_LEDs.srcs/constrs_1/new/my_constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y11 [get_ports spi_rtl_io0_io]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]

@@ -3,528 +3,353 @@
     with args -log design_1_xbar_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_xbar_0.tcl
 
 
-****** Vivado v2018.2 (64-bit)
-  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+ECHO is off.
+ECHO is off.
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_xbar_0.tcl -notrace
-Command: synth_design -top design_1_xbar_0 -part xc7z020clg484-1 -mode out_of_context
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 473.512 ; gain = 179.914
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/19165/digilent/vivado-library/ip'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.cache/ip 
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_xbar_0
+Command: synth_design -top design_1_xbar_0 -part xc7z020clg484-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8948 
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1796
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 400.613 ; gain = 106.820
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:23 . Memory (MB): peak = 1356.613 ; gain = 439.480
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:59]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_axi_crossbar' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
-	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
-	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
-	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 512'b00000000000000000000000000000000010000010010010000000000000000000000000000000000000000000000000001000001001000110000000000000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000001000001111000000000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000010010001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_ADDR_WIDTH bound to: 256'b0000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000 
-	Parameter C_S_AXI_BASE_ID bound to: 0 - type: integer 
-	Parameter C_S_AXI_THREAD_ID_WIDTH bound to: 0 - type: integer 
-	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
-	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_M_AXI_WRITE_CONNECTIVITY bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_M_AXI_READ_CONNECTIVITY bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_R_REGISTER bound to: 1 - type: integer 
-	Parameter C_S_AXI_SINGLE_THREAD bound to: 1 - type: integer 
-	Parameter C_S_AXI_WRITE_ACCEPTANCE bound to: 1 - type: integer 
-	Parameter C_S_AXI_READ_ACCEPTANCE bound to: 1 - type: integer 
-	Parameter C_M_AXI_WRITE_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_M_AXI_READ_ISSUING bound to: 256'b0000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001000000000000000000000000000000010000000000000000000000000000000100000000000000000000000000000001 
-	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
-	Parameter C_M_AXI_SECURE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_CONNECTIVITY_MODE bound to: 0 - type: integer 
-	Parameter P_ONES bound to: 65'b11111111111111111111111111111111111111111111111111111111111111111 
-	Parameter P_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
-	Parameter P_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
-	Parameter P_AXI4 bound to: 0 - type: integer 
-	Parameter P_AXI3 bound to: 1 - type: integer 
-	Parameter P_AXILITE bound to: 2 - type: integer 
-	Parameter P_AXILITE_SIZE bound to: 3'b010 
-	Parameter P_INCR bound to: 2'b01 
-	Parameter P_M_AXI_SUPPORTS_WRITE bound to: 8'b11111111 
-	Parameter P_M_AXI_SUPPORTS_READ bound to: 8'b11111111 
-	Parameter P_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
-	Parameter P_S_AXI_SUPPORTS_READ bound to: 1'b1 
-	Parameter C_DEBUG bound to: 1 - type: integer 
-	Parameter P_RANGE_CHECK bound to: 1 - type: integer 
-	Parameter P_ADDR_DECODE bound to: 1 - type: integer 
-	Parameter P_M_AXI_ERR_MODE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter P_LEN bound to: 8 - type: integer 
-	Parameter P_LOCK bound to: 1 - type: integer 
-	Parameter P_FAMILY bound to: zynq - type: string 
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_crossbar_sasd' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
-	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_NUM_SLAVE_SLOTS bound to: 1 - type: integer 
-	Parameter C_NUM_MASTER_SLOTS bound to: 8 - type: integer 
-	Parameter C_NUM_ADDR_RANGES bound to: 1 - type: integer 
-	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ADDR_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
-	Parameter C_M_AXI_BASE_ADDR bound to: 512'b00000000000000000000000000000000010000010010010000000000000000000000000000000000000000000000000001000001001000110000000000000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000001000001111000000000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000010010001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_M_AXI_HIGH_ADDR bound to: 512'b00000000000000000000000000000000010000010010010011111111111111110000000000000000000000000000000001000001001000111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001111000001111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000010010001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
-	Parameter C_S_AXI_BASE_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_S_AXI_HIGH_ID bound to: 64'b0000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_AXI_SUPPORTS_USER_SIGNALS bound to: 0 - type: integer 
-	Parameter C_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_WUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_S_AXI_SUPPORTS_WRITE bound to: 1'b1 
-	Parameter C_S_AXI_SUPPORTS_READ bound to: 1'b1 
-	Parameter C_M_AXI_SUPPORTS_WRITE bound to: 8'b11111111 
-	Parameter C_M_AXI_SUPPORTS_READ bound to: 8'b11111111 
-	Parameter C_S_AXI_ARB_PRIORITY bound to: 0 - type: integer 
-	Parameter C_M_AXI_SECURE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_M_AXI_ERR_MODE bound to: 256'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-	Parameter C_R_REGISTER bound to: 1 - type: integer 
-	Parameter C_RANGE_CHECK bound to: 1 - type: integer 
-	Parameter C_ADDR_DECODE bound to: 1 - type: integer 
-	Parameter C_DEBUG bound to: 1 - type: integer 
-	Parameter P_AXI4 bound to: 0 - type: integer 
-	Parameter P_AXI3 bound to: 1 - type: integer 
-	Parameter P_AXILITE bound to: 2 - type: integer 
-	Parameter P_NUM_MASTER_SLOTS_DE bound to: 9 - type: integer 
-	Parameter P_NUM_MASTER_SLOTS_LOG bound to: 3 - type: integer 
-	Parameter P_NUM_MASTER_SLOTS_DE_LOG bound to: 4 - type: integer 
-	Parameter P_NUM_SLAVE_SLOTS_LOG bound to: 1 - type: integer 
-	Parameter P_AXI_AUSER_WIDTH bound to: 1 - type: integer 
-	Parameter P_AXI_WID_WIDTH bound to: 1 - type: integer 
-	Parameter P_AMESG_WIDTH bound to: 64 - type: integer 
-	Parameter P_BMESG_WIDTH bound to: 3 - type: integer 
-	Parameter P_RMESG_WIDTH bound to: 36 - type: integer 
-	Parameter P_WMESG_WIDTH bound to: 39 - type: integer 
-	Parameter P_AXILITE_ERRMODE bound to: 1 - type: integer 
-	Parameter P_NONSECURE_BIT bound to: 1 - type: integer 
-	Parameter P_M_SECURE_MASK bound to: 8'b00000000 
-	Parameter P_M_AXILITE_MASK bound to: 8'b00000000 
-	Parameter P_FIXED bound to: 2'b00 
-	Parameter P_BYPASS bound to: 0 - type: integer 
-	Parameter P_LIGHTWT bound to: 7 - type: integer 
-	Parameter P_FULLY_REG bound to: 1 - type: integer 
-	Parameter P_R_REG_CONFIG bound to: 1 - type: integer 
-	Parameter P_DECERR bound to: 2'b11 
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_addr_decoder' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
-	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_NUM_TARGETS bound to: 8 - type: integer 
-	Parameter C_NUM_TARGETS_LOG bound to: 3 - type: integer 
-	Parameter C_NUM_RANGES bound to: 1 - type: integer 
-	Parameter C_ADDR_WIDTH bound to: 32 - type: integer 
-	Parameter C_TARGET_ENC bound to: 1 - type: integer 
-	Parameter C_TARGET_HOT bound to: 1 - type: integer 
-	Parameter C_REGION_ENC bound to: 1 - type: integer 
-	Parameter C_BASE_ADDR bound to: 512'b00000000000000000000000000000000010000010010010000000000000000000000000000000000000000000000000001000001001000110000000000000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000001000001111000000000000000000000000000000000000000000000000000000100000100100001000000000000000000000000000000000000000000000000010000010010001000000000000000000000000000000000000000000000000001000001001000000000000000000000 
-	Parameter C_HIGH_ADDR bound to: 512'b00000000000000000000000000000000010000010010010011111111111111110000000000000000000000000000000001000001001000111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000001111000001111111111111111000000000000000000000000000000000100000100100001111111111111111100000000000000000000000000000000010000010010001011111111111111110000000000000000000000000000000001000001001000001111111111111111 
-	Parameter C_TARGET_QUAL bound to: 9'b011111111 
-	Parameter C_RESOLUTION bound to: 2 - type: integer 
-	Parameter C_COMPARATOR_THRESHOLD bound to: 6 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000010010000000000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_carry_and' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
-	Parameter C_FAMILY bound to: rtl - type: string 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_carry_and' (1#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:62]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000010010001000000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized0' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000010010000100000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized1' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized2' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000011110000000000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized2' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized3' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000010010001100000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized3' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_VALUE bound to: 30'b010000010010010000000000000000 
-	Parameter C_DATA_WIDTH bound to: 30 - type: integer 
-	Parameter C_BITS_PER_LUT bound to: 6 - type: integer 
-	Parameter C_NUM_LUT bound to: 5 - type: integer 
-	Parameter C_FIX_DATA_WIDTH bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_comparator_static__parameterized4' (2#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2133]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_addr_decoder' (3#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:794]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_decerr_slave' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
-	Parameter C_AXI_ID_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_DATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_AXI_BUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_RUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_AXI_PROTOCOL bound to: 2 - type: integer 
-	Parameter C_RESP bound to: 3 - type: integer 
-	Parameter P_WRITE_IDLE bound to: 2'b00 
-	Parameter P_WRITE_DATA bound to: 2'b01 
-	Parameter P_WRITE_RESP bound to: 2'b10 
-	Parameter P_READ_IDLE bound to: 1'b0 
-	Parameter P_READ_DATA bound to: 1'b1 
-	Parameter P_AXI4 bound to: 0 - type: integer 
-	Parameter P_AXI3 bound to: 1 - type: integer 
-	Parameter P_AXILITE bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_decerr_slave' (4#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3501]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_addr_arbiter_sasd' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
-	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_NUM_S bound to: 1 - type: integer 
-	Parameter C_NUM_S_LOG bound to: 1 - type: integer 
-	Parameter C_AMESG_WIDTH bound to: 64 - type: integer 
-	Parameter C_GRANT_ENC bound to: 1 - type: integer 
-	Parameter C_ARB_PRIORITY bound to: 0 - type: integer 
-	Parameter P_PRIO_MASK bound to: 1'b0 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_addr_arbiter_sasd' (5#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:65]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_splitter' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
-	Parameter C_NUM_M bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_splitter' (6#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_18_splitter__parameterized0' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
-	Parameter C_NUM_M bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_splitter__parameterized0' (6#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4461]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
-	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
-	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc' (7#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 1 - type: integer 
-	Parameter C_SEL_WIDTH bound to: 1 - type: integer 
-	Parameter C_DATA_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized0' (7#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
-	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
-	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized1' (7#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_17_axic_register_slice' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:189]
-	Parameter C_FAMILY bound to: zynq - type: string 
-	Parameter C_DATA_WIDTH bound to: 36 - type: integer 
-	Parameter C_REG_CONFIG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_17_axic_register_slice' (8#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:189]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-	Parameter C_FAMILY bound to: rtl - type: string 
-	Parameter C_RATIO bound to: 9 - type: integer 
-	Parameter C_SEL_WIDTH bound to: 4 - type: integer 
-	Parameter C_DATA_WIDTH bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_0_mux_enc__parameterized2' (8#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v:2452]
-WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_aw_trans_seq_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2056]
-WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_ar_trans_seq_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2067]
-WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_w_beat_cnt_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2078]
-WARNING: [Synth 8-6014] Unused sequential element gen_debug_trans_seq.debug_r_beat_cnt_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:2091]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_crossbar_sasd' (9#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:1240]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_18_axi_crossbar' (10#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:4884]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (11#1) [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:59]
-WARNING: [Synth 8-3331] design generic_baseblocks_v2_1_0_mux_enc__parameterized0 has unconnected port S[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_AWID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_WLAST
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_decerr_slave has unconnected port S_AXI_ARLEN[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_addr_decoder has unconnected port ADDR[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_addr_decoder has unconnected port ADDR[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port S_AXI_AWID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port S_AXI_ARID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_BID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_crossbar_sasd has unconnected port M_AXI_RID[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlen[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awsize[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awsize[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awsize[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awburst[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awburst[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awlock[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awcache[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awcache[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awcache[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awcache[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awqos[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awqos[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awqos[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awqos[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_awuser[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_wid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_wlast[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_wuser[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlen[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arsize[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arsize[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arsize[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arburst[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arburst[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arlock[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arcache[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arcache[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arcache[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arcache[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arqos[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arqos[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arqos[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_arqos[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port s_axi_aruser[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_bid[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[7]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[6]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[5]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[4]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[3]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[2]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[1]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_buser[0]
-WARNING: [Synth 8-3331] design axi_crossbar_v2_1_18_axi_crossbar has unconnected port m_axi_rid[7]
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6157] synthesizing module 'design_1_xbar_0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_axi_crossbar' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_crossbar' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_si_transactor' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_addr_decoder' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_carry_and' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_carry_and' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized1' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized1' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized2' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized2' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized3' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized3' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized4' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_comparator_static__parameterized4' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_addr_decoder' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6157] synthesizing module 'SRLC32E' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:133887]
+INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:133887]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_arbiter_resp' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:1020]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_arbiter_resp' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:1020]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_mux_enc' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6157] synthesizing module 'MUXF7' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:85238]
+INFO: [Synth 8-6155] done synthesizing module 'MUXF7' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:85238]
+INFO: [Synth 8-6157] synthesizing module 'MUXF8' [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:85275]
+INFO: [Synth 8-6155] done synthesizing module 'MUXF8' (0#1) [C:/Xilinx/Vivado/2023.2/scripts/rt/data/unisim_comp.v:85275]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_mux_enc' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_si_transactor' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_si_transactor__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_1_mux_enc__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/10ab/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_si_transactor__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_splitter' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_splitter' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_wdata_router' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_axic_reg_srl_fifo' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_axic_reg_srl_fifo' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_wdata_router' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_wdata_mux' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_wdata_mux' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_29_axi_register_slice' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized1' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized1' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized2' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_29_axic_register_slice__parameterized2' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_29_axi_register_slice' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/ff9f/hdl/axi_register_slice_v2_1_vl_rfs.v:3718]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo__parameterized1' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl__parameterized1' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_ndeep_srl__parameterized1' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_28_axic_srl_fifo__parameterized1' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_wdata_mux__parameterized0' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_wdata_mux__parameterized0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_29_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_29_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_decerr_slave' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3626]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_decerr_slave' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_30_addr_arbiter' [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_addr_arbiter' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_crossbar' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_30_axi_crossbar' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xbar_0' (0#1) [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/synth/design_1_xbar_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[2].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[3].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[4].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[5].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[6].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[7].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[0].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[1].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[2].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[3].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[4].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[5].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[6].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element gen_multi_thread.gen_thread_loop[7].gen_debug_r_multi_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:4338]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/279e/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[2].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[3].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[4].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[5].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[6].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[7].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[8].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.gen/sources_1/bd/design_1/ipshared/fb47/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_29_axic_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_29_axic_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_29_axic_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_29_axic_register_slice__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_infrastructure_v1_1_0_vector2axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[11] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[10] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[9] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[8] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[7] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[6] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[5] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[4] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[3] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[2] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[1] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_aruser[0] in module axi_infrastructure_v1_1_0_axi2vector is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclk2x in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_crossbar_v2_1_30_wdata_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_crossbar_v2_1_30_wdata_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ASELECT[0] in module axi_crossbar_v2_1_30_wdata_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AVALID in module axi_crossbar_v2_1_30_wdata_mux__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ACLK in module axi_crossbar_v2_1_30_wdata_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ARESET in module axi_crossbar_v2_1_30_wdata_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ASELECT[0] in module axi_crossbar_v2_1_30_wdata_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AVALID in module axi_crossbar_v2_1_30_wdata_mux is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[1] in module axi_crossbar_v2_1_30_addr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ADDR[0] in module axi_crossbar_v2_1_30_addr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_30_si_transactor__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[0] in module axi_crossbar_v2_1_30_si_transactor__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_30_si_transactor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[0] in module axi_crossbar_v2_1_30_si_transactor is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[11] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[10] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[9] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[8] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[7] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[6] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[5] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[4] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[3] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[2] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[1] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WID[0] in module axi_crossbar_v2_1_30_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[11] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[10] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[9] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[8] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[7] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[6] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[5] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[4] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[3] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[2] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[1] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_aruser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[7] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[6] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[5] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[4] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[3] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[2] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[1] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[7] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[6] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[5] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[4] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[3] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[2] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[1] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_crossbar_v2_1_30_axi_crossbar is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 554.508 ; gain = 260.715
+Finished RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1634.344 ; gain = 717.211
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 554.508 ; gain = 260.715
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1634.344 ; gain = 717.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 554.508 ; gain = 260.715
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:40 . Memory (MB): peak = 1634.344 ; gain = 717.211
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7z020clg484-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.553 . Memory (MB): peak = 1634.344 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 128 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_xbar_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1730.387 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-WARNING: [Constraints 18-5210] No constraint will be written out.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.136 . Memory (MB): peak = 807.055 ; gain = 2.605
+The system cannot find the path specified.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.412 . Memory (MB): peak = 1730.832 ; gain = 0.445
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:01:01 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:01:01 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:01:01 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'gen_axilite.s_axi_wready_i_reg' into 'gen_axilite.s_axi_awready_i_reg' [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3574]
-WARNING: [Synth 8-6014] Unused sequential element gen_axilite.s_axi_wready_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:3574]
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return8" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return7" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return6" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return5" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return4" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "f_mux_return1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_28_axic_reg_srl_fifo'
+INFO: [Synth 8-802] inferred FSM for state register 'gen_axi.write_cs_reg' in module 'axi_crossbar_v2_1_30_decerr_slave'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    ZERO |                             1000 |                               10
+                     ONE |                             0010 |                               11
+                     TWO |                             0001 |                               01
+                  iSTATE |                             0100 |                               00
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi_data_fifo_v2_1_28_axic_reg_srl_fifo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+            P_WRITE_IDLE |                              001 |                               00
+            P_WRITE_DATA |                              010 |                               01
+            P_WRITE_RESP |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' using encoding 'one-hot' in module 'axi_crossbar_v2_1_30_decerr_slave'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:01:05 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    4 Bit       Adders := 50    
+	   2 Input    3 Bit       Adders := 10    
+	   2 Input    2 Bit       Adders := 1     
+	   2 Input    1 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 26    
 +---Registers : 
-	               64 Bit    Registers := 1     
-	               36 Bit    Registers := 2     
-	                9 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 14    
+	               75 Bit    Registers := 2     
+	               47 Bit    Registers := 18    
+	               14 Bit    Registers := 9     
+	               12 Bit    Registers := 18    
+	                9 Bit    Registers := 6     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 19    
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 21    
+	                1 Bit    Registers := 77    
 +---Muxes : 
-	   2 Input     64 Bit        Muxes := 1     
-	   2 Input     36 Bit        Muxes := 2     
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 71    
+	   2 Input   72 Bit        Muxes := 18    
+	   2 Input   64 Bit        Muxes := 16    
+	   2 Input   47 Bit        Muxes := 18    
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 22    
+	   3 Input    4 Bit        Muxes := 17    
+	   2 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 61    
+	   2 Input    1 Bit        Muxes := 76    
+	   4 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module axi_crossbar_v2_1_18_addr_decoder 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
-Module axi_crossbar_v2_1_18_decerr_slave 
-Detailed RTL Component Info : 
-+---Registers : 
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 3     
-Module axi_crossbar_v2_1_18_addr_arbiter_sasd 
-Detailed RTL Component Info : 
-+---Registers : 
-	               64 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
-+---Muxes : 
-	   2 Input     64 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module axi_crossbar_v2_1_18_splitter 
-Detailed RTL Component Info : 
-+---Registers : 
-	                3 Bit    Registers := 1     
-Module axi_crossbar_v2_1_18_splitter__parameterized0 
-Detailed RTL Component Info : 
-+---Registers : 
-	                2 Bit    Registers := 1     
-Module generic_baseblocks_v2_1_0_mux_enc 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized1 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
-Module axi_register_slice_v2_1_17_axic_register_slice 
-Detailed RTL Component Info : 
-+---Registers : 
-	               36 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     36 Bit        Muxes := 2     
-Module generic_baseblocks_v2_1_0_mux_enc__parameterized2 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 9     
-Module axi_crossbar_v2_1_18_crossbar_sasd 
-Detailed RTL Component Info : 
-+---Registers : 
-	                9 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
@@ -538,81 +363,51 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-6014] Unused sequential element inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_grant_enc_i_reg was removed.  [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/15a3/hdl/axi_crossbar_v2_1_vl_rfs.v:324]
-INFO: [Synth 8-3936] Found unconnected internal register 'inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg' and it is trimmed from '36' to '35' bits. [c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ipshared/6020/hdl/axi_register_slice_v2_1_vl_rfs.v:422]
-INFO: [Synth 8-3886] merging instance 'inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[4]' (FDR) to 'inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[5]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[5] )
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[63]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[62]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[61]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[60]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[59]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[58]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[57]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[56]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[55]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[54]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[53]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[52]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[51]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[50]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[49]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[45]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[44]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[43]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[42]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[41]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[40]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[39]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[38]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[37]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[36]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[35]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[34]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[33]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.m_amesg_i_reg[0]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/reg_slice_r/skid_buffer_reg[35]) is unused and will be removed from module design_1_xbar_0.
-INFO: [Synth 8-3332] Sequential element (inst/gen_sasd.crossbar_sasd_0/m_atarget_hot_reg[5]) is unused and will be removed from module design_1_xbar_0.
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port aclk2x in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awuser[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[11] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[10] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[9] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[8] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[7] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[6] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[5] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[4] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[3] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[2] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[1] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wid[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wuser[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_aruser[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_buser[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_ruser[0] in module axi_register_slice_v2_1_29_axi_register_slice is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_30_si_transactor__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[0] in module axi_crossbar_v2_1_30_si_transactor__parameterized0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ABURST[1] in module axi_crossbar_v2_1_30_si_transactor is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3332] Sequential element (wrouter_aw_fifo/FSM_onehot_state_reg[2]) is unused and will be removed from module axi_crossbar_v2_1_30_wdata_router.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:01:31 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:01:43 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 807.055 ; gain = 513.262
+Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:01:53 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Technology Mapping : Time (s): cpu = 00:00:45 ; elapsed = 00:01:56 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -629,50 +424,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:02:06 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:02:06 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -685,53 +467,49 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-----+------+
-|      |Cell |Count |
-+------+-----+------+
-|1     |LUT1 |     2|
-|2     |LUT2 |    12|
-|3     |LUT3 |     8|
-|4     |LUT4 |    94|
-|5     |LUT5 |    93|
-|6     |LUT6 |   115|
-|7     |FDRE |   136|
-+------+-----+------+
-
-Report Instance Areas: 
-+------+-------------------------------------+-----------------------------------------------+------+
-|      |Instance                             |Module                                         |Cells |
-+------+-------------------------------------+-----------------------------------------------+------+
-|1     |top                                  |                                               |   460|
-|2     |  inst                               |axi_crossbar_v2_1_18_axi_crossbar              |   460|
-|3     |    \gen_sasd.crossbar_sasd_0        |axi_crossbar_v2_1_18_crossbar_sasd             |   460|
-|4     |      addr_arbiter_inst              |axi_crossbar_v2_1_18_addr_arbiter_sasd         |   149|
-|5     |      \gen_decerr.decerr_slave_inst  |axi_crossbar_v2_1_18_decerr_slave              |    15|
-|6     |      reg_slice_r                    |axi_register_slice_v2_1_17_axic_register_slice |   247|
-|7     |      splitter_ar                    |axi_crossbar_v2_1_18_splitter__parameterized0  |     4|
-|8     |      splitter_aw                    |axi_crossbar_v2_1_18_splitter                  |    18|
-+------+-------------------------------------+-----------------------------------------------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |    32|
+|2     |LUT1    |    41|
+|3     |LUT2    |    25|
+|4     |LUT3    |   473|
+|5     |LUT4    |   114|
+|6     |LUT5    |   121|
+|7     |LUT6    |   483|
+|8     |MUXF7   |    62|
+|9     |MUXF8   |    62|
+|10    |SRLC32E |     4|
+|11    |FDRE    |  1560|
+|12    |FDSE    |    10|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 823.750 ; gain = 529.957
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:32 . Memory (MB): peak = 823.750 ; gain = 277.410
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 823.750 ; gain = 529.957
+Synthesis finished with 0 errors, 0 critical warnings and 66 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:30 ; elapsed = 00:01:58 . Memory (MB): peak = 1730.832 ; gain = 717.211
+Synthesis Optimization Complete : Time (s): cpu = 00:00:49 ; elapsed = 00:02:07 . Memory (MB): peak = 1730.832 ; gain = 813.699
 INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.184 . Memory (MB): peak = 1730.832 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 156 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1730.832 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+The system cannot find the path specified.
+Synth Design complete | Checksum: f7193d38
 INFO: [Common 17-83] Releasing license: Synthesis
-112 Infos, 107 Warnings, 0 Critical Warnings and 0 Errors encountered.
+106 Infos, 152 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:44 . Memory (MB): peak = 828.500 ; gain = 541.723
-WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
-INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
-INFO: [Coretcl 2-1174] Renamed 7 cell refs.
-WARNING: [Constraints 18-5210] No constraint will be written out.
-INFO: [Common 17-1381] The checkpoint 'C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:02:22 . Memory (MB): peak = 1730.832 ; gain = 1235.461
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1730.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_xbar_0, cache-ID = caae92b5a68246ac
+INFO: [Coretcl 2-1174] Renamed 46 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1730.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_xbar_0_synth_1/design_1_xbar_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_xbar_0_utilization_synth.rpt -pb design_1_xbar_0_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.049 . Memory (MB): peak = 828.500 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sat May 11 06:25:54 2019...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 24 14:36:02 2024...

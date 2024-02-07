@@ -1,8 +1,9 @@
---Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+--Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
---Date        : Sat May 11 06:24:27 2019
---Host        : AsusP8 running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+--Date        : Mon Feb  5 18:52:00 2024
+--Host        : LAPTOP-4NG0TGNQ running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -71,9 +72,6 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     spi_rtl_io0_i : in STD_LOGIC;
     spi_rtl_io0_o : out STD_LOGIC;
     spi_rtl_io0_t : out STD_LOGIC;
@@ -86,9 +84,12 @@ architecture STRUCTURE of design_1_wrapper is
     spi_rtl_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     spi_rtl_ss_t : out STD_LOGIC;
-    int_out : out STD_LOGIC;
     DINS_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    DOUTS_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 )
+    DOUTS_tri_o : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    int_out : out STD_LOGIC
   );
   end component design_1;
   component IOBUF is

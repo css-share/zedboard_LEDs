@@ -1,10 +1,11 @@
--- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
--- Date        : Sat May 11 06:25:42 2019
--- Host        : AsusP8 running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+-- Date        : Wed Jan 24 17:35:24 2024
+-- Host        : LAPTOP-4NG0TGNQ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_sim_netlist.vhdl
+--               c:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_100M_0/design_1_rst_ps7_0_100M_0_sim_netlist.vhdl
 -- Design      : design_1_rst_ps7_0_100M_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -30,25 +31,30 @@ entity design_1_rst_ps7_0_100M_0_cdc_sync is
 end design_1_rst_ps7_0_100M_0_cdc_sync;
 
 architecture STRUCTURE of design_1_rst_ps7_0_100M_0_cdc_sync is
+  signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\ : STD_LOGIC;
+  signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\ : STD_LOGIC;
+  signal Q : STD_LOGIC;
   signal asr_d1 : STD_LOGIC;
-  signal s_level_out_d1_cdc_to : STD_LOGIC;
-  signal s_level_out_d2 : STD_LOGIC;
-  signal s_level_out_d3 : STD_LOGIC;
   signal \^scndry_out\ : STD_LOGIC;
   attribute ASYNC_REG : boolean;
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP : string;
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "VCC:CE";
   attribute box_type : string;
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "PRIMITIVE";
 begin
   scndry_out <= \^scndry_out\;
@@ -60,7 +66,7 @@ begin
       C => slowest_sync_clk,
       CE => '1',
       D => asr_d1,
-      Q => s_level_out_d1_cdc_to,
+      Q => Q,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1__0\: unisim.vcomponents.LUT1
@@ -78,8 +84,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d1_cdc_to,
-      Q => s_level_out_d2,
+      D => Q,
+      Q => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\: unisim.vcomponents.FDRE
@@ -89,8 +95,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d2,
-      Q => s_level_out_d3,
+      D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\,
+      Q => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\: unisim.vcomponents.FDRE
@@ -100,7 +106,7 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d3,
+      D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
       Q => \^scndry_out\,
       R => '0'
     );
@@ -126,7 +132,9 @@ entity design_1_rst_ps7_0_100M_0_cdc_sync_0 is
     lpf_exr_reg : out STD_LOGIC;
     scndry_out : out STD_LOGIC;
     lpf_exr : in STD_LOGIC;
-    p_3_out : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    p_1_in4_in : in STD_LOGIC;
+    p_2_in3_in : in STD_LOGIC;
+    exr_lpf : in STD_LOGIC_VECTOR ( 0 to 0 );
     mb_debug_sys_rst : in STD_LOGIC;
     ext_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
@@ -136,25 +144,30 @@ entity design_1_rst_ps7_0_100M_0_cdc_sync_0 is
 end design_1_rst_ps7_0_100M_0_cdc_sync_0;
 
 architecture STRUCTURE of design_1_rst_ps7_0_100M_0_cdc_sync_0 is
+  signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\ : STD_LOGIC;
+  signal \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\ : STD_LOGIC;
+  signal Q : STD_LOGIC;
   signal exr_d1 : STD_LOGIC;
-  signal s_level_out_d1_cdc_to : STD_LOGIC;
-  signal s_level_out_d2 : STD_LOGIC;
-  signal s_level_out_d3 : STD_LOGIC;
   signal \^scndry_out\ : STD_LOGIC;
   attribute ASYNC_REG : boolean;
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP : string;
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "VCC:CE";
   attribute box_type : string;
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\ : label is "PRIMITIVE";
   attribute ASYNC_REG of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is std.standard.true;
   attribute XILINX_LEGACY_PRIM of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "FDR";
+  attribute XILINX_TRANSFORM_PINMAP of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "VCC:CE";
   attribute box_type of \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\ : label is "PRIMITIVE";
 begin
   scndry_out <= \^scndry_out\;
@@ -166,7 +179,7 @@ begin
       C => slowest_sync_clk,
       CE => '1',
       D => exr_d1,
-      Q => s_level_out_d1_cdc_to,
+      Q => Q,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_IN_cdc_to_i_1\: unisim.vcomponents.LUT2
@@ -185,8 +198,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d1_cdc_to,
-      Q => s_level_out_d2,
+      D => Q,
+      Q => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d3\: unisim.vcomponents.FDRE
@@ -196,8 +209,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d2,
-      Q => s_level_out_d3,
+      D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d2\,
+      Q => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
       R => '0'
     );
 \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d4\: unisim.vcomponents.FDRE
@@ -207,7 +220,7 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => s_level_out_d3,
+      D => \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.s_level_out_d3\,
       Q => \^scndry_out\,
       R => '0'
     );
@@ -217,10 +230,10 @@ lpf_exr_i_1: unisim.vcomponents.LUT5
     )
         port map (
       I0 => lpf_exr,
-      I1 => p_3_out(1),
-      I2 => p_3_out(2),
+      I1 => p_1_in4_in,
+      I2 => p_2_in3_in,
       I3 => \^scndry_out\,
-      I4 => p_3_out(0),
+      I4 => exr_lpf(0),
       O => lpf_exr_reg
     );
 end STRUCTURE;
@@ -410,15 +423,20 @@ architecture STRUCTURE of design_1_rst_ps7_0_100M_0_lpf is
   signal \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0\ : STD_LOGIC;
   signal Q : STD_LOGIC;
   signal asr_lpf : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal exr_lpf : STD_LOGIC_VECTOR ( 0 to 0 );
   signal lpf_asr : STD_LOGIC;
   signal lpf_exr : STD_LOGIC;
   signal \lpf_int0__0\ : STD_LOGIC;
   signal p_1_in : STD_LOGIC;
+  signal p_1_in4_in : STD_LOGIC;
   signal p_2_in : STD_LOGIC;
+  signal p_2_in3_in : STD_LOGIC;
   signal p_3_in1_in : STD_LOGIC;
-  signal p_3_out : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal p_3_in6_in : STD_LOGIC;
   attribute XILINX_LEGACY_PRIM : string;
   attribute XILINX_LEGACY_PRIM of POR_SRL_I : label is "SRL16";
+  attribute XILINX_TRANSFORM_PINMAP : string;
+  attribute XILINX_TRANSFORM_PINMAP of POR_SRL_I : label is "VCC:CE";
   attribute box_type : string;
   attribute box_type of POR_SRL_I : label is "PRIMITIVE";
   attribute srl_name : string;
@@ -437,12 +455,14 @@ begin
     );
 \ACTIVE_LOW_EXT.ACT_LO_EXT\: entity work.design_1_rst_ps7_0_100M_0_cdc_sync_0
      port map (
+      exr_lpf(0) => exr_lpf(0),
       ext_reset_in => ext_reset_in,
       lpf_exr => lpf_exr,
       lpf_exr_reg => \ACTIVE_LOW_EXT.ACT_LO_EXT_n_0\,
       mb_debug_sys_rst => mb_debug_sys_rst,
-      p_3_out(2 downto 0) => p_3_out(2 downto 0),
-      scndry_out => p_3_out(3),
+      p_1_in4_in => p_1_in4_in,
+      p_2_in3_in => p_2_in3_in,
+      scndry_out => p_3_in6_in,
       slowest_sync_clk => slowest_sync_clk
     );
 \AUX_LPF[1].asr_lpf_reg[1]\: unisim.vcomponents.FDRE
@@ -485,8 +505,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => p_3_out(3),
-      Q => p_3_out(2),
+      D => p_3_in6_in,
+      Q => p_2_in3_in,
       R => '0'
     );
 \EXT_LPF[2].exr_lpf_reg[2]\: unisim.vcomponents.FDRE
@@ -496,8 +516,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => p_3_out(2),
-      Q => p_3_out(1),
+      D => p_2_in3_in,
+      Q => p_1_in4_in,
       R => '0'
     );
 \EXT_LPF[3].exr_lpf_reg[3]\: unisim.vcomponents.FDRE
@@ -507,8 +527,8 @@ begin
         port map (
       C => slowest_sync_clk,
       CE => '1',
-      D => p_3_out(1),
-      Q => p_3_out(0),
+      D => p_1_in4_in,
+      Q => exr_lpf(0),
       R => '0'
     );
 POR_SRL_I: unisim.vcomponents.SRL16E
@@ -579,8 +599,8 @@ entity design_1_rst_ps7_0_100M_0_sequence_psr is
     MB_out : out STD_LOGIC;
     Bsr_out : out STD_LOGIC;
     Pr_out : out STD_LOGIC;
-    \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N\ : out STD_LOGIC;
-    \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N\ : out STD_LOGIC;
+    bsr_reg_0 : out STD_LOGIC;
+    pr_reg_0 : out STD_LOGIC;
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
@@ -612,16 +632,16 @@ architecture STRUCTURE of design_1_rst_ps7_0_100M_0_sequence_psr is
   signal seq_cnt : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal seq_cnt_en : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\ : label is "soft_lutpair5";
   attribute SOFT_HLUTNM of Core_i_1 : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \bsr_dec[0]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \bsr_dec[2]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of bsr_i_1 : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \core_dec[0]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \core_dec[2]_i_1\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of from_sys_i_1 : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \pr_dec[0]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of pr_i_1 : label is "soft_lutpair5";
 begin
   Bsr_out <= \^bsr_out\;
   MB_out <= \^mb_out\;
@@ -632,7 +652,7 @@ begin
     )
         port map (
       I0 => \^bsr_out\,
-      O => \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N\
+      O => bsr_reg_0
     );
 \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N_i_1\: unisim.vcomponents.LUT1
     generic map(
@@ -640,7 +660,7 @@ begin
     )
         port map (
       I0 => \^pr_out\,
-      O => \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N\
+      O => pr_reg_0
     );
 Core_i_1: unisim.vcomponents.LUT2
     generic map(
@@ -941,11 +961,6 @@ architecture STRUCTURE of design_1_rst_ps7_0_100M_0_proc_sys_reset is
   attribute box_type of \BSR_OUT_DFF[0].FDRE_BSR\ : label is "PRIMITIVE";
   attribute box_type of FDRE_inst : label is "PRIMITIVE";
   attribute box_type of \PR_OUT_DFF[0].FDRE_PER\ : label is "PRIMITIVE";
-  attribute equivalent_register_removal : string;
-  attribute equivalent_register_removal of bus_struct_reset : signal is "no";
-  attribute equivalent_register_removal of interconnect_aresetn : signal is "no";
-  attribute equivalent_register_removal of peripheral_aresetn : signal is "no";
-  attribute equivalent_register_removal of peripheral_reset : signal is "no";
 begin
 \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N\: unisim.vcomponents.FDRE
     generic map(
@@ -1028,12 +1043,12 @@ FDRE_inst: unisim.vcomponents.FDRE
     );
 SEQ: entity work.design_1_rst_ps7_0_100M_0_sequence_psr
      port map (
-      \ACTIVE_LOW_BSR_OUT_DFF[0].FDRE_BSR_N\ => SEQ_n_3,
-      \ACTIVE_LOW_PR_OUT_DFF[0].FDRE_PER_N\ => SEQ_n_4,
       Bsr_out => Bsr_out,
       MB_out => MB_out,
       Pr_out => Pr_out,
+      bsr_reg_0 => SEQ_n_3,
       lpf_int => lpf_int,
+      pr_reg_0 => SEQ_n_4,
       slowest_sync_clk => slowest_sync_clk
     );
 end STRUCTURE;
@@ -1061,7 +1076,7 @@ entity design_1_rst_ps7_0_100M_0 is
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of design_1_rst_ps7_0_100M_0 : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of design_1_rst_ps7_0_100M_0 : entity is "proc_sys_reset,Vivado 2018.2";
+  attribute x_core_info of design_1_rst_ps7_0_100M_0 : entity is "proc_sys_reset,Vivado 2023.2";
 end design_1_rst_ps7_0_100M_0;
 
 architecture STRUCTURE of design_1_rst_ps7_0_100M_0 is
@@ -1086,23 +1101,23 @@ architecture STRUCTURE of design_1_rst_ps7_0_100M_0 is
   attribute x_interface_info : string;
   attribute x_interface_info of aux_reset_in : signal is "xilinx.com:signal:reset:1.0 aux_reset RST";
   attribute x_interface_parameter : string;
-  attribute x_interface_parameter of aux_reset_in : signal is "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW";
+  attribute x_interface_parameter of aux_reset_in : signal is "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of ext_reset_in : signal is "xilinx.com:signal:reset:1.0 ext_reset RST";
-  attribute x_interface_parameter of ext_reset_in : signal is "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW";
+  attribute x_interface_parameter of ext_reset_in : signal is "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW, INSERT_VIP 0";
   attribute x_interface_info of mb_debug_sys_rst : signal is "xilinx.com:signal:reset:1.0 dbg_reset RST";
-  attribute x_interface_parameter of mb_debug_sys_rst : signal is "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH";
+  attribute x_interface_parameter of mb_debug_sys_rst : signal is "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH, INSERT_VIP 0";
   attribute x_interface_info of mb_reset : signal is "xilinx.com:signal:reset:1.0 mb_rst RST";
-  attribute x_interface_parameter of mb_reset : signal is "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR";
+  attribute x_interface_parameter of mb_reset : signal is "XIL_INTERFACENAME mb_rst, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0";
   attribute x_interface_info of slowest_sync_clk : signal is "xilinx.com:signal:clock:1.0 clock CLK";
-  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 1e+08, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0";
+  attribute x_interface_parameter of slowest_sync_clk : signal is "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0";
   attribute x_interface_info of bus_struct_reset : signal is "xilinx.com:signal:reset:1.0 bus_struct_reset RST";
-  attribute x_interface_parameter of bus_struct_reset : signal is "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT";
+  attribute x_interface_parameter of bus_struct_reset : signal is "XIL_INTERFACENAME bus_struct_reset, POLARITY ACTIVE_HIGH, TYPE INTERCONNECT, INSERT_VIP 0";
   attribute x_interface_info of interconnect_aresetn : signal is "xilinx.com:signal:reset:1.0 interconnect_low_rst RST";
-  attribute x_interface_parameter of interconnect_aresetn : signal is "XIL_INTERFACENAME interconnect_low_rst, POLARITY ACTIVE_LOW, TYPE INTERCONNECT";
+  attribute x_interface_parameter of interconnect_aresetn : signal is "XIL_INTERFACENAME interconnect_low_rst, POLARITY ACTIVE_LOW, TYPE INTERCONNECT, INSERT_VIP 0";
   attribute x_interface_info of peripheral_aresetn : signal is "xilinx.com:signal:reset:1.0 peripheral_low_rst RST";
-  attribute x_interface_parameter of peripheral_aresetn : signal is "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL";
+  attribute x_interface_parameter of peripheral_aresetn : signal is "XIL_INTERFACENAME peripheral_low_rst, POLARITY ACTIVE_LOW, TYPE PERIPHERAL, INSERT_VIP 0";
   attribute x_interface_info of peripheral_reset : signal is "xilinx.com:signal:reset:1.0 peripheral_high_rst RST";
-  attribute x_interface_parameter of peripheral_reset : signal is "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL";
+  attribute x_interface_parameter of peripheral_reset : signal is "XIL_INTERFACENAME peripheral_high_rst, POLARITY ACTIVE_HIGH, TYPE PERIPHERAL, INSERT_VIP 0";
 begin
 U0: entity work.design_1_rst_ps7_0_100M_0_proc_sys_reset
      port map (

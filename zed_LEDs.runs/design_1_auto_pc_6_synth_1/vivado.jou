@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Wed Jan 24 14:35:27 2024
+# Process ID: 11828
+# Current directory: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_auto_pc_6_synth_1
+# Command line: vivado.exe -log design_1_auto_pc_6.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_pc_6.tcl
+# Log file: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_auto_pc_6_synth_1/design_1_auto_pc_6.vds
+# Journal file: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.runs/design_1_auto_pc_6_synth_1\vivado.jou
+# Running On: LAPTOP-4NG0TGNQ, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 10, Host memory: 12540 MB
+#-----------------------------------------------------------
+source design_1_auto_pc_6.tcl -notrace

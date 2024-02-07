@@ -1,14 +1,20 @@
 #-----------------------------------------------------------
-# Vivado v2018.2 (64-bit)
-# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
-# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Fri Sep 27 20:34:08 2019
-# Process ID: 9312
-# Current directory: C:/Xilinx/Vivado/projects/zed_LEDs
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14820 C:\Xilinx\Vivado\projects\zed_LEDs\zed_LEDs.xpr
-# Log file: C:/Xilinx/Vivado/projects/zed_LEDs/vivado.log
-# Journal file: C:/Xilinx/Vivado/projects/zed_LEDs\vivado.jou
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Mon Feb  5 18:49:34 2024
+# Process ID: 18108
+# Current directory: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7832 C:\Users\19165\Downloads\zedboard_LEDs-master\zedboard_LEDs-master\zed_LEDs.xpr
+# Log file: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/vivado.log
+# Journal file: C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master\vivado.jou
+# Running On: LAPTOP-4NG0TGNQ, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 10, Host memory: 12540 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Xilinx/Vivado/projects/zed_LEDs/zed_LEDs.xpr
+open_project C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs.xpr
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/Users/19165/Downloads/zedboard_LEDs-master/zedboard_LEDs-master/zed_LEDs_wrapper.xsa
